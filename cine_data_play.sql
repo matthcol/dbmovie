@@ -380,7 +380,3 @@ insert into play (id_actor,id_movie,role) values (651737,54215,'Man');
 insert into play (id_actor,id_movie,role) values (743364,54215,'Mechanic');
 insert into play (id_actor,id_movie,role) values (770671,54215,'Extra');
 insert into play (id_actor,id_movie,role) values (908671,54215,'Hardware Store Customer');
-insert into play (id_actor,id_movie,role) values (268611,993846,'Stratton Broker');
-insert into play (id_actor,id_movie,role) values (154215,295178,'Gunman at Pool');
-insert into play (id_actor,id_movie,role) values (3274512,783598,'Singing Man');
-insert into play (id_actor,id_movie,role) values (5421589,1905041,'Sexy Girl');
