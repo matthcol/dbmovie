@@ -7,9 +7,6 @@
  
 SET CLIENT_ENCODING = 'UTF-8';
 
-DROP SCHEMA movie cascade;
-DROP USER if exists movie;
-
 create schema movie authorization movie;
 
 set role movie;
