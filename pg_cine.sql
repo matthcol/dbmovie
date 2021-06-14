@@ -1,4 +1,5 @@
 SET CLIENT_ENCODING = 'UTF-8';
+set datestyle=ISO;
 
 DROP SCHEMA movie cascade;
 DROP USER if exists movie;
