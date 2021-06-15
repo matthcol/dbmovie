@@ -1,3 +1,5 @@
+-- DDL mysql, mariadb
+-- table movies
 create table movies (
 	id integer auto_increment,
 	title varchar(250) not null,
