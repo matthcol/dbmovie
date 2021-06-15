@@ -1,3 +1,5 @@
+-- DDL postgresql
+-- table movies
 create table movies (
 	id serial constraint pk_movies primary key,
 	title varchar(250) not null,
