@@ -5,7 +5,8 @@ create table movies (
 	title varchar(250) not null,
 	year smallint not null,
 	duration smallint null,
-	synopsis text null
+	synopsis text null,
+	poster_uri varchar(300)
 );
 
 alter table movies add constraint CHK_MOVIES_YEAR CHECK (year >= 1888);
