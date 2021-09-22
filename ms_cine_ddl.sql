@@ -35,4 +35,3 @@ references movies(id);
 
 alter table play add constraint FK_PLAY_ACTOR FOREIGN KEY (id_actor)
 references stars(id);
-

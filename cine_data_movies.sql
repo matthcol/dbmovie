@@ -1,3 +1,5 @@
+SET IDENTITY_INSERT movies ON
+
 insert into movies (id,title,year,duration,genres,synopsis,poster_uri,id_director) 
 	values (74512,'Family Plot',1976,120,'Comedy,Crime,Drama,Thriller','A phony psychic/con artist and her taxi driver/private investigator boyfriend encounter a pair of serial kidnappers while trailing a missing heir in California.','https://m.media-amazon.com/images/M/MV5BZWE5NDI0OTktNWZkZi00OTQ5LTg2ZTctNzljNDFmZmYyYWEzXkEyXkFqcGdeQXVyNjc1NTYyMjg@._V1_SY1000_CR0,0,676,1000_AL_.jpg',33);
 insert into movies (id,title,year,duration,genres,synopsis,poster_uri,id_director) 

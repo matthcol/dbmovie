@@ -1,3 +1,4 @@
+SET IDENTITY_INSERT stars ON
 insert into stars (id,name,birthdate) values (2588606,'Steve McQueen','1969-10-09');
 insert into stars (id,name,birthdate) values (33,'Alfred Hitchcock','1899-08-13');
 insert into stars (id,name,birthdate) values (54,'Marilyn Monroe','1926-06-01');
