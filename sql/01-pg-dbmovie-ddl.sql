@@ -1,14 +1,11 @@
-create sequence seq_persons_id start with 1;
-create sequence seq_movies_id start with 1;
-
 create table persons (
-	id integer constraint pk_stars primary key,
+	id serial constraint pk_stars primary key,
 	name varchar(150) not null,
 	birthdate date null
 );
 
 create table movies (
-	id integer constraint pk_movies primary key,
+	id serial constraint pk_movies primary key,
 	title varchar(300) not null,
 	year smallint not null,
 	duration smallint null,
