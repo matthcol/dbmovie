@@ -17,7 +17,7 @@ services:
     image: postgres:${POSTGRES_VERSION:-latest}
     restart: unless-stopped
     ports:
-      - ${PGADMIN_PORT:-5432}:5432
+      - ${POSTGRES_PORT:-5432}:5432
     environment:
       POSTGRES_DB: ${POSTGRES_DB:-dbmovie}
       POSTGRES_USER: ${POSTGRES_USER:-movie}
