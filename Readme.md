@@ -16,4 +16,7 @@ su postgres -c "psql -f 00-create-db-user.sql"
 In directory sql/ 
 (you can specify another db by changing option -d)
 
-psql -U movie -d dbmovie -h localhost -p 5432 -f pg_movie_all.sql
+PGPASSWORD=password psql -U movie -d dbmovie -h localhost -p 5432 -f pg_movie_all.sql
+
+## Edit postgresql.conf and pg_hba.conf
+Configure these files to access dbmovie with user movie from wherever you want
