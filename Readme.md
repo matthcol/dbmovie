@@ -1,22 +1,29 @@
 # Movie database
 
-## (Windows only) Add PostgreSQL tools in Path variable
-Add following dir in PATH variable: C:\Program Files\PostgreSQL\15\bin
-
 ## Create specific user, schema, db, ...
 In directory sql/
 
-### On windows
-psql -U postgres -d postgres -h localhost -p 5432 -f 00-create-db-user.sql
-
-### On linux as user postgres
-su postgres -c "psql -f 00-create-db-user.sql"
+### On linux as user root
+mysql -u root < 00-create-db-user.sql
 
 ## Create tables and data (Linux, Windows as any OS user)
 In directory sql/ 
-(you can specify another db by changing option -d)
 
-PGPASSWORD=password psql -U movie -d dbmovie -h localhost -p 5432 -f pg_movie_all.sql
+mysql -u movie -p dbmovie < maria_movie_all.sql
 
-## Edit postgresql.conf and pg_hba.conf
-Configure these files to access dbmovie with user movie from wherever you want
+## Tests
+- Se connecter avec le user movie:
+
+mysql -u movie -p dbmovie
+
+- Lister les bases
+
+show databases;
+
+- Lister les tables
+
+show tables;
+
+- Vérifier le contenu d'une table
+
+select * from movies limit 50;
