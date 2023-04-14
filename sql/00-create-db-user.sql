@@ -1,8 +1,16 @@
 -- execute this script in admin mode
--- NB: you can create a specific database or work with db postgres
-create user movie with login password 'password';
-create database dbmovie encoding 'UTF-8';
 
--- change database to create schema movie
-\c dbmovie
-create schema movie authorization movie;
+-- 1. create database
+create database dbmovie CHARACTER SET utf8;
+
+-- 2. create user with all privileges to database dbmovie
+
+-- for local access only:
+-- create user 'movie'@'localhost' identified by 'password';
+-- grant all privileges on dbmovie.* to 'movie'@'localhost';
+
+-- for local and remote access:
+create user 'movie'@'*' identified by 'password';
+grant all privileges on dbmovie.* to 'movie'@'*';
+
+flush privileges;
