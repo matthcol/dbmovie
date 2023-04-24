@@ -6,3 +6,5 @@
 @03-movies.sql
 @04-play.sql
 @05-genres.sql
+
+exit;
