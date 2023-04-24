@@ -1,3439 +1,3432 @@
-SET client_encoding = 'UTF8';
+set define off
+set autocommit on
 
-COPY have_genre (movie_id, genre) FROM stdin;
-5257	Comedy
-6366	Drama
-8351	Drama
-8384	Western
-8642	Drama
-8676	Drama
-8981	Drama
-9124	Comedy
-9124	Romance
-9274	Comedy
-9274	Romance
-9403	Comedy
-9403	Romance
-9475	Comedy
-9475	Romance
-9492	Comedy
-9492	Drama
-9576	Comedy
-9666	Adventure
-9740	Comedy
-9740	Romance
-9740	Western
-9767	Drama
-10099	Comedy
-10099	Romance
-10175	Comedy
-10175	Romance
-10207	Comedy
-10207	Romance
-10219	Adventure
-10219	Comedy
-10219	Romance
-10389	Comedy
-10389	Romance
-10637	Comedy
-10637	Romance
-10771	Comedy
-10771	Drama
-10837	Comedy
-10837	Romance
-10883	Comedy
-10883	Drama
-10883	Romance
-10928	Drama
-11146	Comedy
-11282	Comedy
-11381	Drama
-11469	Comedy
-11527	Comedy
-11527	Romance
-11892	Drama
-12180	Comedy
-12180	Drama
-12260	Comedy
-12413	Drama
-12555	Drama
-12823	Comedy
-12823	Romance
-12864	Drama
-13126	Mystery
-13140	Drama
-13140	Thriller
-13229	Drama
-13229	Romance
-13444	Comedy
-13449	Drama
-13512	Comedy
-13512	Romance
-13592	Drama
-13611	Drama
-13751	Drama
-13891	Drama
-14205	Comedy
-14205	Romance
-14264	Drama
-14264	Romance
-14572	Drama
-14689	Drama
-14918	Drama
-15022	Drama
-15022	History
-15022	Romance
-15022	War
-15249	Drama
-16048	Comedy
-16048	Romance
-16062	Drama
-16093	Drama
-16127	Romance
-16127	Thriller
-16230	Drama
-16230	Romance
-16251	Comedy
-16251	Drama
-16251	Romance
-16420	Comedy
-16420	Drama
-16514	Drama
-16560	Action
-16560	Comedy
-16560	Drama
-16560	Romance
-16597	Comedy
-16597	Romance
-16627	Drama
-16627	Romance
-16690	Action
-16690	Drama
-16690	Romance
-16939	Western
-16954	Drama
-17075	Crime
-17075	Drama
-17075	Mystery
-17075	Thriller
-17201	Adventure
-17201	Comedy
-17201	Romance
-17201	Western
-17344	Drama
-17417	Drama
-17506	Comedy
-17632	Drama
-17632	Romance
-17825	Adventure
-17825	Drama
-17825	Thriller
-17832	Drama
-17832	Sport
-17843	Romance
-17843	Thriller
-17936	Comedy
-18201	Comedy
-18314	Comedy
-18328	Drama
-18328	Romance
-18328	Sport
-18350	Comedy
-18710	Comedy
-18756	Comedy
-18876	Comedy
-18876	Drama
-18876	Romance
-18909	Drama
-18909	War
-18949	Comedy
-18949	Romance
-18949	Sport
-18972	Drama
-18972	Romance
-18972	Thriller
-19044	Comedy
-19085	Crime
-19085	Comedy
-19182	Drama
-19339	Comedy
-19339	Drama
-19471	Comedy
-19471	Drama
-19588	Drama
-19699	Adventure
-19699	Drama
-19702	Crime
-19702	Film-Noir
-19702	Thriller
-19895	Drama
-19895	Romance
-19895	Sport
-20142	Drama
-20142	Romance
-20223	Drama
-20223	War
-20359	Drama
-20359	Romance
-20359	Sport
-20438	Drama
-20438	Sport
-20604	Comedy
-20604	Music
-20691	Adventure
-20691	Western
-20691	Romance
-20702	Crime
-20702	Drama
-20702	War
-20759	Musical
-20852	Comedy
-20852	Musical
-21015	Comedy
-21015	Drama
-21128	Mystery
-21128	Thriller
-21140	Action
-21140	Drama
-21165	Crime
-21165	Mystery
-21165	Thriller
-21319	Adventure
-21319	Western
-21507	Mystery
-21911	Comedy
-21911	Romance
-22093	Comedy
-22093	Romance
-22109	Drama
-22109	Sport
-22134	Drama
-22134	Romance
-22293	Action
-22293	Mystery
-22293	Romance
-22293	Western
-22395	Drama
-22479	Drama
-22681	Western
-22981	Action
-22981	Horror
-22981	Mystery
-22981	Romance
-22981	Western
-23038	Action
-23038	Adventure
-23038	Crime
-23038	Drama
-23038	Mystery
-23038	Thriller
-23109	Drama
-23109	Sport
-23285	Crime
-23285	Mystery
-23285	Thriller
-23395	Comedy
-23395	Drama
-23395	Romance
-23396	Action
-23396	Romance
-23396	Western
-23456	Crime
-23456	Drama
-23456	Mystery
-23456	Thriller
-23567	Action
-23567	Adventure
-23567	Mystery
-23567	Western
-23576	Drama
-23576	Romance
-23576	Sport
-23631	Action
-23631	Adventure
-23631	Drama
-23631	Romance
-23631	Western
-23775	Drama
-23775	Romance
-23878	Drama
-23899	Drama
-23899	Sport
-24124	Comedy
-24124	Romance
-24257	Romance
-24257	Drama
-24293	Adventure
-24293	Music
-24293	Romance
-24293	Western
-24500	Music
-24500	Romance
-24500	Western
-24516	Action
-24516	Drama
-24516	Romance
-24516	Western
-24592	Action
-24592	Comedy
-24592	Drama
-24592	Romance
-24592	Western
-24647	Action
-24647	Adventure
-24647	Romance
-24647	Western
-24663	Action
-24663	Adventure
-24663	Drama
-24663	Mystery
-24663	Thriller
-24663	War
-24747	Biography
-24747	Music
-24747	Romance
-24805	Action
-24805	Adventure
-24805	Romance
-24805	Western
-24902	Action
-24902	Adventure
-24902	Drama
-24902	Western
-25373	Action
-25373	Adventure
-25373	Romance
-25373	Western
-25440	Action
-25440	Adventure
-25440	Romance
-25440	Western
-25452	Crime
-25452	Mystery
-25452	Thriller
-25455	Adventure
-25455	Crime
-25455	Romance
-25455	Sport
-25455	Western
-25699	Action
-25699	Mystery
-25699	Romance
-25699	Western
-25830	Action
-25830	Mystery
-25830	Romance
-25830	Western
-25903	Action
-25903	Adventure
-25903	Drama
-25903	Romance
-25903	Western
-25969	Action
-25969	Adventure
-25969	Romance
-25969	Western
-26029	Film-Noir
-26029	Mystery
-26029	Thriller
-26267	Action
-26267	Adventure
-26267	Drama
-26267	Western
-26273	Action
-26273	Adventure
-26273	Romance
-26273	Western
-26614	Western
-26774	Action
-26774	Adventure
-26774	Drama
-26774	Romance
-26774	Western
-26846	Action
-26846	Adventure
-26846	Crime
-26846	Music
-26846	Western
-26908	Action
-26908	Romance
-26908	Western
-26966	Adventure
-26966	Drama
-26966	Music
-27087	Action
-27087	Adventure
-27087	Drama
-27087	Western
-27200	Action
-27200	Drama
-27200	History
-27200	Romance
-27200	Western
-27462	Drama
-27462	Romance
-27462	Sport
-27849	Western
-27876	Action
-27876	Adventure
-27876	Romance
-27876	Western
-27905	Drama
-27905	Western
-28068	Western
-28212	Crime
-28212	Thriller
-28227	Drama
-28227	Mystery
-28227	Romance
-28231	Mystery
-28231	Thriller
-28510	Comedy
-28510	Romance
-28510	Western
-28554	Adventure
-28653	Action
-28653	Adventure
-28653	Romance
-28653	Western
-28677	Action
-28677	Drama
-28677	Romance
-28677	Western
-29034	Action
-29034	Drama
-29034	Romance
-29044	Drama
-29044	Romance
-29044	Sport
-29811	Crime
-29811	Mystery
-29811	Romance
-29811	Thriller
-30341	Mystery
-30341	Thriller
-30545	Action
-30545	Adventure
-30545	Comedy
-30545	Western
-30550	Action
-30550	Adventure
-30550	Drama
-30550	Western
-30663	Action
-30663	Adventure
-30663	Crime
-30663	Western
-30714	Action
-30714	Adventure
-30714	Drama
-30714	Western
-31033	Adventure
-31033	History
-31033	Western
-31505	Adventure
-31505	Crime
-31718	Western
-31722	Action
-31722	Adventure
-31722	Drama
-31722	History
-31722	Western
-31971	Adventure
-31971	Drama
-31971	Western
-32032	Action
-32032	Adventure
-32032	Comedy
-32032	Western
-32146	Action
-32146	Adventure
-32146	Western
-32383	Drama
-32383	Romance
-32383	Western
-32484	Action
-32484	Romance
-32484	Thriller
-32484	War
-32609	Crime
-32609	Drama
-32609	Romance
-32728	Drama
-32728	War
-32976	Drama
-32976	Mystery
-32976	Romance
-32976	Thriller
-33038	Comedy
-33038	Drama
-33038	Romance
-33159	Adventure
-33159	Drama
-33159	Romance
-33806	Comedy
-33806	Romance
-33806	Thriller
-33808	Drama
-33808	Western
-33871	Comedy
-33871	Crime
-33871	Drama
-33871	Romance
-33922	Comedy
-33922	Romance
-34182	Adventure
-34182	Drama
-34182	Romance
-34182	Western
-34248	Mystery
-34248	Thriller
-34742	Action
-34742	Drama
-34742	Romance
-34742	War
-34889	Action
-34889	Adventure
-34889	Drama
-34889	Romance
-34889	Western
-35195	Action
-35195	Drama
-35195	Romance
-35244	Action
-35244	Adventure
-35244	Drama
-35244	Romance
-35250	Drama
-35250	Romance
-35250	War
-35279	Thriller
-35279	War
-35369	Drama
-35369	Western
-36038	Romance
-36038	Western
-36092	Comedy
-36092	Romance
-36092	Western
-36342	Thriller
-36824	Drama
-36824	Romance
-36824	War
-37017	Drama
-37017	War
-37343	Mystery
-37343	Romance
-37343	Western
-37522	Drama
-37522	War
-37627	Western
-37702	Musical
-37702	Romance
-37702	Western
-38109	Film-Noir
-38109	Mystery
-38109	Romance
-38109	Thriller
-38160	Drama
-38160	War
-38787	Drama
-38787	Film-Noir
-38787	Romance
-38787	Thriller
-39110	Comedy
-39110	Romance
-39152	Romance
-39152	Western
-39694	Crime
-39694	Drama
-39694	Romance
-39694	Thriller
-39927	Adventure
-39927	Drama
-39927	Romance
-40064	Drama
-40064	Western
-40369	Action
-40369	Adventure
-40369	Western
-40724	Action
-40724	Adventure
-40724	Drama
-40724	Romance
-40724	Western
-40746	Crime
-40746	Drama
-40746	Mystery
-40746	Thriller
-40946	Action
-40946	Adventure
-40946	Romance
-41361	Adventure
-41361	Romance
-41361	War
-41361	Western
-41841	Action
-41841	Drama
-41841	Romance
-41841	War
-41866	Western
-42004	Crime
-42004	Drama
-42004	Romance
-42895	Romance
-42895	Western
-42994	Film-Noir
-42994	Thriller
-43547	Action
-43547	Drama
-43547	War
-43887	Drama
-43887	Romance
-43887	War
-44079	Crime
-44079	Film-Noir
-44079	Thriller
-44418	Crime
-44418	Drama
-44418	History
-44418	Romance
-44418	Thriller
-45061	Comedy
-45061	Drama
-45061	Romance
-45883	Drama
-45883	Romance
-45883	War
-45883	Western
-45897	Crime
-45897	Drama
-45897	Thriller
-45919	Adventure
-45919	Drama
-46463	Comedy
-46463	Drama
-46463	Romance
-46463	Sport
-46912	Crime
-46912	Thriller
-47086	Action
-47086	Adventure
-47086	Drama
-47086	Thriller
-47396	Mystery
-47396	Thriller
-47889	Action
-47889	Adventure
-48092	Comedy
-48092	Fantasy
-48279	Drama
-48279	History
-48294	Comedy
-48294	Fantasy
-48294	Romance
-48554	Horror
-48554	Sci-Fi
-48593	Action
-48593	Drama
-48593	War
-48696	Horror
-48696	Sci-Fi
-48728	Mystery
-48728	Romance
-48728	Thriller
-48750	Comedy
-48750	Mystery
-48971	Drama
-48971	War
-49092	Adventure
-49092	Biography
-49092	History
-49092	Romance
-49092	War
-49212	Comedy
-49212	Western
-49470	Drama
-49470	Thriller
-49547	Drama
-49547	Romance
-49730	Adventure
-49730	Drama
-49730	Western
-49778	Biography
-49778	Drama
-49778	Sport
-49793	Drama
-49793	Romance
-49793	Western
-50099	Action
-50099	Crime
-50099	Drama
-50099	Mystery
-50363	Adventure
-50363	Family
-50562	Action
-50562	Drama
-50562	Romance
-50562	Thriller
-50562	War
-50629	Adventure
-50629	Drama
-50772	Action
-50772	Crime
-51084	Thriller
-51198	Biography
-51198	Drama
-51198	War
-51207	Drama
-51207	Film-Noir
-51349	Western
-51364	Drama
-51364	Romance
-51364	War
-51398	Adventure
-51398	Drama
-51398	History
-51398	Romance
-51418	Horror
-51418	Sci-Fi
-51713	Crime
-51713	Drama
-51713	Thriller
-51757	Comedy
-51757	Drama
-51840	Drama
-51840	Romance
-51840	War
-51987	Crime
-51987	Drama
-51987	Romance
-52357	Mystery
-52357	Romance
-52357	Thriller
-52722	Adventure
-52722	Family
-52722	Fantasy
-52722	Romance
-52862	Crime
-52862	Drama
-52862	Thriller
-52902	Adventure
-52902	Romance
-52902	War
-52902	Western
-53108	Drama
-53108	War
-53125	Adventure
-53125	Mystery
-53125	Thriller
-53221	Action
-53221	Drama
-53221	Western
-53334	Action
-53334	Adventure
-53580	Adventure
-53580	Drama
-53580	History
-53580	War
-53580	Western
-54047	Action
-54047	Adventure
-54047	Western
-54127	Comedy
-54127	Romance
-54127	Western
-54215	Horror
-54215	Mystery
-54215	Thriller
-54757	Action
-54757	Adventure
-54757	Romance
-54757	Western
-54898	Crime
-54898	Drama
-54930	Crime
-54930	Film-Noir
-54930	Mystery
-54989	Comedy
-54989	Romance
-55262	Comedy
-55262	War
-55928	Action
-55928	Adventure
-55928	Thriller
-56059	Action
-56059	Adventure
-56059	Comedy
-56059	Drama
-56059	Romance
-56062	Drama
-56062	War
-56085	Western
-56197	Action
-56197	Drama
-56197	History
-56197	War
-56217	Drama
-56217	Western
-56676	Adventure
-56676	Drama
-56676	War
-56869	Drama
-56869	Horror
-56869	Mystery
-56869	Romance
-57007	Adventure
-57007	Comedy
-57007	Romance
-57076	Action
-57076	Adventure
-57076	Thriller
-57115	Adventure
-57115	Drama
-57115	History
-57115	Thriller
-57115	War
-57263	Comedy
-57263	Drama
-57263	Romance
-57298	Comedy
-57298	Romance
-57298	Western
-57517	Comedy
-57517	Drama
-57517	Romance
-57952	Drama
-57952	Western
-58150	Action
-58150	Adventure
-58150	Thriller
-58329	Crime
-58329	Drama
-58329	Mystery
-58329	Romance
-58329	Thriller
-58461	Action
-58461	Drama
-58461	Western
-58754	Crime
-58754	Drama
-58754	Thriller
-58930	Drama
-59037	Drama
-59181	Sci-Fi
-59181	Thriller
-59245	Biography
-59245	Drama
-59245	History
-59274	Drama
-59274	War
-59309	Drama
-59309	War
-59578	Western
-59740	Western
-59800	Action
-59800	Adventure
-59800	Thriller
-60196	Western
-60218	Adventure
-60218	Drama
-60218	History
-60218	War
-60287	Comedy
-60287	Crime
-60287	Drama
-60414	Comedy
-60414	Drama
-60414	Romance
-60748	Western
-60934	Adventure
-60934	Drama
-60934	Romance
-60934	War
-61037	Comedy
-61037	Drama
-61037	Romance
-61107	Romance
-61107	Thriller
-61139	Drama
-61619	Drama
-61619	Romance
-61619	Western
-61747	Drama
-61747	Western
-61927	Comedy
-61927	Romance
-62373	Western
-62472	Western
-62512	Action
-62512	Adventure
-62512	Thriller
-62765	Action
-62765	Crime
-62765	Thriller
-62824	Action
-62824	Comedy
-62824	Crime
-62824	Thriller
-62824	Western
-63035	Drama
-63035	War
-63036	Comedy
-63036	Drama
-63060	Action
-63060	Adventure
-63060	Drama
-63060	Romance
-63060	War
-63161	Drama
-63161	War
-63161	Western
-63592	Western
-63688	Crime
-63688	Drama
-63688	Romance
-63688	Thriller
-63803	Drama
-63803	Romance
-64757	Action
-64757	Adventure
-64757	Thriller
-64782	Comedy
-64782	Drama
-64782	Musical
-64782	Romance
-64782	Western
-64886	Comedy
-64886	Drama
-65112	Drama
-65112	Thriller
-65126	Adventure
-65126	Drama
-65126	Western
-65134	Adventure
-65134	Romance
-65134	War
-65134	Western
-65150	Action
-65150	Adventure
-65150	Romance
-65150	War
-65150	Western
-65198	Comedy
-65207	Action
-65207	Adventure
-65207	War
-65547	Biography
-65547	Western
-65641	Drama
-65775	Comedy
-65775	Drama
-65775	Romance
-65832	Adventure
-65832	Comedy
-65832	Fantasy
-65836	Comedy
-65836	Drama
-65904	Adult
-65904	Comedy
-65904	Drama
-65904	Romance
-65938	Adventure
-65938	Comedy
-65938	War
-66090	Drama
-66090	History
-66156	Thriller
-66301	Adventure
-66301	Romance
-66301	War
-66301	Western
-66601	Drama
-66767	Action
-66767	Crime
-66767	Thriller
-66808	Comedy
-66819	Drama
-66819	Thriller
-66819	War
-66831	Western
-66995	Action
-66995	Adventure
-66995	Thriller
-66999	Action
-66999	Crime
-66999	Thriller
-67315	Adventure
-67315	Drama
-67334	Action
-67334	Adventure
-67334	Drama
-67334	Sport
-67576	Comedy
-67588	Drama
-67588	Thriller
-68309	Crime
-68309	Drama
-68309	Romance
-68332	Comedy
-68332	Mystery
-68421	Adventure
-68421	Drama
-68421	Western
-68611	Thriller
-68637	Comedy
-68638	Action
-68638	Crime
-68638	Thriller
-68699	Drama
-68699	Mystery
-68699	Western
-68768	Western
-68786	Drama
-68786	Western
-69704	Comedy
-69704	Drama
-69822	Drama
-69822	Romance
-69834	Drama
-69834	Western
-70328	Action
-70328	Adventure
-70328	Thriller
-70334	Comedy
-70334	Crime
-70334	Drama
-70334	Mystery
-70334	Thriller
-70355	Action
-70355	Crime
-70355	Mystery
-70355	Thriller
-70379	Crime
-70379	Drama
-70379	Thriller
-70468	Crime
-70468	Drama
-70468	Thriller
-70511	Biography
-70511	Crime
-70511	Drama
-70698	Horror
-70698	Mystery
-70698	Thriller
-70801	Action
-70825	Action
-70825	Comedy
-70825	Romance
-70825	Western
-70948	Adventure
-70948	Fantasy
-70948	Sci-Fi
-71115	Drama
-71115	Romance
-71360	Drama
-71360	Mystery
-71360	Thriller
-71772	Comedy
-71772	Drama
-71772	Romance
-71807	Action
-71807	Adventure
-71807	Thriller
-71824	Action
-71824	Crime
-71824	Drama
-71824	Mystery
-71824	Thriller
-71877	Crime
-71877	Drama
-71877	Mystery
-71930	Action
-71930	Drama
-71994	Comedy
-71994	Drama
-71994	Fantasy
-71994	Horror
-71994	Music
-71994	Romance
-71994	Thriller
-72034	Comedy
-72226	Crime
-72226	Drama
-72288	Comedy
-72288	Crime
-72288	Drama
-72308	Action
-72308	Drama
-72308	Thriller
-72732	Action
-72732	Comedy
-72732	Crime
-72761	Biography
-72761	Crime
-72761	Drama
-72856	Action
-72856	Comedy
-72856	Sci-Fi
-72856	Sport
-72872	Adventure
-72872	Romance
-72872	Drama
-72872	Musical
-72926	Action
-72926	Crime
-72926	Thriller
-72973	Crime
-72973	Mystery
-72973	Thriller
-73195	Adventure
-73195	Thriller
-73341	Adventure
-73341	History
-73341	War
-73636	Adventure
-73636	Drama
-73636	Western
-73694	Action
-73694	Drama
-73796	Crime
-73796	Drama
-73796	Thriller
-73906	Action
-73906	Adventure
-73906	Drama
-74279	Action
-74279	Comedy
-74279	Crime
-74279	Drama
-74279	Thriller
-74285	Horror
-74415	Action
-74415	Drama
-74483	Action
-74483	Crime
-74483	Thriller
-74512	Comedy
-74512	Crime
-74512	Drama
-74512	Thriller
-74962	Action
-74962	Thriller
-74991	Drama
-74991	Mystery
-74991	Thriller
-75029	Western
-75147	Adventure
-75147	Drama
-75147	Romance
-75148	Drama
-75148	Sport
-75213	Drama
-75213	Romance
-75213	Western
-75268	Comedy
-75268	Drama
-75314	Crime
-75314	Drama
-75784	Drama
-75784	History
-75784	War
-75860	Drama
-75860	Sci-Fi
-75906	Action
-75906	Comedy
-75968	Drama
-75968	War
-75993	Drama
-76012	Action
-76012	Comedy
-76012	Crime
-76070	Action
-76070	Crime
-76070	Thriller
-76138	Comedy
-76138	Drama
-76216	Comedy
-76216	Crime
-76216	Horror
-76216	Mystery
-76451	Drama
-76451	Music
-76451	Musical
-76580	Comedy
-76580	Action
-76580	Adventure
-76752	Action
-76752	Adventure
-76752	Thriller
-76759	Action
-76759	Adventure
-76759	Fantasy
-76759	Sci-Fi
-77523	Action
-77523	Comedy
-77531	Crime
-77531	Drama
-77531	Thriller
-77572	Action
-77572	Drama
-77572	War
-77588	Horror
-77588	Sci-Fi
-77655	Action
-77655	Drama
-77667	Comedy
-77667	Drama
-77667	Romance
-77667	Action
-78056	Drama
-78723	Action
-78723	Comedy
-78723	War
-78748	Horror
-78748	Sci-Fi
-78788	Drama
-78788	Mystery
-78788	War
-79013	Adventure
-79013	Romance
-79013	Thriller
-79013	War
-79116	Biography
-79116	Crime
-79116	Drama
-79116	Thriller
-79180	Comedy
-79180	Drama
-79180	Western
-79240	Adventure
-79240	Crime
-79240	Drama
-79240	Thriller
-79268	Action
-79268	Adventure
-79268	Drama
-79268	Romance
-79268	War
-79302	Comedy
-79550	Action
-79550	Drama
-79550	Sci-Fi
-79550	Thriller
-79574	Action
-79574	Adventure
-79574	Sci-Fi
-79574	Thriller
-79576	Comedy
-79576	Drama
-79576	War
-79817	Drama
-79817	Sport
-79858	Comedy
-79900	Comedy
-79900	Crime
-80031	Crime
-80031	Drama
-80031	Romance
-80031	Western
-80097	Comedy
-80097	Western
-80110	Drama
-80110	Romance
-80110	War
-80377	Action
-80377	Comedy
-80455	Adventure
-80455	Comedy
-80455	Crime
-80455	Music
-80455	Musical
-80472	Action
-80472	Adventure
-80472	Comedy
-80472	Drama
-80472	Romance
-80472	Western
-80661	Mystery
-80661	Thriller
-80684	Action
-80684	Adventure
-80684	Fantasy
-80684	Sci-Fi
-80850	Horror
-80850	Thriller
-80907	Action
-80907	Biography
-80907	Comedy
-80907	Crime
-80907	Drama
-80907	Thriller
-81398	Biography
-81398	Drama
-81398	Sport
-81633	Adventure
-81633	Comedy
-81633	Fantasy
-81633	Sci-Fi
-82085	Mystery
-82085	Thriller
-82198	Action
-82198	Adventure
-82198	Fantasy
-82398	Action
-82398	Adventure
-82398	Thriller
-82535	Comedy
-82535	Action
-82535	Drama
-82535	Family
-82762	Comedy
-82762	Fantasy
-82762	Horror
-82817	Action
-82817	Crime
-82817	Thriller
-82869	Action
-82869	Crime
-82869	Sci-Fi
-82869	Thriller
-82869	Western
-82880	Comedy
-82910	Drama
-82910	Horror
-82910	Romance
-82910	Sci-Fi
-82910	Thriller
-82971	Action
-82971	Adventure
-83284	Drama
-83284	Sport
-83284	War
-83605	Action
-83605	Comedy
-83658	Action
-83658	Sci-Fi
-83658	Thriller
-83866	Family
-83866	Sci-Fi
-83907	Horror
-83943	Action
-83943	Adventure
-83943	Thriller
-83944	Action
-83944	Adventure
-83947	Drama
-84088	Comedy
-84088	Drama
-84088	Music
-84088	Western
-84602	Drama
-84602	Sport
-84750	Action
-84750	Adventure
-84750	Fantasy
-84750	Romance
-84920	Comedy
-84920	Drama
-84920	Thriller
-85794	Comedy
-85794	Crime
-85794	Drama
-85794	Thriller
-86006	Action
-86006	Adventure
-86006	Thriller
-86034	Action
-86034	Adventure
-86034	Thriller
-86190	Action
-86190	Adventure
-86190	Fantasy
-86190	Sci-Fi
-86250	Crime
-86250	Drama
-86361	Drama
-86361	Music
-86361	Romance
-86383	Action
-86383	Crime
-86383	Thriller
-86491	Horror
-86491	Sci-Fi
-86927	Comedy
-86979	Crime
-86979	Drama
-86979	Thriller
-86984	Crime
-86984	Drama
-86984	Mystery
-86984	Thriller
-86998	Comedy
-86998	Drama
-86998	Music
-86998	Romance
-87062	Action
-87062	Comedy
-87062	Crime
-87078	Action
-87078	Adventure
-87078	Fantasy
-87363	Comedy
-87363	Fantasy
-87363	Horror
-87469	Action
-87469	Adventure
-87727	Action
-87727	Adventure
-87727	Drama
-87727	Thriller
-87727	War
-87739	Comedy
-88001	Comedy
-88001	Music
-88161	Comedy
-88161	Fantasy
-88161	Romance
-88247	Action
-88247	Sci-Fi
-88269	Sci-Fi
-88272	Crime
-88272	Mystery
-88272	Thriller
-88421	Drama
-88680	Comedy
-88680	Crime
-88680	Drama
-88680	Thriller
-88939	Drama
-88944	Action
-88944	Adventure
-88944	Thriller
-88967	Comedy
-88967	Crime
-88967	Horror
-89270	Adventure
-89270	Comedy
-89469	Adventure
-89469	Fantasy
-89469	Romance
-89482	Family
-89482	Comedy
-89482	Fantasy
-89543	Comedy
-89543	Thriller
-89695	Action
-89695	Comedy
-89695	Crime
-89695	Drama
-89767	Drama
-89767	Western
-89880	Action
-89880	Adventure
-89880	Thriller
-89893	Action
-89893	Adventure
-89893	Fantasy
-89927	Drama
-89927	Sport
-90056	Adventure
-90056	Comedy
-90093	Action
-90093	Adventure
-90093	Horror
-90093	Thriller
-90093	War
-90264	Action
-90264	Adventure
-90264	Thriller
-90274	Adventure
-90274	Comedy
-90329	Crime
-90329	Drama
-90329	Romance
-90329	Thriller
-90557	Drama
-90557	Music
-90605	Action
-90605	Adventure
-90605	Sci-Fi
-90605	Thriller
-90859	Action
-90859	Crime
-90859	Thriller
-90863	Drama
-90863	Sport
-91019	Drama
-91019	Romance
-91019	War
-91187	Drama
-91187	War
-91203	Action
-91203	Adventure
-91203	Fantasy
-91541	Comedy
-91557	Adventure
-91557	Drama
-91557	Thriller
-91605	Crime
-91605	Drama
-91605	Mystery
-91605	Thriller
-91653	Comedy
-91653	Drama
-91653	Romance
-91828	Action
-91828	Crime
-91828	Thriller
-91993	Adventure
-91993	Family
-91993	Sci-Fi
-92226	Comedy
-92226	Crime
-92263	Action
-92263	Crime
-92263	Drama
-92263	Thriller
-92264	Action
-92264	Drama
-92264	War
-92610	Comedy
-92610	Horror
-92610	Sci-Fi
-92675	Action
-92675	Biography
-92675	Drama
-92675	Sport
-92925	Comedy
-92925	Crime
-92965	Action
-92965	Drama
-92965	History
-92965	War
-92991	Action
-92991	Comedy
-92991	Fantasy
-92991	Horror
-92991	Thriller
-93428	Action
-93428	Adventure
-93428	Thriller
-93692	Action
-93692	Drama
-93692	Sport
-93773	Action
-93773	Adventure
-93773	Sci-Fi
-93773	Thriller
-93822	Comedy
-93822	Crime
-93894	Action
-93894	Sci-Fi
-93894	Thriller
-93898	Drama
-94008	Crime
-94008	Drama
-94008	Romance
-94008	Thriller
-94226	Crime
-94226	Drama
-94226	Thriller
-94351	Action
-94351	Crime
-94351	Drama
-94357	Action
-94357	Crime
-94357	Drama
-94357	Thriller
-94737	Comedy
-94737	Drama
-94737	Fantasy
-94737	Romance
-94747	Biography
-94747	Drama
-94747	Music
-94750	Action
-94750	Drama
-94963	Action
-94963	Crime
-94963	Mystery
-94963	Thriller
-95174	Crime
-95174	Drama
-95174	Mystery
-95174	Thriller
-95379	Horror
-95379	Thriller
-95405	Drama
-95405	Romance
-95497	Drama
-95583	Action
-95583	Crime
-95583	Horror
-95583	Mystery
-95613	Comedy
-95613	Drama
-95897	Action
-95897	Crime
-95897	Mystery
-95897	Thriller
-95927	Comedy
-95927	Drama
-95927	Romance
-95956	Action
-95956	Adventure
-95963	Action
-95963	Comedy
-95963	Crime
-95963	Thriller
-96320	Comedy
-96320	Crime
-96463	Comedy
-96463	Drama
-96463	Romance
-96734	Comedy
-96734	Mystery
-96734	Thriller
-96754	Adventure
-96754	Drama
-96754	Mystery
-96754	Sci-Fi
-96754	Thriller
-96794	Drama
-96794	Fantasy
-96794	Romance
-96933	Action
-96933	Crime
-96933	Thriller
-97027	Crime
-97027	Drama
-97027	War
-97138	Action
-97138	Sci-Fi
-97138	Thriller
-97202	Action
-97202	Crime
-97202	Drama
-97202	Thriller
-97328	Crime
-97328	Drama
-97576	Action
-97576	Adventure
-97659	Action
-97659	Sport
-97659	Thriller
-97742	Action
-97742	Adventure
-97742	Thriller
-97770	Action
-97770	Crime
-97770	Drama
-97770	Thriller
-97858	Animation
-97858	Comedy
-97858	Music
-97858	Musical
-97965	Comedy
-97965	Drama
-97965	Romance
-98067	Comedy
-98067	Drama
-98097	Action
-98097	Comedy
-98097	Crime
-98097	Drama
-98439	Action
-98439	Comedy
-98439	Crime
-98439	Thriller
-98536	Comedy
-98536	Crime
-98536	Drama
-98536	Thriller
-99077	Biography
-99077	Drama
-99165	Comedy
-99165	Drama
-99165	Romance
-99365	Action
-99365	Sci-Fi
-99365	Thriller
-99385	Action
-99385	Crime
-99385	Mystery
-99385	Thriller
-99426	Action
-99426	Crime
-99426	Drama
-99426	Thriller
-99426	War
-99685	Biography
-99685	Crime
-99685	Drama
-99703	Crime
-99703	Drama
-99703	Thriller
-99810	Action
-99810	Adventure
-99810	Thriller
-99892	Comedy
-99892	Romance
-99938	Comedy
-99938	Crime
-100029	Action
-100029	Crime
-100029	Drama
-100029	Sport
-100107	Crime
-100107	Horror
-100107	Action
-100107	Thriller
-100150	Crime
-100150	Drama
-100150	Thriller
-100404	Mystery
-100404	Thriller
-100507	Drama
-100507	Sport
-100514	Action
-100514	Crime
-100514	Drama
-100514	Thriller
-100530	Drama
-100530	Romance
-100530	Thriller
-100802	Action
-100802	Sci-Fi
-100802	Thriller
-100876	Western
-100928	Adventure
-100928	Drama
-100992	Crime
-100992	Drama
-100998	Drama
-100998	Fantasy
-101020	Action
-101020	Comedy
-101020	Crime
-101020	Thriller
-101410	Comedy
-101410	Drama
-101410	Thriller
-101540	Crime
-101540	Thriller
-101670	Horror
-101764	Action
-101764	Crime
-101984	Drama
-101999	Comedy
-102034	Action
-102034	Adventure
-102034	Fantasy
-102034	Sci-Fi
-102034	Thriller
-102057	Adventure
-102057	Comedy
-102057	Family
-102057	Fantasy
-102603	Comedy
-102603	Crime
-102768	Drama
-102768	Romance
-102798	Action
-102798	Adventure
-102798	Drama
-102798	Romance
-103064	Action
-103064	Sci-Fi
-103074	Adventure
-103074	Crime
-103074	Drama
-103594	Adventure
-103594	Biography
-103594	Drama
-103594	History
-103873	Action
-103873	Comedy
-103873	Fantasy
-103873	Horror
-104511	Action
-104511	Comedy
-104511	Crime
-104511	Horror
-104511	Romance
-104684	Action
-104684	Crime
-104684	Thriller
-104694	Comedy
-104694	Drama
-104694	Family
-104694	Sport
-104839	Adventure
-104839	Drama
-104839	Romance
-105112	Action
-105112	Thriller
-105211	Drama
-105217	Crime
-105217	Drama
-105217	Horror
-105217	Thriller
-105236	Crime
-105236	Drama
-105236	Thriller
-105399	Action
-105399	Comedy
-105477	Action
-105477	Comedy
-105695	Drama
-105695	Western
-105698	Action
-105698	Sci-Fi
-105810	Crime
-105810	Drama
-105810	Thriller
-106074	Drama
-106074	History
-106226	Drama
-106226	Romance
-106308	Comedy
-106308	Fantasy
-106308	Horror
-106519	Crime
-106519	Drama
-106519	Thriller
-106582	Action
-106582	Adventure
-106582	Thriller
-106673	Comedy
-106673	Romance
-106697	Action
-106697	Sci-Fi
-106697	Thriller
-106793	Comedy
-106793	Drama
-106977	Action
-106977	Crime
-106977	Drama
-106977	Mystery
-106977	Thriller
-107076	Action
-107076	Adventure
-107076	Drama
-107076	Thriller
-107206	Action
-107206	Crime
-107206	Drama
-107206	Thriller
-107212	Comedy
-107212	Drama
-107212	Romance
-107290	Action
-107290	Adventure
-107290	Sci-Fi
-107290	Thriller
-107362	Action
-107362	Adventure
-107362	Comedy
-107362	Fantasy
-107478	Comedy
-107711	Action
-107711	Drama
-107711	Romance
-107711	Thriller
-107808	Crime
-107808	Drama
-107808	Thriller
-107818	Drama
-107969	Action
-107969	Crime
-107969	Drama
-107969	Mystery
-107969	Thriller
-108052	Biography
-108052	Drama
-108052	History
-108149	Comedy
-108149	Drama
-108149	Mystery
-108160	Comedy
-108160	Drama
-108160	Romance
-108941	Adventure
-108941	Drama
-108941	Fantasy
-108941	Horror
-108941	Sci-Fi
-109444	Action
-109444	Crime
-109444	Drama
-109444	Thriller
-109813	Comedy
-109813	Family
-109813	Fantasy
-109830	Drama
-109830	Romance
-109920	Comedy
-110005	Biography
-110005	Crime
-110005	Drama
-110005	Thriller
-110074	Comedy
-110074	Drama
-110074	Fantasy
-110197	Crime
-110197	Comedy
-110197	Drama
-110216	Comedy
-110216	Romance
-110216	Sci-Fi
-110912	Crime
-110912	Drama
-110932	Biography
-110932	Drama
-110932	History
-111022	Comedy
-111149	Crime
-111149	Thriller
-111218	Comedy
-111218	Drama
-111218	Romance
-111237	Comedy
-111237	Drama
-111255	Action
-111255	Drama
-111255	Thriller
-111301	Action
-111301	Adventure
-111301	Comedy
-111301	Thriller
-111438	Action
-111438	Crime
-111438	Sci-Fi
-111438	Thriller
-111503	Action
-111503	Comedy
-111503	Thriller
-112384	Adventure
-112384	Drama
-112384	History
-112401	Action
-112401	Crime
-112401	Thriller
-112442	Action
-112442	Comedy
-112442	Crime
-112442	Thriller
-112579	Drama
-112579	Romance
-112641	Crime
-112641	Drama
-112642	Comedy
-112642	Family
-112642	Fantasy
-112851	Action
-112851	Crime
-112851	Thriller
-112854	Crime
-112854	Comedy
-112854	Fantasy
-113071	Action
-113071	Adventure
-113071	Drama
-113071	Romance
-113101	Comedy
-113140	Action
-113140	Sci-Fi
-113140	Thriller
-113189	Action
-113189	Adventure
-113189	Thriller
-113492	Action
-113492	Crime
-113492	Sci-Fi
-113492	Thriller
-113501	Action
-113501	Crime
-113501	Drama
-113501	Mystery
-113501	Thriller
-114214	Action
-114214	Romance
-114214	Thriller
-114214	Western
-114319	Comedy
-114319	Drama
-114319	Romance
-114371	Action
-114371	Comedy
-114371	Drama
-114576	Action
-114576	Crime
-114576	Thriller
-114681	Comedy
-114681	Crime
-114681	Drama
-114681	Thriller
-114709	Animation
-114709	Adventure
-114709	Comedy
-114709	Family
-114709	Fantasy
-115759	Action
-115759	Adventure
-115759	Thriller
-115994	Comedy
-115994	Crime
-115994	Thriller
-116040	Action
-116040	Adventure
-116040	Drama
-116040	Thriller
-116136	Action
-116136	Adventure
-116136	Fantasy
-116213	Action
-116213	Drama
-116213	Thriller
-116282	Crime
-116282	Drama
-116282	Thriller
-116365	Comedy
-116365	Fantasy
-116365	Horror
-116367	Action
-116367	Crime
-116367	Horror
-116414	Comedy
-116414	Drama
-116629	Action
-116629	Adventure
-116629	Sci-Fi
-116705	Adventure
-116705	Comedy
-116705	Family
-117011	Action
-117011	Romance
-117011	Thriller
-117060	Action
-117060	Adventure
-117060	Thriller
-117420	Action
-117420	Adventure
-117420	Drama
-117420	Thriller
-117500	Action
-117500	Adventure
-117500	Thriller
-117887	Comedy
-117887	Drama
-117887	Music
-117951	Drama
-118158	Adventure
-118158	Drama
-118460	Drama
-118460	Fantasy
-118460	Horror
-118460	Thriller
-118548	Action
-118548	Crime
-118548	Drama
-118548	Thriller
-118571	Action
-118571	Drama
-118571	Thriller
-118577	Comedy
-118607	Biography
-118607	Drama
-118607	History
-118661	Action
-118661	Adventure
-118661	Sci-Fi
-118661	Thriller
-118688	Action
-118688	Sci-Fi
-118715	Comedy
-118715	Crime
-118715	Sport
-118863	Comedy
-118863	Crime
-118887	Crime
-118887	Drama
-118887	Thriller
-118972	Action
-118972	Crime
-118972	Drama
-118972	Thriller
-119013	Action
-119013	Comedy
-119013	Sci-Fi
-119013	Thriller
-119094	Action
-119094	Crime
-119094	Sci-Fi
-119094	Thriller
-119173	Action
-119173	Drama
-119173	War
-119207	Comedy
-119207	Drama
-119216	Comedy
-119216	Crime
-119381	Drama
-119381	Romance
-119396	Crime
-119396	Drama
-119396	Thriller
-119485	Biography
-119485	Drama
-119485	History
-119485	War
-119535	Comedy
-119535	Crime
-119535	Fantasy
-119535	Romance
-119567	Action
-119567	Adventure
-119567	Sci-Fi
-119654	Action
-119654	Adventure
-119654	Comedy
-119654	Sci-Fi
-119668	Crime
-119668	Drama
-119668	Mystery
-119668	Thriller
-120324	Crime
-120324	Drama
-120324	Thriller
-120338	Drama
-120338	Romance
-120347	Action
-120347	Adventure
-120347	Thriller
-120363	Animation
-120363	Adventure
-120363	Comedy
-120363	Family
-120363	Fantasy
-120399	Crime
-120399	Drama
-120399	Thriller
-120570	Action
-120570	Drama
-120570	History
-120570	Thriller
-120587	Animation
-120587	Adventure
-120587	Comedy
-120587	Family
-120660	Action
-120660	Thriller
-120689	Crime
-120689	Drama
-120689	Fantasy
-120689	Mystery
-120724	Action
-120724	Crime
-120724	Thriller
-120737	Action
-120737	Adventure
-120737	Drama
-120737	Fantasy
-120755	Action
-120755	Adventure
-120755	Thriller
-120815	Drama
-120815	War
-120828	Action
-120828	Adventure
-120828	Comedy
-120828	Romance
-120832	Crime
-120832	Mystery
-120832	Thriller
-120891	Action
-120891	Comedy
-120891	Sci-Fi
-120891	Western
-120912	Action
-120912	Adventure
-120912	Comedy
-120912	Mystery
-120912	Sci-Fi
-124595	Drama
-124595	Romance
-124595	Thriller
-126388	Action
-126388	Adventure
-126388	Drama
-126388	War
-126916	Drama
-126916	Romance
-126916	Sport
-128853	Comedy
-128853	Drama
-128853	Romance
-129167	Animation
-129167	Action
-129167	Adventure
-129167	Comedy
-129167	Drama
-129167	Family
-129167	Sci-Fi
-132245	Action
-132245	Drama
-132245	Sport
-133285	Comedy
-133285	Drama
-133285	Romance
-134273	Crime
-134273	Drama
-134273	Mystery
-134273	Thriller
-134630	Comedy
-134630	Drama
-134630	Music
-134630	Romance
-134847	Action
-134847	Horror
-134847	Sci-Fi
-137494	Action
-137494	Crime
-137494	Romance
-137494	Thriller
-138322	Action
-138322	Adventure
-138322	Crime
-138322	Thriller
-138524	Comedy
-138524	Crime
-138524	Romance
-138946	Crime
-138946	Drama
-138946	Romance
-138946	Thriller
-139151	Action
-139151	Comedy
-139151	Drama
-139151	Romance
-139668	Crime
-139668	Drama
-139668	Mystery
-139668	Thriller
-142692	Comedy
-143145	Action
-143145	Adventure
-143145	Thriller
-145487	Action
-145487	Adventure
-145487	Sci-Fi
-145734	Comedy
-145734	Drama
-145734	Romance
-146675	Action
-146675	Fantasy
-146675	Horror
-146675	Thriller
-146984	Drama
-146984	Fantasy
-146984	Sport
-149171	Crime
-149171	Drama
-154506	Crime
-154506	Mystery
-154506	Thriller
-156934	Drama
-156934	Mystery
-156934	Romance
-160184	Crime
-160184	Thriller
-161081	Drama
-161081	Fantasy
-161081	Horror
-161081	Mystery
-161081	Thriller
-162222	Adventure
-162222	Drama
-162222	Romance
-163114	Comedy
-163114	Crime
-163114	Mystery
-163114	Thriller
-163978	Adventure
-163978	Drama
-163978	Romance
-163978	Thriller
-163988	Drama
-163988	Thriller
-164108	Comedy
-167260	Adventure
-167260	Drama
-167260	Fantasy
-167261	Adventure
-167261	Drama
-167261	Fantasy
-167988	Music
-168622	Drama
-170678	Drama
-172156	Action
-172156	Comedy
-172156	Crime
-172156	Thriller
-172495	Action
-172495	Adventure
-172495	Drama
-173893	None
-176269	Action
-176269	Sci-Fi
-178762	Drama
-180073	Biography
-180073	Drama
-181536	Drama
-181689	Action
-181689	Crime
-181689	Mystery
-181689	Sci-Fi
-181689	Thriller
-181852	Action
-181852	Sci-Fi
-181984	Crime
-181984	Drama
-181984	Thriller
-182392	Drama
-183523	Adventure
-183523	Sci-Fi
-183523	Thriller
-185431	Comedy
-185431	Fantasy
-185446	Drama
-185906	Action
-185906	Drama
-185906	History
-185906	War
-186566	Action
-186566	Adventure
-186566	Thriller
-190590	Adventure
-190590	Comedy
-190590	Crime
-190590	Music
-193364	Action
-193364	Adventure
-193364	Comedy
-208988	Action
-208988	Crime
-208988	Drama
-208988	Thriller
-209144	Mystery
-209144	Thriller
-211465	Crime
-211465	Drama
-211465	Thriller
-212720	Drama
-212720	Sci-Fi
-212985	Crime
-212985	Drama
-212985	Thriller
-216216	Action
-216216	Mystery
-216216	Sci-Fi
-216216	Thriller
-217505	Crime
-217505	Drama
-219699	Drama
-219699	Fantasy
-219699	Horror
-219699	Mystery
-230575	Comedy
-230575	Horror
-232500	Action
-232500	Crime
-232500	Thriller
-233469	Action
-233469	Drama
-233469	Thriller
-238552	Action
-238552	Sci-Fi
-238552	Thriller
-243133	Crime
-243133	Drama
-245562	Action
-245562	Drama
-245562	War
-246460	Action
-246460	Adventure
-246460	Thriller
-248667	Biography
-248667	Drama
-248667	Sport
-252299	Comedy
-252299	Crime
-252299	Drama
-252299	Thriller
-252299	War
-257044	Crime
-257044	Drama
-257044	Thriller
-259711	Fantasy
-259711	Mystery
-259711	Romance
-259711	Sci-Fi
-259711	Thriller
-264464	Biography
-264464	Crime
-264464	Drama
-265086	Drama
-265086	History
-265086	War
-266465	Action
-266465	Crime
-266465	Drama
-266465	Thriller
-266697	Action
-266697	Crime
-266697	Thriller
-267626	Drama
-267626	History
-267626	Thriller
-267626	War
-269743	Comedy
-273689	Drama
-273689	Romance
-273689	Sci-Fi
-273689	Thriller
-275947	Action
-275947	Comedy
-275947	Crime
-275947	Romance
-278504	Drama
-278504	Mystery
-278504	Thriller
-280665	Crime
-280665	Drama
-280665	Mystery
-280665	Thriller
-286106	Drama
-286106	Mystery
-286106	Sci-Fi
-286106	Thriller
-289043	Action
-289043	Drama
-289043	Horror
-289043	Sci-Fi
-289043	Thriller
-295178	Action
-295178	Adventure
-295178	Comedy
-295178	Crime
-295701	Action
-295701	Adventure
-295701	Thriller
-295721	Action
-295721	Comedy
-295721	Crime
-296572	Action
-296572	Adventure
-296572	Sci-Fi
-296572	Thriller
-298296	Action
-298296	Thriller
-307453	Animation
-307453	Adventure
-307453	Comedy
-307453	Family
-307453	Fantasy
-309377	Action
-309377	Crime
-309377	Drama
-309377	Mystery
-309377	Thriller
-310000	Action
-310000	Comedy
-310000	Crime
-310000	Drama
-311429	Action
-311429	Adventure
-311429	Fantasy
-311429	Sci-Fi
-316654	Action
-316654	Adventure
-316654	Sci-Fi
-317219	Animation
-317219	Comedy
-317219	Family
-317219	Sport
-320661	Action
-320661	Adventure
-320661	Drama
-320661	History
-320661	War
-323939	Crime
-323939	Thriller
-325805	Comedy
-325805	Crime
-325805	Drama
-325805	Thriller
-327056	Crime
-327056	Drama
-327056	Mystery
-327056	Thriller
-327437	Action
-327437	Adventure
-327437	Comedy
-327437	Family
-327437	Western
-327850	Action
-327850	Adventure
-327850	Comedy
-327850	Thriller
-328880	Animation
-328880	Adventure
-328880	Comedy
-328880	Family
-328880	Fantasy
-329717	Action
-329717	Comedy
-329717	Crime
-329717	Thriller
-335245	Comedy
-335245	Crime
-335245	Thriller
-338337	Action
-338337	Mystery
-338337	Sci-Fi
-338337	Thriller
-338348	Animation
-338348	Adventure
-338348	Comedy
-338348	Family
-338348	Fantasy
-338348	Musical
-338459	Action
-338459	Adventure
-338459	Comedy
-338459	Family
-338459	Sci-Fi
-338751	Biography
-338751	Drama
-339135	Action
-339135	Drama
-339135	Thriller
-343818	Action
-343818	Drama
-343818	Sci-Fi
-343818	Thriller
-349710	Action
-349710	Drama
-349710	Thriller
-353969	Action
-353969	Crime
-353969	Drama
-353969	Mystery
-353969	Thriller
-358273	Biography
-358273	Drama
-358273	Music
-358273	Romance
-359715	Comedy
-360717	Action
-360717	Adventure
-360717	Drama
-360717	Romance
-361748	Adventure
-361748	Drama
-361748	War
-362227	Comedy
-362227	Drama
-362227	Romance
-364970	Action
-364970	Adventure
-364970	Sci-Fi
-364970	Thriller
-366777	Comedy
-366777	Crime
-366777	Drama
-366777	Family
-367478	Action
-367478	Adventure
-367478	Drama
-367882	Action
-367882	Adventure
-368447	Drama
-368447	Mystery
-368447	Thriller
-372784	Action
-372784	Adventure
-374463	Action
-374463	Adventure
-374463	Drama
-374463	History
-374463	War
-377057	Comedy
-378194	Action
-378194	Crime
-378194	Thriller
-380510	Drama
-380510	Fantasy
-380510	Thriller
-381061	Action
-381061	Adventure
-381061	Thriller
-381442	Comedy
-382625	Mystery
-382625	Thriller
-386588	Comedy
-386588	Romance
-387877	Crime
-387877	Drama
-387877	Mystery
-387877	Thriller
-395169	Biography
-395169	Drama
-395169	History
-395169	War
-395699	Action
-395699	Comedy
-395699	Drama
-395699	Family
-401445	Comedy
-401445	Drama
-401445	Romance
-401711	Comedy
-401711	Drama
-401711	Romance
-401792	Crime
-401792	Thriller
-405159	Drama
-405159	Sport
-407304	Adventure
-407304	Sci-Fi
-407304	Thriller
-407887	Crime
-407887	Drama
-407887	Thriller
-408306	Action
-408306	Drama
-408306	History
-408306	Thriller
-408345	Crime
-408345	Thriller
-409847	Action
-409847	Sci-Fi
-409847	Thriller
-409847	Western
-411098	Drama
-413300	Action
-413300	Adventure
-413300	Sci-Fi
-413852	Comedy
-413852	Thriller
-413852	Mystery
-416891	Comedy
-418689	Action
-418689	Adventure
-418689	Drama
-418689	History
-418689	War
-419749	Biography
-419749	Comedy
-419749	Crime
-419749	Drama
-425112	Action
-425112	Comedy
-425112	Mystery
-425112	Thriller
-425637	Action
-425637	Adventure
-425637	Drama
-425637	History
-425637	War
-435761	Animation
-435761	Adventure
-435761	Comedy
-435761	Family
-435761	Fantasy
-443272	Biography
-443272	Drama
-443272	History
-443272	War
-448134	Sci-Fi
-448134	Thriller
-448157	Action
-448157	Fantasy
-453562	Biography
-453562	Drama
-453562	Sport
-454921	Biography
-454921	Drama
-457409	Drama
-458471	Action
-458471	Thriller
-458471	War
-460810	Adventure
-460810	Comedy
-460810	Drama
-462322	Action
-462322	Horror
-462322	Thriller
-462329	Action
-462329	Thriller
-462499	Action
-462499	Thriller
-462538	Animation
-462538	Adventure
-462538	Comedy
-463985	Action
-463985	Crime
-463985	Thriller
-468492	Action
-468492	Drama
-468492	Horror
-468492	Sci-Fi
-468569	Action
-468569	Crime
-468569	Drama
-468569	Thriller
-472062	Biography
-472062	Comedy
-472062	Drama
-472062	History
-475290	Comedy
-475290	Drama
-475290	Music
-475290	Mystery
-475343	Comedy
-475343	Horror
-477302	Adventure
-477302	Drama
-477302	Mystery
-477348	Crime
-477348	Drama
-477348	Thriller
-479143	Action
-479143	Drama
-479143	Sport
-480249	Action
-480249	Adventure
-480249	Drama
-480249	Sci-Fi
-480249	Thriller
-482571	Drama
-482571	Mystery
-482571	Sci-Fi
-482571	Thriller
-490215	Drama
-490215	History
-498380	Action
-498380	Adventure
-498380	Drama
-498380	History
-498380	War
-498399	Crime
-498399	Drama
-498399	Thriller
-499549	Action
-499549	Adventure
-499549	Fantasy
-499549	Sci-Fi
-758774	Action
-758774	Drama
-758774	Thriller
-765429	Biography
-765429	Crime
-765429	Drama
-765429	Thriller
-783598	Crime
-783598	Drama
-783598	Thriller
-808151	Action
-808151	Mystery
-808151	Thriller
-808399	Comedy
-808399	Drama
-808399	Romance
-814314	Drama
-816692	Adventure
-816692	Drama
-816692	Sci-Fi
-816692	Thriller
-824747	Biography
-824747	Crime
-824747	Drama
-824747	History
-824747	Mystery
-824747	Thriller
-826631	Comedy
-826631	Drama
-827521	Action
-827521	Crime
-827521	Thriller
-830515	Action
-830515	Adventure
-830515	Thriller
-831884	Crime
-831884	Drama
-831884	Thriller
-848557	Fantasy
-848557	Horror
-848557	Sci-Fi
-848557	Thriller
-851471	Animation
-851471	Adventure
-851471	Comedy
-874886	Comedy
-874886	Drama
-874886	Romance
-887883	Comedy
-887883	Crime
-887883	Drama
-887883	Thriller
-903624	Adventure
-903624	Family
-903624	Fantasy
-906665	Action
-906665	Western
-924129	Crime
-924129	Drama
-937237	Crime
-937237	Thriller
-937237	War
-955308	Action
-955308	Adventure
-955308	Drama
-955308	History
-959306	Comedy
-959306	Crime
-959306	Drama
-970179	Drama
-970179	Family
-970179	Fantasy
-970179	Mystery
-973844	Comedy
-973844	Drama
-976060	Comedy
-976060	Drama
-976060	Fantasy
-983193	Animation
-983193	Action
-983193	Adventure
-983193	Family
-983193	Mystery
-986233	Biography
-986233	Drama
-993846	Biography
-993846	Crime
-993846	Drama
-1010048	Drama
-1010048	Romance
-1013752	Action
-1013752	Thriller
-1019452	Comedy
-1019452	Drama
-1025100	Action
-1025100	Drama
-1025100	Sci-Fi
-1025100	Thriller
-1028528	Action
-1028528	Adventure
-1028528	Thriller
-1057500	Biography
-1057500	Drama
-1057500	History
-1057500	Sport
-1074638	Action
-1074638	Adventure
-1074638	Thriller
-1077258	Action
-1077258	Adventure
-1077258	Comedy
-1077258	Horror
-1077258	Thriller
-1092026	Adventure
-1092026	Comedy
-1092026	Sci-Fi
-1103275	Drama
-1103275	Romance
-1126618	Comedy
-1126618	Drama
-1126618	Romance
-1127180	Horror
-1127180	Thriller
-1130884	Mystery
-1130884	Thriller
-1130988	Comedy
-1130988	Crime
-1130988	Drama
-1135989	Biography
-1135989	Drama
-1135989	History
-1135989	Mystery
-1135989	Romance
-1135989	War
-1144804	Action
-1144804	Comedy
-1144804	Romance
-1164607	Action
-1164607	Adventure
-1170358	Adventure
-1170358	Fantasy
-1173949	Comedy
-1205489	Drama
-1206885	Action
-1206885	Thriller
-1211956	Action
-1211956	Thriller
-1212419	Drama
-1212419	Fantasy
-1212419	Romance
-1216496	Crime
-1216496	Drama
-1216496	Thriller
-1222817	Comedy
-1222817	Family
-1222817	Fantasy
-1222817	Romance
-1229340	Comedy
-1244659	Drama
-1286146	Action
-1286146	Crime
-1286146	Drama
-1286146	Romance
-1288403	Action
-1288403	Adventure
-1288403	Sci-Fi
-1293847	Action
-1293847	Adventure
-1293847	Thriller
-1302006	Biography
-1302006	Crime
-1302006	Drama
-1302011	Animation
-1302011	Action
-1302011	Adventure
-1302011	Comedy
-1302011	Family
-1302011	Fantasy
-1308729	Action
-1308729	Crime
-1308729	Thriller
-1320253	Action
-1320253	Adventure
-1320253	Thriller
-1326972	Action
-1326972	Drama
-1326972	History
-1326972	War
-1340138	Action
-1340138	Adventure
-1340138	Sci-Fi
-1340138	Thriller
-1345836	Action
-1345836	Adventure
-1356864	Comedy
-1356864	Drama
-1356864	Music
-1371111	Action
-1371111	Drama
-1371111	Mystery
-1371111	Sci-Fi
-1375666	Action
-1375666	Adventure
-1375666	Sci-Fi
-1375666	Thriller
-1386697	Action
-1386697	Adventure
-1386697	Fantasy
-1386697	Sci-Fi
-1403865	Drama
-1403865	Western
-1409024	Action
-1409024	Adventure
-1409024	Comedy
-1409024	Sci-Fi
-1411250	Action
-1411250	Adventure
-1411250	Sci-Fi
-1411250	Thriller
-1413495	Drama
-1413495	Thriller
-1436568	Action
-1436568	Crime
-1436568	Drama
-1436568	Thriller
-1438461	Drama
-1438461	History
-1438461	War
-1446714	Adventure
-1446714	Mystery
-1446714	Sci-Fi
-1460743	Action
-1460743	Adventure
-1502397	Action
-1502397	Comedy
-1502397	Crime
-1502397	Thriller
-1528100	Action
-1528100	Drama
-1528100	Fantasy
-1535109	Biography
-1535109	Crime
-1535109	Drama
-1535109	Thriller
-1542344	Biography
-1542344	Drama
-1549920	Action
-1549920	Thriller
-1560747	Drama
-1568911	Action
-1568911	Adventure
-1568911	Drama
-1568911	History
-1568911	War
-1583420	Comedy
-1583420	Drama
-1583420	Romance
-1596343	Action
-1596343	Adventure
-1596343	Crime
-1596343	Thriller
-1616195	Biography
-1616195	Drama
-1616195	Romance
-1618442	Action
-1618442	Adventure
-1618442	Fantasy
-1623205	Adventure
-1623205	Family
-1623205	Fantasy
-1634106	Action
-1634106	Drama
-1634106	Sci-Fi
-1655441	Drama
-1655441	Fantasy
-1655441	Romance
-1659343	Action
-1659343	Horror
-1659343	Mystery
-1659343	Sci-Fi
-1659343	Thriller
-1661382	Comedy
-1661382	Drama
-1661382	Sport
-1677720	Action
-1677720	Adventure
-1677720	Sci-Fi
-1699513	Drama
-1699513	History
-1706620	Action
-1706620	Drama
-1706620	Sci-Fi
-1723811	Drama
-1728245	Comedy
-1731141	Action
-1731141	Adventure
-1731141	Fantasy
-1731141	Sci-Fi
-1735862	Action
-1735862	Crime
-1735862	Drama
-1735862	Thriller
-1742044	Biography
-1742044	Drama
-1742044	Music
-1742044	Musical
-1742334	Action
-1742334	Crime
-1742334	Drama
-1742334	Thriller
-1764651	Action
-1764651	Adventure
-1764651	Thriller
-1767372	Comedy
-1767372	Drama
-1791528	Comedy
-1791528	Crime
-1791528	Drama
-1791528	Mystery
-1791528	Romance
-1795369	Drama
-1795369	Sci-Fi
-1798709	Drama
-1798709	Romance
-1798709	Sci-Fi
-1813593	Action
-1813593	Adventure
-1813593	Comedy
-1813593	Crime
-1813593	Fantasy
-1813593	Horror
-1813593	Thriller
-1815862	Action
-1815862	Adventure
-1815862	Sci-Fi
-1825784	Comedy
-1829012	Drama
-1829012	Mystery
-1829012	Thriller
-1830499	Comedy
-1830499	Crime
-1837709	Drama
-1837709	Fantasy
-1837709	Mystery
-1837709	Romance
-1838609	Comedy
-1853728	Drama
-1853728	Western
-1856101	Action
-1856101	Drama
-1856101	Mystery
-1856101	Sci-Fi
-1856101	Thriller
-1881002	Drama
-1881002	Horror
-1905041	Action
-1905041	Adventure
-1905041	Thriller
-1924429	Crime
-1924429	Drama
-1924429	Mystery
-1924429	Thriller
-1951181	Drama
-1951181	Romance
-1959602	Horror
-1975249	Action
-1975249	Crime
-1975249	Drama
-1975249	Thriller
-1979376	Animation
-1979376	Adventure
-1979376	Comedy
-1979376	Family
-1979376	Fantasy
-2015381	Action
-2015381	Adventure
-2015381	Comedy
-2015381	Sci-Fi
-2024544	Biography
-2024544	Drama
-2024544	History
-2040578	Comedy
-2040578	Horror
-2040578	Sci-Fi
-2042568	Comedy
-2042568	Drama
-2042568	Music
-2080374	Biography
-2080374	Drama
-2083383	Drama
-2083383	Sport
-2112277	Action
-2112277	Crime
-2112277	Drama
-2112277	Thriller
-2140373	Biography
-2140373	Comedy
-2140373	Drama
-2150371	Drama
-2150371	History
-2150371	Romance
-2150371	War
-2179136	Action
-2179136	Biography
-2179136	Drama
-2179136	War
-2193215	Crime
-2193215	Drama
-2193215	Thriller
-2193265	Action
-2193265	Adventure
-2193265	Comedy
-2267968	Animation
-2267968	Action
-2267968	Adventure
-2267968	Comedy
-2267968	Family
-2267968	Fantasy
-2297164	Comedy
-2297164	Drama
-2297164	Fantasy
-2297164	Sci-Fi
-2305700	Sport
-2310332	Adventure
-2310332	Fantasy
-2316204	Horror
-2316204	Sci-Fi
-2316204	Thriller
-2333784	Action
-2333784	Adventure
-2333784	Thriller
-2379713	Action
-2379713	Adventure
-2379713	Thriller
-2381941	Comedy
-2381941	Crime
-2381941	Drama
-2381941	Romance
-2395199	Action
-2395199	Thriller
-2488496	Action
-2488496	Adventure
-2488496	Sci-Fi
-2513074	Action
-2513074	Drama
-2513074	Sport
-2513074	Thriller
-2513074	War
-2527338	Action
-2527338	Adventure
-2527338	Fantasy
-2527338	Sci-Fi
-2639514	Action
-2639514	Sci-Fi
-2763304	Drama
-2820852	Action
-2820852	Adventure
-2820852	Thriller
-2865120	Animation
-2865120	Action
-2865120	Adventure
-2865120	Comedy
-2865120	Family
-2865120	Fantasy
-2865120	Sci-Fi
-2980210	Comedy
-2980210	Drama
-2980210	Romance
-3040964	Adventure
-3040964	Drama
-3040964	Family
-3040964	Fantasy
-3062096	Action
-3062096	Adventure
-3062096	Crime
-3062096	Drama
-3062096	Mystery
-3062096	Thriller
-3076658	Drama
-3076658	Sport
-3082898	Action
-3082898	Crime
-3082898	Drama
-3082898	Sport
-3138900	Comedy
-3138900	Crime
-3138900	Drama
-3224458	Biography
-3224458	Drama
-3263904	Biography
-3263904	Drama
-3282076	Action
-3282076	Crime
-3282076	Thriller
-3322364	Biography
-3322364	Drama
-3322364	Sport
-3460252	Crime
-3460252	Drama
-3460252	Mystery
-3460252	Thriller
-3460252	Western
-3488328	Action
-3488328	Thriller
-3501590	Drama
-3501590	War
-3513548	Biography
-3513548	Crime
-3513548	Drama
-3588588	Action
-3588588	Crime
-3588588	Drama
-3659388	Adventure
-3659388	Drama
-3659388	Sci-Fi
-3682448	Drama
-3682448	History
-3682448	Thriller
-3691740	Adventure
-3691740	Family
-3691740	Fantasy
-3715320	Comedy
-3715320	Drama
-3715320	Romance
-3896198	Action
-3896198	Adventure
-3896198	Comedy
-3896198	Sci-Fi
-3967856	Action
-3967856	Adventure
-3967856	Drama
-3967856	Sci-Fi
-4027270	Drama
-4027270	History
-4027270	Romance
-4027270	War
-4154756	Action
-4154756	Adventure
-4154756	Sci-Fi
-4154796	Action
-4154796	Adventure
-4154796	Drama
-4154796	Sci-Fi
-4155534	Animation
-4155534	Adventure
-4155534	Comedy
-4155534	Family
-4155534	Fantasy
-4218572	Crime
-4218572	Drama
-4218572	Thriller
-4287320	Drama
-4287320	Sci-Fi
-4287320	Thriller
-4537986	Action
-4537986	Crime
-4537986	Thriller
-4581576	Drama
-4581576	Thriller
-4630562	Action
-4630562	Adventure
-4630562	Crime
-4630562	Thriller
-4682786	Drama
-4682786	Romance
-4818250	Comedy
-4824394	Action
-4824394	Comedy
-4824394	Sci-Fi
-4971344	Crime
-4971344	Drama
-4971344	Western
-5013056	Action
-5013056	Drama
-5013056	History
-5013056	Thriller
-5013056	War
-5113040	Animation
-5113040	Adventure
-5113040	Comedy
-5113040	Family
-5208950	Action
-5208950	Drama
-5294550	Biography
-5294550	Crime
-5294550	Drama
-5294550	Mystery
-5294550	Thriller
-5360996	Biography
-5360996	Drama
-5519340	Action
-5519340	Fantasy
-5519340	Thriller
-5622412	Action
-5622412	Drama
-5622412	Thriller
-5689068	Action
-5689068	Comedy
-5689068	Thriller
-5742374	Crime
-5742374	Drama
-5742374	Mystery
-5742374	Thriller
-5767628	Action
-5767628	Crime
-5767628	Mystery
-5767628	Thriller
-5814534	Animation
-5814534	Adventure
-5814534	Comedy
-5814534	Family
-5814534	Sci-Fi
-5848272	Animation
-5848272	Adventure
-5848272	Comedy
-5848272	Family
-5848272	Fantasy
-6019206	Action
-6019206	Crime
-6019206	Thriller
-6048922	Action
-6048922	Drama
-6048922	History
-6048922	War
-6139732	Adventure
-6139732	Family
-6139732	Fantasy
-6139732	Musical
-6139732	Romance
-6218010	Action
-6218010	Adventure
-6218010	Family
-6218010	Fantasy
-6288124	Biography
-6288124	Comedy
-6288124	Drama
-6294822	Drama
-6294822	Thriller
-6343314	Drama
-6343314	Sport
-6344712	Drama
-6412452	Comedy
-6412452	Drama
-6412452	Musical
-6412452	Mystery
-6412452	Romance
-6412452	Western
-6450804	Action
-6450804	Adventure
-6450804	Sci-Fi
-6513656	Action
-6513656	Crime
-6513656	Mystery
-6513656	Sci-Fi
-6513656	Thriller
-6751668	Comedy
-6751668	Drama
-6751668	Thriller
-6772804	Action
-6772804	Crime
-6772804	Thriller
-6802308	Biography
-6802308	Drama
-6802308	Thriller
-7131622	Comedy
-7131622	Drama
-7255568	Drama
-7255568	Romance
-7255568	Sport
-7286456	Crime
-7286456	Drama
-7286456	Thriller
-7504726	Adventure
-7504726	Drama
-7504726	Family
-7763324	Adventure
-7763324	Fantasy
-7763324	Sci-Fi
-7816392	Action
-7816392	Drama
-7816392	Thriller
-7903530	Action
-7903530	Crime
-7903530	Drama
-7903530	Thriller
-7959026	Crime
-7959026	Drama
-7959026	Thriller
-8079248	Comedy
-8079248	Fantasy
-8079248	Music
-8079248	Musical
-8079248	Romance
-\.
-
-
---
--- PostgreSQL database dump complete
---
-
+INSERT INTO have_genre VALUES (5257, 'Comedy');
+INSERT INTO have_genre VALUES (6366, 'Drama');
+INSERT INTO have_genre VALUES (8351, 'Drama');
+INSERT INTO have_genre VALUES (8384, 'Western');
+INSERT INTO have_genre VALUES (8642, 'Drama');
+INSERT INTO have_genre VALUES (8676, 'Drama');
+INSERT INTO have_genre VALUES (8981, 'Drama');
+INSERT INTO have_genre VALUES (9124, 'Comedy');
+INSERT INTO have_genre VALUES (9124, 'Romance');
+INSERT INTO have_genre VALUES (9274, 'Comedy');
+INSERT INTO have_genre VALUES (9274, 'Romance');
+INSERT INTO have_genre VALUES (9403, 'Comedy');
+INSERT INTO have_genre VALUES (9403, 'Romance');
+INSERT INTO have_genre VALUES (9475, 'Comedy');
+INSERT INTO have_genre VALUES (9475, 'Romance');
+INSERT INTO have_genre VALUES (9492, 'Comedy');
+INSERT INTO have_genre VALUES (9492, 'Drama');
+INSERT INTO have_genre VALUES (9576, 'Comedy');
+INSERT INTO have_genre VALUES (9666, 'Adventure');
+INSERT INTO have_genre VALUES (9740, 'Comedy');
+INSERT INTO have_genre VALUES (9740, 'Romance');
+INSERT INTO have_genre VALUES (9740, 'Western');
+INSERT INTO have_genre VALUES (9767, 'Drama');
+INSERT INTO have_genre VALUES (10099, 'Comedy');
+INSERT INTO have_genre VALUES (10099, 'Romance');
+INSERT INTO have_genre VALUES (10175, 'Comedy');
+INSERT INTO have_genre VALUES (10175, 'Romance');
+INSERT INTO have_genre VALUES (10207, 'Comedy');
+INSERT INTO have_genre VALUES (10207, 'Romance');
+INSERT INTO have_genre VALUES (10219, 'Adventure');
+INSERT INTO have_genre VALUES (10219, 'Comedy');
+INSERT INTO have_genre VALUES (10219, 'Romance');
+INSERT INTO have_genre VALUES (10389, 'Comedy');
+INSERT INTO have_genre VALUES (10389, 'Romance');
+INSERT INTO have_genre VALUES (10637, 'Comedy');
+INSERT INTO have_genre VALUES (10637, 'Romance');
+INSERT INTO have_genre VALUES (10771, 'Comedy');
+INSERT INTO have_genre VALUES (10771, 'Drama');
+INSERT INTO have_genre VALUES (10837, 'Comedy');
+INSERT INTO have_genre VALUES (10837, 'Romance');
+INSERT INTO have_genre VALUES (10883, 'Comedy');
+INSERT INTO have_genre VALUES (10883, 'Drama');
+INSERT INTO have_genre VALUES (10883, 'Romance');
+INSERT INTO have_genre VALUES (10928, 'Drama');
+INSERT INTO have_genre VALUES (11146, 'Comedy');
+INSERT INTO have_genre VALUES (11282, 'Comedy');
+INSERT INTO have_genre VALUES (11381, 'Drama');
+INSERT INTO have_genre VALUES (11469, 'Comedy');
+INSERT INTO have_genre VALUES (11527, 'Comedy');
+INSERT INTO have_genre VALUES (11527, 'Romance');
+INSERT INTO have_genre VALUES (11892, 'Drama');
+INSERT INTO have_genre VALUES (12180, 'Comedy');
+INSERT INTO have_genre VALUES (12180, 'Drama');
+INSERT INTO have_genre VALUES (12260, 'Comedy');
+INSERT INTO have_genre VALUES (12413, 'Drama');
+INSERT INTO have_genre VALUES (12555, 'Drama');
+INSERT INTO have_genre VALUES (12823, 'Comedy');
+INSERT INTO have_genre VALUES (12823, 'Romance');
+INSERT INTO have_genre VALUES (12864, 'Drama');
+INSERT INTO have_genre VALUES (13126, 'Mystery');
+INSERT INTO have_genre VALUES (13140, 'Drama');
+INSERT INTO have_genre VALUES (13140, 'Thriller');
+INSERT INTO have_genre VALUES (13229, 'Drama');
+INSERT INTO have_genre VALUES (13229, 'Romance');
+INSERT INTO have_genre VALUES (13444, 'Comedy');
+INSERT INTO have_genre VALUES (13449, 'Drama');
+INSERT INTO have_genre VALUES (13512, 'Comedy');
+INSERT INTO have_genre VALUES (13512, 'Romance');
+INSERT INTO have_genre VALUES (13592, 'Drama');
+INSERT INTO have_genre VALUES (13611, 'Drama');
+INSERT INTO have_genre VALUES (13751, 'Drama');
+INSERT INTO have_genre VALUES (13891, 'Drama');
+INSERT INTO have_genre VALUES (14205, 'Comedy');
+INSERT INTO have_genre VALUES (14205, 'Romance');
+INSERT INTO have_genre VALUES (14264, 'Drama');
+INSERT INTO have_genre VALUES (14264, 'Romance');
+INSERT INTO have_genre VALUES (14572, 'Drama');
+INSERT INTO have_genre VALUES (14689, 'Drama');
+INSERT INTO have_genre VALUES (14918, 'Drama');
+INSERT INTO have_genre VALUES (15022, 'Drama');
+INSERT INTO have_genre VALUES (15022, 'History');
+INSERT INTO have_genre VALUES (15022, 'Romance');
+INSERT INTO have_genre VALUES (15022, 'War');
+INSERT INTO have_genre VALUES (15249, 'Drama');
+INSERT INTO have_genre VALUES (16048, 'Comedy');
+INSERT INTO have_genre VALUES (16048, 'Romance');
+INSERT INTO have_genre VALUES (16062, 'Drama');
+INSERT INTO have_genre VALUES (16093, 'Drama');
+INSERT INTO have_genre VALUES (16127, 'Romance');
+INSERT INTO have_genre VALUES (16127, 'Thriller');
+INSERT INTO have_genre VALUES (16230, 'Drama');
+INSERT INTO have_genre VALUES (16230, 'Romance');
+INSERT INTO have_genre VALUES (16251, 'Comedy');
+INSERT INTO have_genre VALUES (16251, 'Drama');
+INSERT INTO have_genre VALUES (16251, 'Romance');
+INSERT INTO have_genre VALUES (16420, 'Comedy');
+INSERT INTO have_genre VALUES (16420, 'Drama');
+INSERT INTO have_genre VALUES (16514, 'Drama');
+INSERT INTO have_genre VALUES (16560, 'Action');
+INSERT INTO have_genre VALUES (16560, 'Comedy');
+INSERT INTO have_genre VALUES (16560, 'Drama');
+INSERT INTO have_genre VALUES (16560, 'Romance');
+INSERT INTO have_genre VALUES (16597, 'Comedy');
+INSERT INTO have_genre VALUES (16597, 'Romance');
+INSERT INTO have_genre VALUES (16627, 'Drama');
+INSERT INTO have_genre VALUES (16627, 'Romance');
+INSERT INTO have_genre VALUES (16690, 'Action');
+INSERT INTO have_genre VALUES (16690, 'Drama');
+INSERT INTO have_genre VALUES (16690, 'Romance');
+INSERT INTO have_genre VALUES (16939, 'Western');
+INSERT INTO have_genre VALUES (16954, 'Drama');
+INSERT INTO have_genre VALUES (17075, 'Crime');
+INSERT INTO have_genre VALUES (17075, 'Drama');
+INSERT INTO have_genre VALUES (17075, 'Mystery');
+INSERT INTO have_genre VALUES (17075, 'Thriller');
+INSERT INTO have_genre VALUES (17201, 'Adventure');
+INSERT INTO have_genre VALUES (17201, 'Comedy');
+INSERT INTO have_genre VALUES (17201, 'Romance');
+INSERT INTO have_genre VALUES (17201, 'Western');
+INSERT INTO have_genre VALUES (17344, 'Drama');
+INSERT INTO have_genre VALUES (17417, 'Drama');
+INSERT INTO have_genre VALUES (17506, 'Comedy');
+INSERT INTO have_genre VALUES (17632, 'Drama');
+INSERT INTO have_genre VALUES (17632, 'Romance');
+INSERT INTO have_genre VALUES (17825, 'Adventure');
+INSERT INTO have_genre VALUES (17825, 'Drama');
+INSERT INTO have_genre VALUES (17825, 'Thriller');
+INSERT INTO have_genre VALUES (17832, 'Drama');
+INSERT INTO have_genre VALUES (17832, 'Sport');
+INSERT INTO have_genre VALUES (17843, 'Romance');
+INSERT INTO have_genre VALUES (17843, 'Thriller');
+INSERT INTO have_genre VALUES (17936, 'Comedy');
+INSERT INTO have_genre VALUES (18201, 'Comedy');
+INSERT INTO have_genre VALUES (18314, 'Comedy');
+INSERT INTO have_genre VALUES (18328, 'Drama');
+INSERT INTO have_genre VALUES (18328, 'Romance');
+INSERT INTO have_genre VALUES (18328, 'Sport');
+INSERT INTO have_genre VALUES (18350, 'Comedy');
+INSERT INTO have_genre VALUES (18710, 'Comedy');
+INSERT INTO have_genre VALUES (18756, 'Comedy');
+INSERT INTO have_genre VALUES (18876, 'Comedy');
+INSERT INTO have_genre VALUES (18876, 'Drama');
+INSERT INTO have_genre VALUES (18876, 'Romance');
+INSERT INTO have_genre VALUES (18909, 'Drama');
+INSERT INTO have_genre VALUES (18909, 'War');
+INSERT INTO have_genre VALUES (18949, 'Comedy');
+INSERT INTO have_genre VALUES (18949, 'Romance');
+INSERT INTO have_genre VALUES (18949, 'Sport');
+INSERT INTO have_genre VALUES (18972, 'Drama');
+INSERT INTO have_genre VALUES (18972, 'Romance');
+INSERT INTO have_genre VALUES (18972, 'Thriller');
+INSERT INTO have_genre VALUES (19044, 'Comedy');
+INSERT INTO have_genre VALUES (19085, 'Crime');
+INSERT INTO have_genre VALUES (19085, 'Comedy');
+INSERT INTO have_genre VALUES (19182, 'Drama');
+INSERT INTO have_genre VALUES (19339, 'Comedy');
+INSERT INTO have_genre VALUES (19339, 'Drama');
+INSERT INTO have_genre VALUES (19471, 'Comedy');
+INSERT INTO have_genre VALUES (19471, 'Drama');
+INSERT INTO have_genre VALUES (19588, 'Drama');
+INSERT INTO have_genre VALUES (19699, 'Adventure');
+INSERT INTO have_genre VALUES (19699, 'Drama');
+INSERT INTO have_genre VALUES (19702, 'Crime');
+INSERT INTO have_genre VALUES (19702, 'Film-Noir');
+INSERT INTO have_genre VALUES (19702, 'Thriller');
+INSERT INTO have_genre VALUES (19895, 'Drama');
+INSERT INTO have_genre VALUES (19895, 'Romance');
+INSERT INTO have_genre VALUES (19895, 'Sport');
+INSERT INTO have_genre VALUES (20142, 'Drama');
+INSERT INTO have_genre VALUES (20142, 'Romance');
+INSERT INTO have_genre VALUES (20223, 'Drama');
+INSERT INTO have_genre VALUES (20223, 'War');
+INSERT INTO have_genre VALUES (20359, 'Drama');
+INSERT INTO have_genre VALUES (20359, 'Romance');
+INSERT INTO have_genre VALUES (20359, 'Sport');
+INSERT INTO have_genre VALUES (20438, 'Drama');
+INSERT INTO have_genre VALUES (20438, 'Sport');
+INSERT INTO have_genre VALUES (20604, 'Comedy');
+INSERT INTO have_genre VALUES (20604, 'Music');
+INSERT INTO have_genre VALUES (20691, 'Adventure');
+INSERT INTO have_genre VALUES (20691, 'Western');
+INSERT INTO have_genre VALUES (20691, 'Romance');
+INSERT INTO have_genre VALUES (20702, 'Crime');
+INSERT INTO have_genre VALUES (20702, 'Drama');
+INSERT INTO have_genre VALUES (20702, 'War');
+INSERT INTO have_genre VALUES (20759, 'Musical');
+INSERT INTO have_genre VALUES (20852, 'Comedy');
+INSERT INTO have_genre VALUES (20852, 'Musical');
+INSERT INTO have_genre VALUES (21015, 'Comedy');
+INSERT INTO have_genre VALUES (21015, 'Drama');
+INSERT INTO have_genre VALUES (21128, 'Mystery');
+INSERT INTO have_genre VALUES (21128, 'Thriller');
+INSERT INTO have_genre VALUES (21140, 'Action');
+INSERT INTO have_genre VALUES (21140, 'Drama');
+INSERT INTO have_genre VALUES (21165, 'Crime');
+INSERT INTO have_genre VALUES (21165, 'Mystery');
+INSERT INTO have_genre VALUES (21165, 'Thriller');
+INSERT INTO have_genre VALUES (21319, 'Adventure');
+INSERT INTO have_genre VALUES (21319, 'Western');
+INSERT INTO have_genre VALUES (21507, 'Mystery');
+INSERT INTO have_genre VALUES (21911, 'Comedy');
+INSERT INTO have_genre VALUES (21911, 'Romance');
+INSERT INTO have_genre VALUES (22093, 'Comedy');
+INSERT INTO have_genre VALUES (22093, 'Romance');
+INSERT INTO have_genre VALUES (22109, 'Drama');
+INSERT INTO have_genre VALUES (22109, 'Sport');
+INSERT INTO have_genre VALUES (22134, 'Drama');
+INSERT INTO have_genre VALUES (22134, 'Romance');
+INSERT INTO have_genre VALUES (22293, 'Action');
+INSERT INTO have_genre VALUES (22293, 'Mystery');
+INSERT INTO have_genre VALUES (22293, 'Romance');
+INSERT INTO have_genre VALUES (22293, 'Western');
+INSERT INTO have_genre VALUES (22395, 'Drama');
+INSERT INTO have_genre VALUES (22479, 'Drama');
+INSERT INTO have_genre VALUES (22681, 'Western');
+INSERT INTO have_genre VALUES (22981, 'Action');
+INSERT INTO have_genre VALUES (22981, 'Horror');
+INSERT INTO have_genre VALUES (22981, 'Mystery');
+INSERT INTO have_genre VALUES (22981, 'Romance');
+INSERT INTO have_genre VALUES (22981, 'Western');
+INSERT INTO have_genre VALUES (23038, 'Action');
+INSERT INTO have_genre VALUES (23038, 'Adventure');
+INSERT INTO have_genre VALUES (23038, 'Crime');
+INSERT INTO have_genre VALUES (23038, 'Drama');
+INSERT INTO have_genre VALUES (23038, 'Mystery');
+INSERT INTO have_genre VALUES (23038, 'Thriller');
+INSERT INTO have_genre VALUES (23109, 'Drama');
+INSERT INTO have_genre VALUES (23109, 'Sport');
+INSERT INTO have_genre VALUES (23285, 'Crime');
+INSERT INTO have_genre VALUES (23285, 'Mystery');
+INSERT INTO have_genre VALUES (23285, 'Thriller');
+INSERT INTO have_genre VALUES (23395, 'Comedy');
+INSERT INTO have_genre VALUES (23395, 'Drama');
+INSERT INTO have_genre VALUES (23395, 'Romance');
+INSERT INTO have_genre VALUES (23396, 'Action');
+INSERT INTO have_genre VALUES (23396, 'Romance');
+INSERT INTO have_genre VALUES (23396, 'Western');
+INSERT INTO have_genre VALUES (23456, 'Crime');
+INSERT INTO have_genre VALUES (23456, 'Drama');
+INSERT INTO have_genre VALUES (23456, 'Mystery');
+INSERT INTO have_genre VALUES (23456, 'Thriller');
+INSERT INTO have_genre VALUES (23567, 'Action');
+INSERT INTO have_genre VALUES (23567, 'Adventure');
+INSERT INTO have_genre VALUES (23567, 'Mystery');
+INSERT INTO have_genre VALUES (23567, 'Western');
+INSERT INTO have_genre VALUES (23576, 'Drama');
+INSERT INTO have_genre VALUES (23576, 'Romance');
+INSERT INTO have_genre VALUES (23576, 'Sport');
+INSERT INTO have_genre VALUES (23631, 'Action');
+INSERT INTO have_genre VALUES (23631, 'Adventure');
+INSERT INTO have_genre VALUES (23631, 'Drama');
+INSERT INTO have_genre VALUES (23631, 'Romance');
+INSERT INTO have_genre VALUES (23631, 'Western');
+INSERT INTO have_genre VALUES (23775, 'Drama');
+INSERT INTO have_genre VALUES (23775, 'Romance');
+INSERT INTO have_genre VALUES (23878, 'Drama');
+INSERT INTO have_genre VALUES (23899, 'Drama');
+INSERT INTO have_genre VALUES (23899, 'Sport');
+INSERT INTO have_genre VALUES (24124, 'Comedy');
+INSERT INTO have_genre VALUES (24124, 'Romance');
+INSERT INTO have_genre VALUES (24257, 'Romance');
+INSERT INTO have_genre VALUES (24257, 'Drama');
+INSERT INTO have_genre VALUES (24293, 'Adventure');
+INSERT INTO have_genre VALUES (24293, 'Music');
+INSERT INTO have_genre VALUES (24293, 'Romance');
+INSERT INTO have_genre VALUES (24293, 'Western');
+INSERT INTO have_genre VALUES (24500, 'Music');
+INSERT INTO have_genre VALUES (24500, 'Romance');
+INSERT INTO have_genre VALUES (24500, 'Western');
+INSERT INTO have_genre VALUES (24516, 'Action');
+INSERT INTO have_genre VALUES (24516, 'Drama');
+INSERT INTO have_genre VALUES (24516, 'Romance');
+INSERT INTO have_genre VALUES (24516, 'Western');
+INSERT INTO have_genre VALUES (24592, 'Action');
+INSERT INTO have_genre VALUES (24592, 'Comedy');
+INSERT INTO have_genre VALUES (24592, 'Drama');
+INSERT INTO have_genre VALUES (24592, 'Romance');
+INSERT INTO have_genre VALUES (24592, 'Western');
+INSERT INTO have_genre VALUES (24647, 'Action');
+INSERT INTO have_genre VALUES (24647, 'Adventure');
+INSERT INTO have_genre VALUES (24647, 'Romance');
+INSERT INTO have_genre VALUES (24647, 'Western');
+INSERT INTO have_genre VALUES (24663, 'Action');
+INSERT INTO have_genre VALUES (24663, 'Adventure');
+INSERT INTO have_genre VALUES (24663, 'Drama');
+INSERT INTO have_genre VALUES (24663, 'Mystery');
+INSERT INTO have_genre VALUES (24663, 'Thriller');
+INSERT INTO have_genre VALUES (24663, 'War');
+INSERT INTO have_genre VALUES (24747, 'Biography');
+INSERT INTO have_genre VALUES (24747, 'Music');
+INSERT INTO have_genre VALUES (24747, 'Romance');
+INSERT INTO have_genre VALUES (24805, 'Action');
+INSERT INTO have_genre VALUES (24805, 'Adventure');
+INSERT INTO have_genre VALUES (24805, 'Romance');
+INSERT INTO have_genre VALUES (24805, 'Western');
+INSERT INTO have_genre VALUES (24902, 'Action');
+INSERT INTO have_genre VALUES (24902, 'Adventure');
+INSERT INTO have_genre VALUES (24902, 'Drama');
+INSERT INTO have_genre VALUES (24902, 'Western');
+INSERT INTO have_genre VALUES (25373, 'Action');
+INSERT INTO have_genre VALUES (25373, 'Adventure');
+INSERT INTO have_genre VALUES (25373, 'Romance');
+INSERT INTO have_genre VALUES (25373, 'Western');
+INSERT INTO have_genre VALUES (25440, 'Action');
+INSERT INTO have_genre VALUES (25440, 'Adventure');
+INSERT INTO have_genre VALUES (25440, 'Romance');
+INSERT INTO have_genre VALUES (25440, 'Western');
+INSERT INTO have_genre VALUES (25452, 'Crime');
+INSERT INTO have_genre VALUES (25452, 'Mystery');
+INSERT INTO have_genre VALUES (25452, 'Thriller');
+INSERT INTO have_genre VALUES (25455, 'Adventure');
+INSERT INTO have_genre VALUES (25455, 'Crime');
+INSERT INTO have_genre VALUES (25455, 'Romance');
+INSERT INTO have_genre VALUES (25455, 'Sport');
+INSERT INTO have_genre VALUES (25455, 'Western');
+INSERT INTO have_genre VALUES (25699, 'Action');
+INSERT INTO have_genre VALUES (25699, 'Mystery');
+INSERT INTO have_genre VALUES (25699, 'Romance');
+INSERT INTO have_genre VALUES (25699, 'Western');
+INSERT INTO have_genre VALUES (25830, 'Action');
+INSERT INTO have_genre VALUES (25830, 'Mystery');
+INSERT INTO have_genre VALUES (25830, 'Romance');
+INSERT INTO have_genre VALUES (25830, 'Western');
+INSERT INTO have_genre VALUES (25903, 'Action');
+INSERT INTO have_genre VALUES (25903, 'Adventure');
+INSERT INTO have_genre VALUES (25903, 'Drama');
+INSERT INTO have_genre VALUES (25903, 'Romance');
+INSERT INTO have_genre VALUES (25903, 'Western');
+INSERT INTO have_genre VALUES (25969, 'Action');
+INSERT INTO have_genre VALUES (25969, 'Adventure');
+INSERT INTO have_genre VALUES (25969, 'Romance');
+INSERT INTO have_genre VALUES (25969, 'Western');
+INSERT INTO have_genre VALUES (26029, 'Film-Noir');
+INSERT INTO have_genre VALUES (26029, 'Mystery');
+INSERT INTO have_genre VALUES (26029, 'Thriller');
+INSERT INTO have_genre VALUES (26267, 'Action');
+INSERT INTO have_genre VALUES (26267, 'Adventure');
+INSERT INTO have_genre VALUES (26267, 'Drama');
+INSERT INTO have_genre VALUES (26267, 'Western');
+INSERT INTO have_genre VALUES (26273, 'Action');
+INSERT INTO have_genre VALUES (26273, 'Adventure');
+INSERT INTO have_genre VALUES (26273, 'Romance');
+INSERT INTO have_genre VALUES (26273, 'Western');
+INSERT INTO have_genre VALUES (26614, 'Western');
+INSERT INTO have_genre VALUES (26774, 'Action');
+INSERT INTO have_genre VALUES (26774, 'Adventure');
+INSERT INTO have_genre VALUES (26774, 'Drama');
+INSERT INTO have_genre VALUES (26774, 'Romance');
+INSERT INTO have_genre VALUES (26774, 'Western');
+INSERT INTO have_genre VALUES (26846, 'Action');
+INSERT INTO have_genre VALUES (26846, 'Adventure');
+INSERT INTO have_genre VALUES (26846, 'Crime');
+INSERT INTO have_genre VALUES (26846, 'Music');
+INSERT INTO have_genre VALUES (26846, 'Western');
+INSERT INTO have_genre VALUES (26908, 'Action');
+INSERT INTO have_genre VALUES (26908, 'Romance');
+INSERT INTO have_genre VALUES (26908, 'Western');
+INSERT INTO have_genre VALUES (26966, 'Adventure');
+INSERT INTO have_genre VALUES (26966, 'Drama');
+INSERT INTO have_genre VALUES (26966, 'Music');
+INSERT INTO have_genre VALUES (27087, 'Action');
+INSERT INTO have_genre VALUES (27087, 'Adventure');
+INSERT INTO have_genre VALUES (27087, 'Drama');
+INSERT INTO have_genre VALUES (27087, 'Western');
+INSERT INTO have_genre VALUES (27200, 'Action');
+INSERT INTO have_genre VALUES (27200, 'Drama');
+INSERT INTO have_genre VALUES (27200, 'History');
+INSERT INTO have_genre VALUES (27200, 'Romance');
+INSERT INTO have_genre VALUES (27200, 'Western');
+INSERT INTO have_genre VALUES (27462, 'Drama');
+INSERT INTO have_genre VALUES (27462, 'Romance');
+INSERT INTO have_genre VALUES (27462, 'Sport');
+INSERT INTO have_genre VALUES (27849, 'Western');
+INSERT INTO have_genre VALUES (27876, 'Action');
+INSERT INTO have_genre VALUES (27876, 'Adventure');
+INSERT INTO have_genre VALUES (27876, 'Romance');
+INSERT INTO have_genre VALUES (27876, 'Western');
+INSERT INTO have_genre VALUES (27905, 'Drama');
+INSERT INTO have_genre VALUES (27905, 'Western');
+INSERT INTO have_genre VALUES (28068, 'Western');
+INSERT INTO have_genre VALUES (28212, 'Crime');
+INSERT INTO have_genre VALUES (28212, 'Thriller');
+INSERT INTO have_genre VALUES (28227, 'Drama');
+INSERT INTO have_genre VALUES (28227, 'Mystery');
+INSERT INTO have_genre VALUES (28227, 'Romance');
+INSERT INTO have_genre VALUES (28231, 'Mystery');
+INSERT INTO have_genre VALUES (28231, 'Thriller');
+INSERT INTO have_genre VALUES (28510, 'Comedy');
+INSERT INTO have_genre VALUES (28510, 'Romance');
+INSERT INTO have_genre VALUES (28510, 'Western');
+INSERT INTO have_genre VALUES (28554, 'Adventure');
+INSERT INTO have_genre VALUES (28653, 'Action');
+INSERT INTO have_genre VALUES (28653, 'Adventure');
+INSERT INTO have_genre VALUES (28653, 'Romance');
+INSERT INTO have_genre VALUES (28653, 'Western');
+INSERT INTO have_genre VALUES (28677, 'Action');
+INSERT INTO have_genre VALUES (28677, 'Drama');
+INSERT INTO have_genre VALUES (28677, 'Romance');
+INSERT INTO have_genre VALUES (28677, 'Western');
+INSERT INTO have_genre VALUES (29034, 'Action');
+INSERT INTO have_genre VALUES (29034, 'Drama');
+INSERT INTO have_genre VALUES (29034, 'Romance');
+INSERT INTO have_genre VALUES (29044, 'Drama');
+INSERT INTO have_genre VALUES (29044, 'Romance');
+INSERT INTO have_genre VALUES (29044, 'Sport');
+INSERT INTO have_genre VALUES (29811, 'Crime');
+INSERT INTO have_genre VALUES (29811, 'Mystery');
+INSERT INTO have_genre VALUES (29811, 'Romance');
+INSERT INTO have_genre VALUES (29811, 'Thriller');
+INSERT INTO have_genre VALUES (30341, 'Mystery');
+INSERT INTO have_genre VALUES (30341, 'Thriller');
+INSERT INTO have_genre VALUES (30545, 'Action');
+INSERT INTO have_genre VALUES (30545, 'Adventure');
+INSERT INTO have_genre VALUES (30545, 'Comedy');
+INSERT INTO have_genre VALUES (30545, 'Western');
+INSERT INTO have_genre VALUES (30550, 'Action');
+INSERT INTO have_genre VALUES (30550, 'Adventure');
+INSERT INTO have_genre VALUES (30550, 'Drama');
+INSERT INTO have_genre VALUES (30550, 'Western');
+INSERT INTO have_genre VALUES (30663, 'Action');
+INSERT INTO have_genre VALUES (30663, 'Adventure');
+INSERT INTO have_genre VALUES (30663, 'Crime');
+INSERT INTO have_genre VALUES (30663, 'Western');
+INSERT INTO have_genre VALUES (30714, 'Action');
+INSERT INTO have_genre VALUES (30714, 'Adventure');
+INSERT INTO have_genre VALUES (30714, 'Drama');
+INSERT INTO have_genre VALUES (30714, 'Western');
+INSERT INTO have_genre VALUES (31033, 'Adventure');
+INSERT INTO have_genre VALUES (31033, 'History');
+INSERT INTO have_genre VALUES (31033, 'Western');
+INSERT INTO have_genre VALUES (31505, 'Adventure');
+INSERT INTO have_genre VALUES (31505, 'Crime');
+INSERT INTO have_genre VALUES (31718, 'Western');
+INSERT INTO have_genre VALUES (31722, 'Action');
+INSERT INTO have_genre VALUES (31722, 'Adventure');
+INSERT INTO have_genre VALUES (31722, 'Drama');
+INSERT INTO have_genre VALUES (31722, 'History');
+INSERT INTO have_genre VALUES (31722, 'Western');
+INSERT INTO have_genre VALUES (31971, 'Adventure');
+INSERT INTO have_genre VALUES (31971, 'Drama');
+INSERT INTO have_genre VALUES (31971, 'Western');
+INSERT INTO have_genre VALUES (32032, 'Action');
+INSERT INTO have_genre VALUES (32032, 'Adventure');
+INSERT INTO have_genre VALUES (32032, 'Comedy');
+INSERT INTO have_genre VALUES (32032, 'Western');
+INSERT INTO have_genre VALUES (32146, 'Action');
+INSERT INTO have_genre VALUES (32146, 'Adventure');
+INSERT INTO have_genre VALUES (32146, 'Western');
+INSERT INTO have_genre VALUES (32383, 'Drama');
+INSERT INTO have_genre VALUES (32383, 'Romance');
+INSERT INTO have_genre VALUES (32383, 'Western');
+INSERT INTO have_genre VALUES (32484, 'Action');
+INSERT INTO have_genre VALUES (32484, 'Romance');
+INSERT INTO have_genre VALUES (32484, 'Thriller');
+INSERT INTO have_genre VALUES (32484, 'War');
+INSERT INTO have_genre VALUES (32609, 'Crime');
+INSERT INTO have_genre VALUES (32609, 'Drama');
+INSERT INTO have_genre VALUES (32609, 'Romance');
+INSERT INTO have_genre VALUES (32728, 'Drama');
+INSERT INTO have_genre VALUES (32728, 'War');
+INSERT INTO have_genre VALUES (32976, 'Drama');
+INSERT INTO have_genre VALUES (32976, 'Mystery');
+INSERT INTO have_genre VALUES (32976, 'Romance');
+INSERT INTO have_genre VALUES (32976, 'Thriller');
+INSERT INTO have_genre VALUES (33038, 'Comedy');
+INSERT INTO have_genre VALUES (33038, 'Drama');
+INSERT INTO have_genre VALUES (33038, 'Romance');
+INSERT INTO have_genre VALUES (33159, 'Adventure');
+INSERT INTO have_genre VALUES (33159, 'Drama');
+INSERT INTO have_genre VALUES (33159, 'Romance');
+INSERT INTO have_genre VALUES (33806, 'Comedy');
+INSERT INTO have_genre VALUES (33806, 'Romance');
+INSERT INTO have_genre VALUES (33806, 'Thriller');
+INSERT INTO have_genre VALUES (33808, 'Drama');
+INSERT INTO have_genre VALUES (33808, 'Western');
+INSERT INTO have_genre VALUES (33871, 'Comedy');
+INSERT INTO have_genre VALUES (33871, 'Crime');
+INSERT INTO have_genre VALUES (33871, 'Drama');
+INSERT INTO have_genre VALUES (33871, 'Romance');
+INSERT INTO have_genre VALUES (33922, 'Comedy');
+INSERT INTO have_genre VALUES (33922, 'Romance');
+INSERT INTO have_genre VALUES (34182, 'Adventure');
+INSERT INTO have_genre VALUES (34182, 'Drama');
+INSERT INTO have_genre VALUES (34182, 'Romance');
+INSERT INTO have_genre VALUES (34182, 'Western');
+INSERT INTO have_genre VALUES (34248, 'Mystery');
+INSERT INTO have_genre VALUES (34248, 'Thriller');
+INSERT INTO have_genre VALUES (34742, 'Action');
+INSERT INTO have_genre VALUES (34742, 'Drama');
+INSERT INTO have_genre VALUES (34742, 'Romance');
+INSERT INTO have_genre VALUES (34742, 'War');
+INSERT INTO have_genre VALUES (34889, 'Action');
+INSERT INTO have_genre VALUES (34889, 'Adventure');
+INSERT INTO have_genre VALUES (34889, 'Drama');
+INSERT INTO have_genre VALUES (34889, 'Romance');
+INSERT INTO have_genre VALUES (34889, 'Western');
+INSERT INTO have_genre VALUES (35195, 'Action');
+INSERT INTO have_genre VALUES (35195, 'Drama');
+INSERT INTO have_genre VALUES (35195, 'Romance');
+INSERT INTO have_genre VALUES (35244, 'Action');
+INSERT INTO have_genre VALUES (35244, 'Adventure');
+INSERT INTO have_genre VALUES (35244, 'Drama');
+INSERT INTO have_genre VALUES (35244, 'Romance');
+INSERT INTO have_genre VALUES (35250, 'Drama');
+INSERT INTO have_genre VALUES (35250, 'Romance');
+INSERT INTO have_genre VALUES (35250, 'War');
+INSERT INTO have_genre VALUES (35279, 'Thriller');
+INSERT INTO have_genre VALUES (35279, 'War');
+INSERT INTO have_genre VALUES (35369, 'Drama');
+INSERT INTO have_genre VALUES (35369, 'Western');
+INSERT INTO have_genre VALUES (36038, 'Romance');
+INSERT INTO have_genre VALUES (36038, 'Western');
+INSERT INTO have_genre VALUES (36092, 'Comedy');
+INSERT INTO have_genre VALUES (36092, 'Romance');
+INSERT INTO have_genre VALUES (36092, 'Western');
+INSERT INTO have_genre VALUES (36342, 'Thriller');
+INSERT INTO have_genre VALUES (36824, 'Drama');
+INSERT INTO have_genre VALUES (36824, 'Romance');
+INSERT INTO have_genre VALUES (36824, 'War');
+INSERT INTO have_genre VALUES (37017, 'Drama');
+INSERT INTO have_genre VALUES (37017, 'War');
+INSERT INTO have_genre VALUES (37343, 'Mystery');
+INSERT INTO have_genre VALUES (37343, 'Romance');
+INSERT INTO have_genre VALUES (37343, 'Western');
+INSERT INTO have_genre VALUES (37522, 'Drama');
+INSERT INTO have_genre VALUES (37522, 'War');
+INSERT INTO have_genre VALUES (37627, 'Western');
+INSERT INTO have_genre VALUES (37702, 'Musical');
+INSERT INTO have_genre VALUES (37702, 'Romance');
+INSERT INTO have_genre VALUES (37702, 'Western');
+INSERT INTO have_genre VALUES (38109, 'Film-Noir');
+INSERT INTO have_genre VALUES (38109, 'Mystery');
+INSERT INTO have_genre VALUES (38109, 'Romance');
+INSERT INTO have_genre VALUES (38109, 'Thriller');
+INSERT INTO have_genre VALUES (38160, 'Drama');
+INSERT INTO have_genre VALUES (38160, 'War');
+INSERT INTO have_genre VALUES (38787, 'Drama');
+INSERT INTO have_genre VALUES (38787, 'Film-Noir');
+INSERT INTO have_genre VALUES (38787, 'Romance');
+INSERT INTO have_genre VALUES (38787, 'Thriller');
+INSERT INTO have_genre VALUES (39110, 'Comedy');
+INSERT INTO have_genre VALUES (39110, 'Romance');
+INSERT INTO have_genre VALUES (39152, 'Romance');
+INSERT INTO have_genre VALUES (39152, 'Western');
+INSERT INTO have_genre VALUES (39694, 'Crime');
+INSERT INTO have_genre VALUES (39694, 'Drama');
+INSERT INTO have_genre VALUES (39694, 'Romance');
+INSERT INTO have_genre VALUES (39694, 'Thriller');
+INSERT INTO have_genre VALUES (39927, 'Adventure');
+INSERT INTO have_genre VALUES (39927, 'Drama');
+INSERT INTO have_genre VALUES (39927, 'Romance');
+INSERT INTO have_genre VALUES (40064, 'Drama');
+INSERT INTO have_genre VALUES (40064, 'Western');
+INSERT INTO have_genre VALUES (40369, 'Action');
+INSERT INTO have_genre VALUES (40369, 'Adventure');
+INSERT INTO have_genre VALUES (40369, 'Western');
+INSERT INTO have_genre VALUES (40724, 'Action');
+INSERT INTO have_genre VALUES (40724, 'Adventure');
+INSERT INTO have_genre VALUES (40724, 'Drama');
+INSERT INTO have_genre VALUES (40724, 'Romance');
+INSERT INTO have_genre VALUES (40724, 'Western');
+INSERT INTO have_genre VALUES (40746, 'Crime');
+INSERT INTO have_genre VALUES (40746, 'Drama');
+INSERT INTO have_genre VALUES (40746, 'Mystery');
+INSERT INTO have_genre VALUES (40746, 'Thriller');
+INSERT INTO have_genre VALUES (40946, 'Action');
+INSERT INTO have_genre VALUES (40946, 'Adventure');
+INSERT INTO have_genre VALUES (40946, 'Romance');
+INSERT INTO have_genre VALUES (41361, 'Adventure');
+INSERT INTO have_genre VALUES (41361, 'Romance');
+INSERT INTO have_genre VALUES (41361, 'War');
+INSERT INTO have_genre VALUES (41361, 'Western');
+INSERT INTO have_genre VALUES (41841, 'Action');
+INSERT INTO have_genre VALUES (41841, 'Drama');
+INSERT INTO have_genre VALUES (41841, 'Romance');
+INSERT INTO have_genre VALUES (41841, 'War');
+INSERT INTO have_genre VALUES (41866, 'Western');
+INSERT INTO have_genre VALUES (42004, 'Crime');
+INSERT INTO have_genre VALUES (42004, 'Drama');
+INSERT INTO have_genre VALUES (42004, 'Romance');
+INSERT INTO have_genre VALUES (42895, 'Romance');
+INSERT INTO have_genre VALUES (42895, 'Western');
+INSERT INTO have_genre VALUES (42994, 'Film-Noir');
+INSERT INTO have_genre VALUES (42994, 'Thriller');
+INSERT INTO have_genre VALUES (43547, 'Action');
+INSERT INTO have_genre VALUES (43547, 'Drama');
+INSERT INTO have_genre VALUES (43547, 'War');
+INSERT INTO have_genre VALUES (43887, 'Drama');
+INSERT INTO have_genre VALUES (43887, 'Romance');
+INSERT INTO have_genre VALUES (43887, 'War');
+INSERT INTO have_genre VALUES (44079, 'Crime');
+INSERT INTO have_genre VALUES (44079, 'Film-Noir');
+INSERT INTO have_genre VALUES (44079, 'Thriller');
+INSERT INTO have_genre VALUES (44418, 'Crime');
+INSERT INTO have_genre VALUES (44418, 'Drama');
+INSERT INTO have_genre VALUES (44418, 'History');
+INSERT INTO have_genre VALUES (44418, 'Romance');
+INSERT INTO have_genre VALUES (44418, 'Thriller');
+INSERT INTO have_genre VALUES (45061, 'Comedy');
+INSERT INTO have_genre VALUES (45061, 'Drama');
+INSERT INTO have_genre VALUES (45061, 'Romance');
+INSERT INTO have_genre VALUES (45883, 'Drama');
+INSERT INTO have_genre VALUES (45883, 'Romance');
+INSERT INTO have_genre VALUES (45883, 'War');
+INSERT INTO have_genre VALUES (45883, 'Western');
+INSERT INTO have_genre VALUES (45897, 'Crime');
+INSERT INTO have_genre VALUES (45897, 'Drama');
+INSERT INTO have_genre VALUES (45897, 'Thriller');
+INSERT INTO have_genre VALUES (45919, 'Adventure');
+INSERT INTO have_genre VALUES (45919, 'Drama');
+INSERT INTO have_genre VALUES (46463, 'Comedy');
+INSERT INTO have_genre VALUES (46463, 'Drama');
+INSERT INTO have_genre VALUES (46463, 'Romance');
+INSERT INTO have_genre VALUES (46463, 'Sport');
+INSERT INTO have_genre VALUES (46912, 'Crime');
+INSERT INTO have_genre VALUES (46912, 'Thriller');
+INSERT INTO have_genre VALUES (47086, 'Action');
+INSERT INTO have_genre VALUES (47086, 'Adventure');
+INSERT INTO have_genre VALUES (47086, 'Drama');
+INSERT INTO have_genre VALUES (47086, 'Thriller');
+INSERT INTO have_genre VALUES (47396, 'Mystery');
+INSERT INTO have_genre VALUES (47396, 'Thriller');
+INSERT INTO have_genre VALUES (47889, 'Action');
+INSERT INTO have_genre VALUES (47889, 'Adventure');
+INSERT INTO have_genre VALUES (48092, 'Comedy');
+INSERT INTO have_genre VALUES (48092, 'Fantasy');
+INSERT INTO have_genre VALUES (48279, 'Drama');
+INSERT INTO have_genre VALUES (48279, 'History');
+INSERT INTO have_genre VALUES (48294, 'Comedy');
+INSERT INTO have_genre VALUES (48294, 'Fantasy');
+INSERT INTO have_genre VALUES (48294, 'Romance');
+INSERT INTO have_genre VALUES (48554, 'Horror');
+INSERT INTO have_genre VALUES (48554, 'Sci-Fi');
+INSERT INTO have_genre VALUES (48593, 'Action');
+INSERT INTO have_genre VALUES (48593, 'Drama');
+INSERT INTO have_genre VALUES (48593, 'War');
+INSERT INTO have_genre VALUES (48696, 'Horror');
+INSERT INTO have_genre VALUES (48696, 'Sci-Fi');
+INSERT INTO have_genre VALUES (48728, 'Mystery');
+INSERT INTO have_genre VALUES (48728, 'Romance');
+INSERT INTO have_genre VALUES (48728, 'Thriller');
+INSERT INTO have_genre VALUES (48750, 'Comedy');
+INSERT INTO have_genre VALUES (48750, 'Mystery');
+INSERT INTO have_genre VALUES (48971, 'Drama');
+INSERT INTO have_genre VALUES (48971, 'War');
+INSERT INTO have_genre VALUES (49092, 'Adventure');
+INSERT INTO have_genre VALUES (49092, 'Biography');
+INSERT INTO have_genre VALUES (49092, 'History');
+INSERT INTO have_genre VALUES (49092, 'Romance');
+INSERT INTO have_genre VALUES (49092, 'War');
+INSERT INTO have_genre VALUES (49212, 'Comedy');
+INSERT INTO have_genre VALUES (49212, 'Western');
+INSERT INTO have_genre VALUES (49470, 'Drama');
+INSERT INTO have_genre VALUES (49470, 'Thriller');
+INSERT INTO have_genre VALUES (49547, 'Drama');
+INSERT INTO have_genre VALUES (49547, 'Romance');
+INSERT INTO have_genre VALUES (49730, 'Adventure');
+INSERT INTO have_genre VALUES (49730, 'Drama');
+INSERT INTO have_genre VALUES (49730, 'Western');
+INSERT INTO have_genre VALUES (49778, 'Biography');
+INSERT INTO have_genre VALUES (49778, 'Drama');
+INSERT INTO have_genre VALUES (49778, 'Sport');
+INSERT INTO have_genre VALUES (49793, 'Drama');
+INSERT INTO have_genre VALUES (49793, 'Romance');
+INSERT INTO have_genre VALUES (49793, 'Western');
+INSERT INTO have_genre VALUES (50099, 'Action');
+INSERT INTO have_genre VALUES (50099, 'Crime');
+INSERT INTO have_genre VALUES (50099, 'Drama');
+INSERT INTO have_genre VALUES (50099, 'Mystery');
+INSERT INTO have_genre VALUES (50363, 'Adventure');
+INSERT INTO have_genre VALUES (50363, 'Family');
+INSERT INTO have_genre VALUES (50562, 'Action');
+INSERT INTO have_genre VALUES (50562, 'Drama');
+INSERT INTO have_genre VALUES (50562, 'Romance');
+INSERT INTO have_genre VALUES (50562, 'Thriller');
+INSERT INTO have_genre VALUES (50562, 'War');
+INSERT INTO have_genre VALUES (50629, 'Adventure');
+INSERT INTO have_genre VALUES (50629, 'Drama');
+INSERT INTO have_genre VALUES (50772, 'Action');
+INSERT INTO have_genre VALUES (50772, 'Crime');
+INSERT INTO have_genre VALUES (51084, 'Thriller');
+INSERT INTO have_genre VALUES (51198, 'Biography');
+INSERT INTO have_genre VALUES (51198, 'Drama');
+INSERT INTO have_genre VALUES (51198, 'War');
+INSERT INTO have_genre VALUES (51207, 'Drama');
+INSERT INTO have_genre VALUES (51207, 'Film-Noir');
+INSERT INTO have_genre VALUES (51349, 'Western');
+INSERT INTO have_genre VALUES (51364, 'Drama');
+INSERT INTO have_genre VALUES (51364, 'Romance');
+INSERT INTO have_genre VALUES (51364, 'War');
+INSERT INTO have_genre VALUES (51398, 'Adventure');
+INSERT INTO have_genre VALUES (51398, 'Drama');
+INSERT INTO have_genre VALUES (51398, 'History');
+INSERT INTO have_genre VALUES (51398, 'Romance');
+INSERT INTO have_genre VALUES (51418, 'Horror');
+INSERT INTO have_genre VALUES (51418, 'Sci-Fi');
+INSERT INTO have_genre VALUES (51713, 'Crime');
+INSERT INTO have_genre VALUES (51713, 'Drama');
+INSERT INTO have_genre VALUES (51713, 'Thriller');
+INSERT INTO have_genre VALUES (51757, 'Comedy');
+INSERT INTO have_genre VALUES (51757, 'Drama');
+INSERT INTO have_genre VALUES (51840, 'Drama');
+INSERT INTO have_genre VALUES (51840, 'Romance');
+INSERT INTO have_genre VALUES (51840, 'War');
+INSERT INTO have_genre VALUES (51987, 'Crime');
+INSERT INTO have_genre VALUES (51987, 'Drama');
+INSERT INTO have_genre VALUES (51987, 'Romance');
+INSERT INTO have_genre VALUES (52357, 'Mystery');
+INSERT INTO have_genre VALUES (52357, 'Romance');
+INSERT INTO have_genre VALUES (52357, 'Thriller');
+INSERT INTO have_genre VALUES (52722, 'Adventure');
+INSERT INTO have_genre VALUES (52722, 'Family');
+INSERT INTO have_genre VALUES (52722, 'Fantasy');
+INSERT INTO have_genre VALUES (52722, 'Romance');
+INSERT INTO have_genre VALUES (52862, 'Crime');
+INSERT INTO have_genre VALUES (52862, 'Drama');
+INSERT INTO have_genre VALUES (52862, 'Thriller');
+INSERT INTO have_genre VALUES (52902, 'Adventure');
+INSERT INTO have_genre VALUES (52902, 'Romance');
+INSERT INTO have_genre VALUES (52902, 'War');
+INSERT INTO have_genre VALUES (52902, 'Western');
+INSERT INTO have_genre VALUES (53108, 'Drama');
+INSERT INTO have_genre VALUES (53108, 'War');
+INSERT INTO have_genre VALUES (53125, 'Adventure');
+INSERT INTO have_genre VALUES (53125, 'Mystery');
+INSERT INTO have_genre VALUES (53125, 'Thriller');
+INSERT INTO have_genre VALUES (53221, 'Action');
+INSERT INTO have_genre VALUES (53221, 'Drama');
+INSERT INTO have_genre VALUES (53221, 'Western');
+INSERT INTO have_genre VALUES (53334, 'Action');
+INSERT INTO have_genre VALUES (53334, 'Adventure');
+INSERT INTO have_genre VALUES (53580, 'Adventure');
+INSERT INTO have_genre VALUES (53580, 'Drama');
+INSERT INTO have_genre VALUES (53580, 'History');
+INSERT INTO have_genre VALUES (53580, 'War');
+INSERT INTO have_genre VALUES (53580, 'Western');
+INSERT INTO have_genre VALUES (54047, 'Action');
+INSERT INTO have_genre VALUES (54047, 'Adventure');
+INSERT INTO have_genre VALUES (54047, 'Western');
+INSERT INTO have_genre VALUES (54127, 'Comedy');
+INSERT INTO have_genre VALUES (54127, 'Romance');
+INSERT INTO have_genre VALUES (54127, 'Western');
+INSERT INTO have_genre VALUES (54215, 'Horror');
+INSERT INTO have_genre VALUES (54215, 'Mystery');
+INSERT INTO have_genre VALUES (54215, 'Thriller');
+INSERT INTO have_genre VALUES (54757, 'Action');
+INSERT INTO have_genre VALUES (54757, 'Adventure');
+INSERT INTO have_genre VALUES (54757, 'Romance');
+INSERT INTO have_genre VALUES (54757, 'Western');
+INSERT INTO have_genre VALUES (54898, 'Crime');
+INSERT INTO have_genre VALUES (54898, 'Drama');
+INSERT INTO have_genre VALUES (54930, 'Crime');
+INSERT INTO have_genre VALUES (54930, 'Film-Noir');
+INSERT INTO have_genre VALUES (54930, 'Mystery');
+INSERT INTO have_genre VALUES (54989, 'Comedy');
+INSERT INTO have_genre VALUES (54989, 'Romance');
+INSERT INTO have_genre VALUES (55262, 'Comedy');
+INSERT INTO have_genre VALUES (55262, 'War');
+INSERT INTO have_genre VALUES (55928, 'Action');
+INSERT INTO have_genre VALUES (55928, 'Adventure');
+INSERT INTO have_genre VALUES (55928, 'Thriller');
+INSERT INTO have_genre VALUES (56059, 'Action');
+INSERT INTO have_genre VALUES (56059, 'Adventure');
+INSERT INTO have_genre VALUES (56059, 'Comedy');
+INSERT INTO have_genre VALUES (56059, 'Drama');
+INSERT INTO have_genre VALUES (56059, 'Romance');
+INSERT INTO have_genre VALUES (56062, 'Drama');
+INSERT INTO have_genre VALUES (56062, 'War');
+INSERT INTO have_genre VALUES (56085, 'Western');
+INSERT INTO have_genre VALUES (56197, 'Action');
+INSERT INTO have_genre VALUES (56197, 'Drama');
+INSERT INTO have_genre VALUES (56197, 'History');
+INSERT INTO have_genre VALUES (56197, 'War');
+INSERT INTO have_genre VALUES (56217, 'Drama');
+INSERT INTO have_genre VALUES (56217, 'Western');
+INSERT INTO have_genre VALUES (56676, 'Adventure');
+INSERT INTO have_genre VALUES (56676, 'Drama');
+INSERT INTO have_genre VALUES (56676, 'War');
+INSERT INTO have_genre VALUES (56869, 'Drama');
+INSERT INTO have_genre VALUES (56869, 'Horror');
+INSERT INTO have_genre VALUES (56869, 'Mystery');
+INSERT INTO have_genre VALUES (56869, 'Romance');
+INSERT INTO have_genre VALUES (57007, 'Adventure');
+INSERT INTO have_genre VALUES (57007, 'Comedy');
+INSERT INTO have_genre VALUES (57007, 'Romance');
+INSERT INTO have_genre VALUES (57076, 'Action');
+INSERT INTO have_genre VALUES (57076, 'Adventure');
+INSERT INTO have_genre VALUES (57076, 'Thriller');
+INSERT INTO have_genre VALUES (57115, 'Adventure');
+INSERT INTO have_genre VALUES (57115, 'Drama');
+INSERT INTO have_genre VALUES (57115, 'History');
+INSERT INTO have_genre VALUES (57115, 'Thriller');
+INSERT INTO have_genre VALUES (57115, 'War');
+INSERT INTO have_genre VALUES (57263, 'Comedy');
+INSERT INTO have_genre VALUES (57263, 'Drama');
+INSERT INTO have_genre VALUES (57263, 'Romance');
+INSERT INTO have_genre VALUES (57298, 'Comedy');
+INSERT INTO have_genre VALUES (57298, 'Romance');
+INSERT INTO have_genre VALUES (57298, 'Western');
+INSERT INTO have_genre VALUES (57517, 'Comedy');
+INSERT INTO have_genre VALUES (57517, 'Drama');
+INSERT INTO have_genre VALUES (57517, 'Romance');
+INSERT INTO have_genre VALUES (57952, 'Drama');
+INSERT INTO have_genre VALUES (57952, 'Western');
+INSERT INTO have_genre VALUES (58150, 'Action');
+INSERT INTO have_genre VALUES (58150, 'Adventure');
+INSERT INTO have_genre VALUES (58150, 'Thriller');
+INSERT INTO have_genre VALUES (58329, 'Crime');
+INSERT INTO have_genre VALUES (58329, 'Drama');
+INSERT INTO have_genre VALUES (58329, 'Mystery');
+INSERT INTO have_genre VALUES (58329, 'Romance');
+INSERT INTO have_genre VALUES (58329, 'Thriller');
+INSERT INTO have_genre VALUES (58461, 'Action');
+INSERT INTO have_genre VALUES (58461, 'Drama');
+INSERT INTO have_genre VALUES (58461, 'Western');
+INSERT INTO have_genre VALUES (58754, 'Crime');
+INSERT INTO have_genre VALUES (58754, 'Drama');
+INSERT INTO have_genre VALUES (58754, 'Thriller');
+INSERT INTO have_genre VALUES (58930, 'Drama');
+INSERT INTO have_genre VALUES (59037, 'Drama');
+INSERT INTO have_genre VALUES (59181, 'Sci-Fi');
+INSERT INTO have_genre VALUES (59181, 'Thriller');
+INSERT INTO have_genre VALUES (59245, 'Biography');
+INSERT INTO have_genre VALUES (59245, 'Drama');
+INSERT INTO have_genre VALUES (59245, 'History');
+INSERT INTO have_genre VALUES (59274, 'Drama');
+INSERT INTO have_genre VALUES (59274, 'War');
+INSERT INTO have_genre VALUES (59309, 'Drama');
+INSERT INTO have_genre VALUES (59309, 'War');
+INSERT INTO have_genre VALUES (59578, 'Western');
+INSERT INTO have_genre VALUES (59740, 'Western');
+INSERT INTO have_genre VALUES (59800, 'Action');
+INSERT INTO have_genre VALUES (59800, 'Adventure');
+INSERT INTO have_genre VALUES (59800, 'Thriller');
+INSERT INTO have_genre VALUES (60196, 'Western');
+INSERT INTO have_genre VALUES (60218, 'Adventure');
+INSERT INTO have_genre VALUES (60218, 'Drama');
+INSERT INTO have_genre VALUES (60218, 'History');
+INSERT INTO have_genre VALUES (60218, 'War');
+INSERT INTO have_genre VALUES (60287, 'Comedy');
+INSERT INTO have_genre VALUES (60287, 'Crime');
+INSERT INTO have_genre VALUES (60287, 'Drama');
+INSERT INTO have_genre VALUES (60414, 'Comedy');
+INSERT INTO have_genre VALUES (60414, 'Drama');
+INSERT INTO have_genre VALUES (60414, 'Romance');
+INSERT INTO have_genre VALUES (60748, 'Western');
+INSERT INTO have_genre VALUES (60934, 'Adventure');
+INSERT INTO have_genre VALUES (60934, 'Drama');
+INSERT INTO have_genre VALUES (60934, 'Romance');
+INSERT INTO have_genre VALUES (60934, 'War');
+INSERT INTO have_genre VALUES (61037, 'Comedy');
+INSERT INTO have_genre VALUES (61037, 'Drama');
+INSERT INTO have_genre VALUES (61037, 'Romance');
+INSERT INTO have_genre VALUES (61107, 'Romance');
+INSERT INTO have_genre VALUES (61107, 'Thriller');
+INSERT INTO have_genre VALUES (61139, 'Drama');
+INSERT INTO have_genre VALUES (61619, 'Drama');
+INSERT INTO have_genre VALUES (61619, 'Romance');
+INSERT INTO have_genre VALUES (61619, 'Western');
+INSERT INTO have_genre VALUES (61747, 'Drama');
+INSERT INTO have_genre VALUES (61747, 'Western');
+INSERT INTO have_genre VALUES (61927, 'Comedy');
+INSERT INTO have_genre VALUES (61927, 'Romance');
+INSERT INTO have_genre VALUES (62373, 'Western');
+INSERT INTO have_genre VALUES (62472, 'Western');
+INSERT INTO have_genre VALUES (62512, 'Action');
+INSERT INTO have_genre VALUES (62512, 'Adventure');
+INSERT INTO have_genre VALUES (62512, 'Thriller');
+INSERT INTO have_genre VALUES (62765, 'Action');
+INSERT INTO have_genre VALUES (62765, 'Crime');
+INSERT INTO have_genre VALUES (62765, 'Thriller');
+INSERT INTO have_genre VALUES (62824, 'Action');
+INSERT INTO have_genre VALUES (62824, 'Comedy');
+INSERT INTO have_genre VALUES (62824, 'Crime');
+INSERT INTO have_genre VALUES (62824, 'Thriller');
+INSERT INTO have_genre VALUES (62824, 'Western');
+INSERT INTO have_genre VALUES (63035, 'Drama');
+INSERT INTO have_genre VALUES (63035, 'War');
+INSERT INTO have_genre VALUES (63036, 'Comedy');
+INSERT INTO have_genre VALUES (63036, 'Drama');
+INSERT INTO have_genre VALUES (63060, 'Action');
+INSERT INTO have_genre VALUES (63060, 'Adventure');
+INSERT INTO have_genre VALUES (63060, 'Drama');
+INSERT INTO have_genre VALUES (63060, 'Romance');
+INSERT INTO have_genre VALUES (63060, 'War');
+INSERT INTO have_genre VALUES (63161, 'Drama');
+INSERT INTO have_genre VALUES (63161, 'War');
+INSERT INTO have_genre VALUES (63161, 'Western');
+INSERT INTO have_genre VALUES (63592, 'Western');
+INSERT INTO have_genre VALUES (63688, 'Crime');
+INSERT INTO have_genre VALUES (63688, 'Drama');
+INSERT INTO have_genre VALUES (63688, 'Romance');
+INSERT INTO have_genre VALUES (63688, 'Thriller');
+INSERT INTO have_genre VALUES (63803, 'Drama');
+INSERT INTO have_genre VALUES (63803, 'Romance');
+INSERT INTO have_genre VALUES (64757, 'Action');
+INSERT INTO have_genre VALUES (64757, 'Adventure');
+INSERT INTO have_genre VALUES (64757, 'Thriller');
+INSERT INTO have_genre VALUES (64782, 'Comedy');
+INSERT INTO have_genre VALUES (64782, 'Drama');
+INSERT INTO have_genre VALUES (64782, 'Musical');
+INSERT INTO have_genre VALUES (64782, 'Romance');
+INSERT INTO have_genre VALUES (64782, 'Western');
+INSERT INTO have_genre VALUES (64886, 'Comedy');
+INSERT INTO have_genre VALUES (64886, 'Drama');
+INSERT INTO have_genre VALUES (65112, 'Drama');
+INSERT INTO have_genre VALUES (65112, 'Thriller');
+INSERT INTO have_genre VALUES (65126, 'Adventure');
+INSERT INTO have_genre VALUES (65126, 'Drama');
+INSERT INTO have_genre VALUES (65126, 'Western');
+INSERT INTO have_genre VALUES (65134, 'Adventure');
+INSERT INTO have_genre VALUES (65134, 'Romance');
+INSERT INTO have_genre VALUES (65134, 'War');
+INSERT INTO have_genre VALUES (65134, 'Western');
+INSERT INTO have_genre VALUES (65150, 'Action');
+INSERT INTO have_genre VALUES (65150, 'Adventure');
+INSERT INTO have_genre VALUES (65150, 'Romance');
+INSERT INTO have_genre VALUES (65150, 'War');
+INSERT INTO have_genre VALUES (65150, 'Western');
+INSERT INTO have_genre VALUES (65198, 'Comedy');
+INSERT INTO have_genre VALUES (65207, 'Action');
+INSERT INTO have_genre VALUES (65207, 'Adventure');
+INSERT INTO have_genre VALUES (65207, 'War');
+INSERT INTO have_genre VALUES (65547, 'Biography');
+INSERT INTO have_genre VALUES (65547, 'Western');
+INSERT INTO have_genre VALUES (65641, 'Drama');
+INSERT INTO have_genre VALUES (65775, 'Comedy');
+INSERT INTO have_genre VALUES (65775, 'Drama');
+INSERT INTO have_genre VALUES (65775, 'Romance');
+INSERT INTO have_genre VALUES (65832, 'Adventure');
+INSERT INTO have_genre VALUES (65832, 'Comedy');
+INSERT INTO have_genre VALUES (65832, 'Fantasy');
+INSERT INTO have_genre VALUES (65836, 'Comedy');
+INSERT INTO have_genre VALUES (65836, 'Drama');
+INSERT INTO have_genre VALUES (65904, 'Adult');
+INSERT INTO have_genre VALUES (65904, 'Comedy');
+INSERT INTO have_genre VALUES (65904, 'Drama');
+INSERT INTO have_genre VALUES (65904, 'Romance');
+INSERT INTO have_genre VALUES (65938, 'Adventure');
+INSERT INTO have_genre VALUES (65938, 'Comedy');
+INSERT INTO have_genre VALUES (65938, 'War');
+INSERT INTO have_genre VALUES (66090, 'Drama');
+INSERT INTO have_genre VALUES (66090, 'History');
+INSERT INTO have_genre VALUES (66156, 'Thriller');
+INSERT INTO have_genre VALUES (66301, 'Adventure');
+INSERT INTO have_genre VALUES (66301, 'Romance');
+INSERT INTO have_genre VALUES (66301, 'War');
+INSERT INTO have_genre VALUES (66301, 'Western');
+INSERT INTO have_genre VALUES (66601, 'Drama');
+INSERT INTO have_genre VALUES (66767, 'Action');
+INSERT INTO have_genre VALUES (66767, 'Crime');
+INSERT INTO have_genre VALUES (66767, 'Thriller');
+INSERT INTO have_genre VALUES (66808, 'Comedy');
+INSERT INTO have_genre VALUES (66819, 'Drama');
+INSERT INTO have_genre VALUES (66819, 'Thriller');
+INSERT INTO have_genre VALUES (66819, 'War');
+INSERT INTO have_genre VALUES (66831, 'Western');
+INSERT INTO have_genre VALUES (66995, 'Action');
+INSERT INTO have_genre VALUES (66995, 'Adventure');
+INSERT INTO have_genre VALUES (66995, 'Thriller');
+INSERT INTO have_genre VALUES (66999, 'Action');
+INSERT INTO have_genre VALUES (66999, 'Crime');
+INSERT INTO have_genre VALUES (66999, 'Thriller');
+INSERT INTO have_genre VALUES (67315, 'Adventure');
+INSERT INTO have_genre VALUES (67315, 'Drama');
+INSERT INTO have_genre VALUES (67334, 'Action');
+INSERT INTO have_genre VALUES (67334, 'Adventure');
+INSERT INTO have_genre VALUES (67334, 'Drama');
+INSERT INTO have_genre VALUES (67334, 'Sport');
+INSERT INTO have_genre VALUES (67576, 'Comedy');
+INSERT INTO have_genre VALUES (67588, 'Drama');
+INSERT INTO have_genre VALUES (67588, 'Thriller');
+INSERT INTO have_genre VALUES (68309, 'Crime');
+INSERT INTO have_genre VALUES (68309, 'Drama');
+INSERT INTO have_genre VALUES (68309, 'Romance');
+INSERT INTO have_genre VALUES (68332, 'Comedy');
+INSERT INTO have_genre VALUES (68332, 'Mystery');
+INSERT INTO have_genre VALUES (68421, 'Adventure');
+INSERT INTO have_genre VALUES (68421, 'Drama');
+INSERT INTO have_genre VALUES (68421, 'Western');
+INSERT INTO have_genre VALUES (68611, 'Thriller');
+INSERT INTO have_genre VALUES (68637, 'Comedy');
+INSERT INTO have_genre VALUES (68638, 'Action');
+INSERT INTO have_genre VALUES (68638, 'Crime');
+INSERT INTO have_genre VALUES (68638, 'Thriller');
+INSERT INTO have_genre VALUES (68699, 'Drama');
+INSERT INTO have_genre VALUES (68699, 'Mystery');
+INSERT INTO have_genre VALUES (68699, 'Western');
+INSERT INTO have_genre VALUES (68768, 'Western');
+INSERT INTO have_genre VALUES (68786, 'Drama');
+INSERT INTO have_genre VALUES (68786, 'Western');
+INSERT INTO have_genre VALUES (69704, 'Comedy');
+INSERT INTO have_genre VALUES (69704, 'Drama');
+INSERT INTO have_genre VALUES (69822, 'Drama');
+INSERT INTO have_genre VALUES (69822, 'Romance');
+INSERT INTO have_genre VALUES (69834, 'Drama');
+INSERT INTO have_genre VALUES (69834, 'Western');
+INSERT INTO have_genre VALUES (70328, 'Action');
+INSERT INTO have_genre VALUES (70328, 'Adventure');
+INSERT INTO have_genre VALUES (70328, 'Thriller');
+INSERT INTO have_genre VALUES (70334, 'Comedy');
+INSERT INTO have_genre VALUES (70334, 'Crime');
+INSERT INTO have_genre VALUES (70334, 'Drama');
+INSERT INTO have_genre VALUES (70334, 'Mystery');
+INSERT INTO have_genre VALUES (70334, 'Thriller');
+INSERT INTO have_genre VALUES (70355, 'Action');
+INSERT INTO have_genre VALUES (70355, 'Crime');
+INSERT INTO have_genre VALUES (70355, 'Mystery');
+INSERT INTO have_genre VALUES (70355, 'Thriller');
+INSERT INTO have_genre VALUES (70379, 'Crime');
+INSERT INTO have_genre VALUES (70379, 'Drama');
+INSERT INTO have_genre VALUES (70379, 'Thriller');
+INSERT INTO have_genre VALUES (70468, 'Crime');
+INSERT INTO have_genre VALUES (70468, 'Drama');
+INSERT INTO have_genre VALUES (70468, 'Thriller');
+INSERT INTO have_genre VALUES (70511, 'Biography');
+INSERT INTO have_genre VALUES (70511, 'Crime');
+INSERT INTO have_genre VALUES (70511, 'Drama');
+INSERT INTO have_genre VALUES (70698, 'Horror');
+INSERT INTO have_genre VALUES (70698, 'Mystery');
+INSERT INTO have_genre VALUES (70698, 'Thriller');
+INSERT INTO have_genre VALUES (70801, 'Action');
+INSERT INTO have_genre VALUES (70825, 'Action');
+INSERT INTO have_genre VALUES (70825, 'Comedy');
+INSERT INTO have_genre VALUES (70825, 'Romance');
+INSERT INTO have_genre VALUES (70825, 'Western');
+INSERT INTO have_genre VALUES (70948, 'Adventure');
+INSERT INTO have_genre VALUES (70948, 'Fantasy');
+INSERT INTO have_genre VALUES (70948, 'Sci-Fi');
+INSERT INTO have_genre VALUES (71115, 'Drama');
+INSERT INTO have_genre VALUES (71115, 'Romance');
+INSERT INTO have_genre VALUES (71360, 'Drama');
+INSERT INTO have_genre VALUES (71360, 'Mystery');
+INSERT INTO have_genre VALUES (71360, 'Thriller');
+INSERT INTO have_genre VALUES (71772, 'Comedy');
+INSERT INTO have_genre VALUES (71772, 'Drama');
+INSERT INTO have_genre VALUES (71772, 'Romance');
+INSERT INTO have_genre VALUES (71807, 'Action');
+INSERT INTO have_genre VALUES (71807, 'Adventure');
+INSERT INTO have_genre VALUES (71807, 'Thriller');
+INSERT INTO have_genre VALUES (71824, 'Action');
+INSERT INTO have_genre VALUES (71824, 'Crime');
+INSERT INTO have_genre VALUES (71824, 'Drama');
+INSERT INTO have_genre VALUES (71824, 'Mystery');
+INSERT INTO have_genre VALUES (71824, 'Thriller');
+INSERT INTO have_genre VALUES (71877, 'Crime');
+INSERT INTO have_genre VALUES (71877, 'Drama');
+INSERT INTO have_genre VALUES (71877, 'Mystery');
+INSERT INTO have_genre VALUES (71930, 'Action');
+INSERT INTO have_genre VALUES (71930, 'Drama');
+INSERT INTO have_genre VALUES (71994, 'Comedy');
+INSERT INTO have_genre VALUES (71994, 'Drama');
+INSERT INTO have_genre VALUES (71994, 'Fantasy');
+INSERT INTO have_genre VALUES (71994, 'Horror');
+INSERT INTO have_genre VALUES (71994, 'Music');
+INSERT INTO have_genre VALUES (71994, 'Romance');
+INSERT INTO have_genre VALUES (71994, 'Thriller');
+INSERT INTO have_genre VALUES (72034, 'Comedy');
+INSERT INTO have_genre VALUES (72226, 'Crime');
+INSERT INTO have_genre VALUES (72226, 'Drama');
+INSERT INTO have_genre VALUES (72288, 'Comedy');
+INSERT INTO have_genre VALUES (72288, 'Crime');
+INSERT INTO have_genre VALUES (72288, 'Drama');
+INSERT INTO have_genre VALUES (72308, 'Action');
+INSERT INTO have_genre VALUES (72308, 'Drama');
+INSERT INTO have_genre VALUES (72308, 'Thriller');
+INSERT INTO have_genre VALUES (72732, 'Action');
+INSERT INTO have_genre VALUES (72732, 'Comedy');
+INSERT INTO have_genre VALUES (72732, 'Crime');
+INSERT INTO have_genre VALUES (72761, 'Biography');
+INSERT INTO have_genre VALUES (72761, 'Crime');
+INSERT INTO have_genre VALUES (72761, 'Drama');
+INSERT INTO have_genre VALUES (72856, 'Action');
+INSERT INTO have_genre VALUES (72856, 'Comedy');
+INSERT INTO have_genre VALUES (72856, 'Sci-Fi');
+INSERT INTO have_genre VALUES (72856, 'Sport');
+INSERT INTO have_genre VALUES (72872, 'Adventure');
+INSERT INTO have_genre VALUES (72872, 'Romance');
+INSERT INTO have_genre VALUES (72872, 'Drama');
+INSERT INTO have_genre VALUES (72872, 'Musical');
+INSERT INTO have_genre VALUES (72926, 'Action');
+INSERT INTO have_genre VALUES (72926, 'Crime');
+INSERT INTO have_genre VALUES (72926, 'Thriller');
+INSERT INTO have_genre VALUES (72973, 'Crime');
+INSERT INTO have_genre VALUES (72973, 'Mystery');
+INSERT INTO have_genre VALUES (72973, 'Thriller');
+INSERT INTO have_genre VALUES (73195, 'Adventure');
+INSERT INTO have_genre VALUES (73195, 'Thriller');
+INSERT INTO have_genre VALUES (73341, 'Adventure');
+INSERT INTO have_genre VALUES (73341, 'History');
+INSERT INTO have_genre VALUES (73341, 'War');
+INSERT INTO have_genre VALUES (73636, 'Adventure');
+INSERT INTO have_genre VALUES (73636, 'Drama');
+INSERT INTO have_genre VALUES (73636, 'Western');
+INSERT INTO have_genre VALUES (73694, 'Action');
+INSERT INTO have_genre VALUES (73694, 'Drama');
+INSERT INTO have_genre VALUES (73796, 'Crime');
+INSERT INTO have_genre VALUES (73796, 'Drama');
+INSERT INTO have_genre VALUES (73796, 'Thriller');
+INSERT INTO have_genre VALUES (73906, 'Action');
+INSERT INTO have_genre VALUES (73906, 'Adventure');
+INSERT INTO have_genre VALUES (73906, 'Drama');
+INSERT INTO have_genre VALUES (74279, 'Action');
+INSERT INTO have_genre VALUES (74279, 'Comedy');
+INSERT INTO have_genre VALUES (74279, 'Crime');
+INSERT INTO have_genre VALUES (74279, 'Drama');
+INSERT INTO have_genre VALUES (74279, 'Thriller');
+INSERT INTO have_genre VALUES (74285, 'Horror');
+INSERT INTO have_genre VALUES (74415, 'Action');
+INSERT INTO have_genre VALUES (74415, 'Drama');
+INSERT INTO have_genre VALUES (74483, 'Action');
+INSERT INTO have_genre VALUES (74483, 'Crime');
+INSERT INTO have_genre VALUES (74483, 'Thriller');
+INSERT INTO have_genre VALUES (74512, 'Comedy');
+INSERT INTO have_genre VALUES (74512, 'Crime');
+INSERT INTO have_genre VALUES (74512, 'Drama');
+INSERT INTO have_genre VALUES (74512, 'Thriller');
+INSERT INTO have_genre VALUES (74962, 'Action');
+INSERT INTO have_genre VALUES (74962, 'Thriller');
+INSERT INTO have_genre VALUES (74991, 'Drama');
+INSERT INTO have_genre VALUES (74991, 'Mystery');
+INSERT INTO have_genre VALUES (74991, 'Thriller');
+INSERT INTO have_genre VALUES (75029, 'Western');
+INSERT INTO have_genre VALUES (75147, 'Adventure');
+INSERT INTO have_genre VALUES (75147, 'Drama');
+INSERT INTO have_genre VALUES (75147, 'Romance');
+INSERT INTO have_genre VALUES (75148, 'Drama');
+INSERT INTO have_genre VALUES (75148, 'Sport');
+INSERT INTO have_genre VALUES (75213, 'Drama');
+INSERT INTO have_genre VALUES (75213, 'Romance');
+INSERT INTO have_genre VALUES (75213, 'Western');
+INSERT INTO have_genre VALUES (75268, 'Comedy');
+INSERT INTO have_genre VALUES (75268, 'Drama');
+INSERT INTO have_genre VALUES (75314, 'Crime');
+INSERT INTO have_genre VALUES (75314, 'Drama');
+INSERT INTO have_genre VALUES (75784, 'Drama');
+INSERT INTO have_genre VALUES (75784, 'History');
+INSERT INTO have_genre VALUES (75784, 'War');
+INSERT INTO have_genre VALUES (75860, 'Drama');
+INSERT INTO have_genre VALUES (75860, 'Sci-Fi');
+INSERT INTO have_genre VALUES (75906, 'Action');
+INSERT INTO have_genre VALUES (75906, 'Comedy');
+INSERT INTO have_genre VALUES (75968, 'Drama');
+INSERT INTO have_genre VALUES (75968, 'War');
+INSERT INTO have_genre VALUES (75993, 'Drama');
+INSERT INTO have_genre VALUES (76012, 'Action');
+INSERT INTO have_genre VALUES (76012, 'Comedy');
+INSERT INTO have_genre VALUES (76012, 'Crime');
+INSERT INTO have_genre VALUES (76070, 'Action');
+INSERT INTO have_genre VALUES (76070, 'Crime');
+INSERT INTO have_genre VALUES (76070, 'Thriller');
+INSERT INTO have_genre VALUES (76138, 'Comedy');
+INSERT INTO have_genre VALUES (76138, 'Drama');
+INSERT INTO have_genre VALUES (76216, 'Comedy');
+INSERT INTO have_genre VALUES (76216, 'Crime');
+INSERT INTO have_genre VALUES (76216, 'Horror');
+INSERT INTO have_genre VALUES (76216, 'Mystery');
+INSERT INTO have_genre VALUES (76451, 'Drama');
+INSERT INTO have_genre VALUES (76451, 'Music');
+INSERT INTO have_genre VALUES (76451, 'Musical');
+INSERT INTO have_genre VALUES (76580, 'Comedy');
+INSERT INTO have_genre VALUES (76580, 'Action');
+INSERT INTO have_genre VALUES (76580, 'Adventure');
+INSERT INTO have_genre VALUES (76752, 'Action');
+INSERT INTO have_genre VALUES (76752, 'Adventure');
+INSERT INTO have_genre VALUES (76752, 'Thriller');
+INSERT INTO have_genre VALUES (76759, 'Action');
+INSERT INTO have_genre VALUES (76759, 'Adventure');
+INSERT INTO have_genre VALUES (76759, 'Fantasy');
+INSERT INTO have_genre VALUES (76759, 'Sci-Fi');
+INSERT INTO have_genre VALUES (77523, 'Action');
+INSERT INTO have_genre VALUES (77523, 'Comedy');
+INSERT INTO have_genre VALUES (77531, 'Crime');
+INSERT INTO have_genre VALUES (77531, 'Drama');
+INSERT INTO have_genre VALUES (77531, 'Thriller');
+INSERT INTO have_genre VALUES (77572, 'Action');
+INSERT INTO have_genre VALUES (77572, 'Drama');
+INSERT INTO have_genre VALUES (77572, 'War');
+INSERT INTO have_genre VALUES (77588, 'Horror');
+INSERT INTO have_genre VALUES (77588, 'Sci-Fi');
+INSERT INTO have_genre VALUES (77655, 'Action');
+INSERT INTO have_genre VALUES (77655, 'Drama');
+INSERT INTO have_genre VALUES (77667, 'Comedy');
+INSERT INTO have_genre VALUES (77667, 'Drama');
+INSERT INTO have_genre VALUES (77667, 'Romance');
+INSERT INTO have_genre VALUES (77667, 'Action');
+INSERT INTO have_genre VALUES (78056, 'Drama');
+INSERT INTO have_genre VALUES (78723, 'Action');
+INSERT INTO have_genre VALUES (78723, 'Comedy');
+INSERT INTO have_genre VALUES (78723, 'War');
+INSERT INTO have_genre VALUES (78748, 'Horror');
+INSERT INTO have_genre VALUES (78748, 'Sci-Fi');
+INSERT INTO have_genre VALUES (78788, 'Drama');
+INSERT INTO have_genre VALUES (78788, 'Mystery');
+INSERT INTO have_genre VALUES (78788, 'War');
+INSERT INTO have_genre VALUES (79013, 'Adventure');
+INSERT INTO have_genre VALUES (79013, 'Romance');
+INSERT INTO have_genre VALUES (79013, 'Thriller');
+INSERT INTO have_genre VALUES (79013, 'War');
+INSERT INTO have_genre VALUES (79116, 'Biography');
+INSERT INTO have_genre VALUES (79116, 'Crime');
+INSERT INTO have_genre VALUES (79116, 'Drama');
+INSERT INTO have_genre VALUES (79116, 'Thriller');
+INSERT INTO have_genre VALUES (79180, 'Comedy');
+INSERT INTO have_genre VALUES (79180, 'Drama');
+INSERT INTO have_genre VALUES (79180, 'Western');
+INSERT INTO have_genre VALUES (79240, 'Adventure');
+INSERT INTO have_genre VALUES (79240, 'Crime');
+INSERT INTO have_genre VALUES (79240, 'Drama');
+INSERT INTO have_genre VALUES (79240, 'Thriller');
+INSERT INTO have_genre VALUES (79268, 'Action');
+INSERT INTO have_genre VALUES (79268, 'Adventure');
+INSERT INTO have_genre VALUES (79268, 'Drama');
+INSERT INTO have_genre VALUES (79268, 'Romance');
+INSERT INTO have_genre VALUES (79268, 'War');
+INSERT INTO have_genre VALUES (79302, 'Comedy');
+INSERT INTO have_genre VALUES (79550, 'Action');
+INSERT INTO have_genre VALUES (79550, 'Drama');
+INSERT INTO have_genre VALUES (79550, 'Sci-Fi');
+INSERT INTO have_genre VALUES (79550, 'Thriller');
+INSERT INTO have_genre VALUES (79574, 'Action');
+INSERT INTO have_genre VALUES (79574, 'Adventure');
+INSERT INTO have_genre VALUES (79574, 'Sci-Fi');
+INSERT INTO have_genre VALUES (79574, 'Thriller');
+INSERT INTO have_genre VALUES (79576, 'Comedy');
+INSERT INTO have_genre VALUES (79576, 'Drama');
+INSERT INTO have_genre VALUES (79576, 'War');
+INSERT INTO have_genre VALUES (79817, 'Drama');
+INSERT INTO have_genre VALUES (79817, 'Sport');
+INSERT INTO have_genre VALUES (79858, 'Comedy');
+INSERT INTO have_genre VALUES (79900, 'Comedy');
+INSERT INTO have_genre VALUES (79900, 'Crime');
+INSERT INTO have_genre VALUES (80031, 'Crime');
+INSERT INTO have_genre VALUES (80031, 'Drama');
+INSERT INTO have_genre VALUES (80031, 'Romance');
+INSERT INTO have_genre VALUES (80031, 'Western');
+INSERT INTO have_genre VALUES (80097, 'Comedy');
+INSERT INTO have_genre VALUES (80097, 'Western');
+INSERT INTO have_genre VALUES (80110, 'Drama');
+INSERT INTO have_genre VALUES (80110, 'Romance');
+INSERT INTO have_genre VALUES (80110, 'War');
+INSERT INTO have_genre VALUES (80377, 'Action');
+INSERT INTO have_genre VALUES (80377, 'Comedy');
+INSERT INTO have_genre VALUES (80455, 'Adventure');
+INSERT INTO have_genre VALUES (80455, 'Comedy');
+INSERT INTO have_genre VALUES (80455, 'Crime');
+INSERT INTO have_genre VALUES (80455, 'Music');
+INSERT INTO have_genre VALUES (80455, 'Musical');
+INSERT INTO have_genre VALUES (80472, 'Action');
+INSERT INTO have_genre VALUES (80472, 'Adventure');
+INSERT INTO have_genre VALUES (80472, 'Comedy');
+INSERT INTO have_genre VALUES (80472, 'Drama');
+INSERT INTO have_genre VALUES (80472, 'Romance');
+INSERT INTO have_genre VALUES (80472, 'Western');
+INSERT INTO have_genre VALUES (80661, 'Mystery');
+INSERT INTO have_genre VALUES (80661, 'Thriller');
+INSERT INTO have_genre VALUES (80684, 'Action');
+INSERT INTO have_genre VALUES (80684, 'Adventure');
+INSERT INTO have_genre VALUES (80684, 'Fantasy');
+INSERT INTO have_genre VALUES (80684, 'Sci-Fi');
+INSERT INTO have_genre VALUES (80850, 'Horror');
+INSERT INTO have_genre VALUES (80850, 'Thriller');
+INSERT INTO have_genre VALUES (80907, 'Action');
+INSERT INTO have_genre VALUES (80907, 'Biography');
+INSERT INTO have_genre VALUES (80907, 'Comedy');
+INSERT INTO have_genre VALUES (80907, 'Crime');
+INSERT INTO have_genre VALUES (80907, 'Drama');
+INSERT INTO have_genre VALUES (80907, 'Thriller');
+INSERT INTO have_genre VALUES (81398, 'Biography');
+INSERT INTO have_genre VALUES (81398, 'Drama');
+INSERT INTO have_genre VALUES (81398, 'Sport');
+INSERT INTO have_genre VALUES (81633, 'Adventure');
+INSERT INTO have_genre VALUES (81633, 'Comedy');
+INSERT INTO have_genre VALUES (81633, 'Fantasy');
+INSERT INTO have_genre VALUES (81633, 'Sci-Fi');
+INSERT INTO have_genre VALUES (82085, 'Mystery');
+INSERT INTO have_genre VALUES (82085, 'Thriller');
+INSERT INTO have_genre VALUES (82198, 'Action');
+INSERT INTO have_genre VALUES (82198, 'Adventure');
+INSERT INTO have_genre VALUES (82198, 'Fantasy');
+INSERT INTO have_genre VALUES (82398, 'Action');
+INSERT INTO have_genre VALUES (82398, 'Adventure');
+INSERT INTO have_genre VALUES (82398, 'Thriller');
+INSERT INTO have_genre VALUES (82535, 'Comedy');
+INSERT INTO have_genre VALUES (82535, 'Action');
+INSERT INTO have_genre VALUES (82535, 'Drama');
+INSERT INTO have_genre VALUES (82535, 'Family');
+INSERT INTO have_genre VALUES (82762, 'Comedy');
+INSERT INTO have_genre VALUES (82762, 'Fantasy');
+INSERT INTO have_genre VALUES (82762, 'Horror');
+INSERT INTO have_genre VALUES (82817, 'Action');
+INSERT INTO have_genre VALUES (82817, 'Crime');
+INSERT INTO have_genre VALUES (82817, 'Thriller');
+INSERT INTO have_genre VALUES (82869, 'Action');
+INSERT INTO have_genre VALUES (82869, 'Crime');
+INSERT INTO have_genre VALUES (82869, 'Sci-Fi');
+INSERT INTO have_genre VALUES (82869, 'Thriller');
+INSERT INTO have_genre VALUES (82869, 'Western');
+INSERT INTO have_genre VALUES (82880, 'Comedy');
+INSERT INTO have_genre VALUES (82910, 'Drama');
+INSERT INTO have_genre VALUES (82910, 'Horror');
+INSERT INTO have_genre VALUES (82910, 'Romance');
+INSERT INTO have_genre VALUES (82910, 'Sci-Fi');
+INSERT INTO have_genre VALUES (82910, 'Thriller');
+INSERT INTO have_genre VALUES (82971, 'Action');
+INSERT INTO have_genre VALUES (82971, 'Adventure');
+INSERT INTO have_genre VALUES (83284, 'Drama');
+INSERT INTO have_genre VALUES (83284, 'Sport');
+INSERT INTO have_genre VALUES (83284, 'War');
+INSERT INTO have_genre VALUES (83605, 'Action');
+INSERT INTO have_genre VALUES (83605, 'Comedy');
+INSERT INTO have_genre VALUES (83658, 'Action');
+INSERT INTO have_genre VALUES (83658, 'Sci-Fi');
+INSERT INTO have_genre VALUES (83658, 'Thriller');
+INSERT INTO have_genre VALUES (83866, 'Family');
+INSERT INTO have_genre VALUES (83866, 'Sci-Fi');
+INSERT INTO have_genre VALUES (83907, 'Horror');
+INSERT INTO have_genre VALUES (83943, 'Action');
+INSERT INTO have_genre VALUES (83943, 'Adventure');
+INSERT INTO have_genre VALUES (83943, 'Thriller');
+INSERT INTO have_genre VALUES (83944, 'Action');
+INSERT INTO have_genre VALUES (83944, 'Adventure');
+INSERT INTO have_genre VALUES (83947, 'Drama');
+INSERT INTO have_genre VALUES (84088, 'Comedy');
+INSERT INTO have_genre VALUES (84088, 'Drama');
+INSERT INTO have_genre VALUES (84088, 'Music');
+INSERT INTO have_genre VALUES (84088, 'Western');
+INSERT INTO have_genre VALUES (84602, 'Drama');
+INSERT INTO have_genre VALUES (84602, 'Sport');
+INSERT INTO have_genre VALUES (84750, 'Action');
+INSERT INTO have_genre VALUES (84750, 'Adventure');
+INSERT INTO have_genre VALUES (84750, 'Fantasy');
+INSERT INTO have_genre VALUES (84750, 'Romance');
+INSERT INTO have_genre VALUES (84920, 'Comedy');
+INSERT INTO have_genre VALUES (84920, 'Drama');
+INSERT INTO have_genre VALUES (84920, 'Thriller');
+INSERT INTO have_genre VALUES (85794, 'Comedy');
+INSERT INTO have_genre VALUES (85794, 'Crime');
+INSERT INTO have_genre VALUES (85794, 'Drama');
+INSERT INTO have_genre VALUES (85794, 'Thriller');
+INSERT INTO have_genre VALUES (86006, 'Action');
+INSERT INTO have_genre VALUES (86006, 'Adventure');
+INSERT INTO have_genre VALUES (86006, 'Thriller');
+INSERT INTO have_genre VALUES (86034, 'Action');
+INSERT INTO have_genre VALUES (86034, 'Adventure');
+INSERT INTO have_genre VALUES (86034, 'Thriller');
+INSERT INTO have_genre VALUES (86190, 'Action');
+INSERT INTO have_genre VALUES (86190, 'Adventure');
+INSERT INTO have_genre VALUES (86190, 'Fantasy');
+INSERT INTO have_genre VALUES (86190, 'Sci-Fi');
+INSERT INTO have_genre VALUES (86250, 'Crime');
+INSERT INTO have_genre VALUES (86250, 'Drama');
+INSERT INTO have_genre VALUES (86361, 'Drama');
+INSERT INTO have_genre VALUES (86361, 'Music');
+INSERT INTO have_genre VALUES (86361, 'Romance');
+INSERT INTO have_genre VALUES (86383, 'Action');
+INSERT INTO have_genre VALUES (86383, 'Crime');
+INSERT INTO have_genre VALUES (86383, 'Thriller');
+INSERT INTO have_genre VALUES (86491, 'Horror');
+INSERT INTO have_genre VALUES (86491, 'Sci-Fi');
+INSERT INTO have_genre VALUES (86927, 'Comedy');
+INSERT INTO have_genre VALUES (86979, 'Crime');
+INSERT INTO have_genre VALUES (86979, 'Drama');
+INSERT INTO have_genre VALUES (86979, 'Thriller');
+INSERT INTO have_genre VALUES (86984, 'Crime');
+INSERT INTO have_genre VALUES (86984, 'Drama');
+INSERT INTO have_genre VALUES (86984, 'Mystery');
+INSERT INTO have_genre VALUES (86984, 'Thriller');
+INSERT INTO have_genre VALUES (86998, 'Comedy');
+INSERT INTO have_genre VALUES (86998, 'Drama');
+INSERT INTO have_genre VALUES (86998, 'Music');
+INSERT INTO have_genre VALUES (86998, 'Romance');
+INSERT INTO have_genre VALUES (87062, 'Action');
+INSERT INTO have_genre VALUES (87062, 'Comedy');
+INSERT INTO have_genre VALUES (87062, 'Crime');
+INSERT INTO have_genre VALUES (87078, 'Action');
+INSERT INTO have_genre VALUES (87078, 'Adventure');
+INSERT INTO have_genre VALUES (87078, 'Fantasy');
+INSERT INTO have_genre VALUES (87363, 'Comedy');
+INSERT INTO have_genre VALUES (87363, 'Fantasy');
+INSERT INTO have_genre VALUES (87363, 'Horror');
+INSERT INTO have_genre VALUES (87469, 'Action');
+INSERT INTO have_genre VALUES (87469, 'Adventure');
+INSERT INTO have_genre VALUES (87727, 'Action');
+INSERT INTO have_genre VALUES (87727, 'Adventure');
+INSERT INTO have_genre VALUES (87727, 'Drama');
+INSERT INTO have_genre VALUES (87727, 'Thriller');
+INSERT INTO have_genre VALUES (87727, 'War');
+INSERT INTO have_genre VALUES (87739, 'Comedy');
+INSERT INTO have_genre VALUES (88001, 'Comedy');
+INSERT INTO have_genre VALUES (88001, 'Music');
+INSERT INTO have_genre VALUES (88161, 'Comedy');
+INSERT INTO have_genre VALUES (88161, 'Fantasy');
+INSERT INTO have_genre VALUES (88161, 'Romance');
+INSERT INTO have_genre VALUES (88247, 'Action');
+INSERT INTO have_genre VALUES (88247, 'Sci-Fi');
+INSERT INTO have_genre VALUES (88269, 'Sci-Fi');
+INSERT INTO have_genre VALUES (88272, 'Crime');
+INSERT INTO have_genre VALUES (88272, 'Mystery');
+INSERT INTO have_genre VALUES (88272, 'Thriller');
+INSERT INTO have_genre VALUES (88421, 'Drama');
+INSERT INTO have_genre VALUES (88680, 'Comedy');
+INSERT INTO have_genre VALUES (88680, 'Crime');
+INSERT INTO have_genre VALUES (88680, 'Drama');
+INSERT INTO have_genre VALUES (88680, 'Thriller');
+INSERT INTO have_genre VALUES (88939, 'Drama');
+INSERT INTO have_genre VALUES (88944, 'Action');
+INSERT INTO have_genre VALUES (88944, 'Adventure');
+INSERT INTO have_genre VALUES (88944, 'Thriller');
+INSERT INTO have_genre VALUES (88967, 'Comedy');
+INSERT INTO have_genre VALUES (88967, 'Crime');
+INSERT INTO have_genre VALUES (88967, 'Horror');
+INSERT INTO have_genre VALUES (89270, 'Adventure');
+INSERT INTO have_genre VALUES (89270, 'Comedy');
+INSERT INTO have_genre VALUES (89469, 'Adventure');
+INSERT INTO have_genre VALUES (89469, 'Fantasy');
+INSERT INTO have_genre VALUES (89469, 'Romance');
+INSERT INTO have_genre VALUES (89482, 'Family');
+INSERT INTO have_genre VALUES (89482, 'Comedy');
+INSERT INTO have_genre VALUES (89482, 'Fantasy');
+INSERT INTO have_genre VALUES (89543, 'Comedy');
+INSERT INTO have_genre VALUES (89543, 'Thriller');
+INSERT INTO have_genre VALUES (89695, 'Action');
+INSERT INTO have_genre VALUES (89695, 'Comedy');
+INSERT INTO have_genre VALUES (89695, 'Crime');
+INSERT INTO have_genre VALUES (89695, 'Drama');
+INSERT INTO have_genre VALUES (89767, 'Drama');
+INSERT INTO have_genre VALUES (89767, 'Western');
+INSERT INTO have_genre VALUES (89880, 'Action');
+INSERT INTO have_genre VALUES (89880, 'Adventure');
+INSERT INTO have_genre VALUES (89880, 'Thriller');
+INSERT INTO have_genre VALUES (89893, 'Action');
+INSERT INTO have_genre VALUES (89893, 'Adventure');
+INSERT INTO have_genre VALUES (89893, 'Fantasy');
+INSERT INTO have_genre VALUES (89927, 'Drama');
+INSERT INTO have_genre VALUES (89927, 'Sport');
+INSERT INTO have_genre VALUES (90056, 'Adventure');
+INSERT INTO have_genre VALUES (90056, 'Comedy');
+INSERT INTO have_genre VALUES (90093, 'Action');
+INSERT INTO have_genre VALUES (90093, 'Adventure');
+INSERT INTO have_genre VALUES (90093, 'Horror');
+INSERT INTO have_genre VALUES (90093, 'Thriller');
+INSERT INTO have_genre VALUES (90093, 'War');
+INSERT INTO have_genre VALUES (90264, 'Action');
+INSERT INTO have_genre VALUES (90264, 'Adventure');
+INSERT INTO have_genre VALUES (90264, 'Thriller');
+INSERT INTO have_genre VALUES (90274, 'Adventure');
+INSERT INTO have_genre VALUES (90274, 'Comedy');
+INSERT INTO have_genre VALUES (90329, 'Crime');
+INSERT INTO have_genre VALUES (90329, 'Drama');
+INSERT INTO have_genre VALUES (90329, 'Romance');
+INSERT INTO have_genre VALUES (90329, 'Thriller');
+INSERT INTO have_genre VALUES (90557, 'Drama');
+INSERT INTO have_genre VALUES (90557, 'Music');
+INSERT INTO have_genre VALUES (90605, 'Action');
+INSERT INTO have_genre VALUES (90605, 'Adventure');
+INSERT INTO have_genre VALUES (90605, 'Sci-Fi');
+INSERT INTO have_genre VALUES (90605, 'Thriller');
+INSERT INTO have_genre VALUES (90859, 'Action');
+INSERT INTO have_genre VALUES (90859, 'Crime');
+INSERT INTO have_genre VALUES (90859, 'Thriller');
+INSERT INTO have_genre VALUES (90863, 'Drama');
+INSERT INTO have_genre VALUES (90863, 'Sport');
+INSERT INTO have_genre VALUES (91019, 'Drama');
+INSERT INTO have_genre VALUES (91019, 'Romance');
+INSERT INTO have_genre VALUES (91019, 'War');
+INSERT INTO have_genre VALUES (91187, 'Drama');
+INSERT INTO have_genre VALUES (91187, 'War');
+INSERT INTO have_genre VALUES (91203, 'Action');
+INSERT INTO have_genre VALUES (91203, 'Adventure');
+INSERT INTO have_genre VALUES (91203, 'Fantasy');
+INSERT INTO have_genre VALUES (91541, 'Comedy');
+INSERT INTO have_genre VALUES (91557, 'Adventure');
+INSERT INTO have_genre VALUES (91557, 'Drama');
+INSERT INTO have_genre VALUES (91557, 'Thriller');
+INSERT INTO have_genre VALUES (91605, 'Crime');
+INSERT INTO have_genre VALUES (91605, 'Drama');
+INSERT INTO have_genre VALUES (91605, 'Mystery');
+INSERT INTO have_genre VALUES (91605, 'Thriller');
+INSERT INTO have_genre VALUES (91653, 'Comedy');
+INSERT INTO have_genre VALUES (91653, 'Drama');
+INSERT INTO have_genre VALUES (91653, 'Romance');
+INSERT INTO have_genre VALUES (91828, 'Action');
+INSERT INTO have_genre VALUES (91828, 'Crime');
+INSERT INTO have_genre VALUES (91828, 'Thriller');
+INSERT INTO have_genre VALUES (91993, 'Adventure');
+INSERT INTO have_genre VALUES (91993, 'Family');
+INSERT INTO have_genre VALUES (91993, 'Sci-Fi');
+INSERT INTO have_genre VALUES (92226, 'Comedy');
+INSERT INTO have_genre VALUES (92226, 'Crime');
+INSERT INTO have_genre VALUES (92263, 'Action');
+INSERT INTO have_genre VALUES (92263, 'Crime');
+INSERT INTO have_genre VALUES (92263, 'Drama');
+INSERT INTO have_genre VALUES (92263, 'Thriller');
+INSERT INTO have_genre VALUES (92264, 'Action');
+INSERT INTO have_genre VALUES (92264, 'Drama');
+INSERT INTO have_genre VALUES (92264, 'War');
+INSERT INTO have_genre VALUES (92610, 'Comedy');
+INSERT INTO have_genre VALUES (92610, 'Horror');
+INSERT INTO have_genre VALUES (92610, 'Sci-Fi');
+INSERT INTO have_genre VALUES (92675, 'Action');
+INSERT INTO have_genre VALUES (92675, 'Biography');
+INSERT INTO have_genre VALUES (92675, 'Drama');
+INSERT INTO have_genre VALUES (92675, 'Sport');
+INSERT INTO have_genre VALUES (92925, 'Comedy');
+INSERT INTO have_genre VALUES (92925, 'Crime');
+INSERT INTO have_genre VALUES (92965, 'Action');
+INSERT INTO have_genre VALUES (92965, 'Drama');
+INSERT INTO have_genre VALUES (92965, 'History');
+INSERT INTO have_genre VALUES (92965, 'War');
+INSERT INTO have_genre VALUES (92991, 'Action');
+INSERT INTO have_genre VALUES (92991, 'Comedy');
+INSERT INTO have_genre VALUES (92991, 'Fantasy');
+INSERT INTO have_genre VALUES (92991, 'Horror');
+INSERT INTO have_genre VALUES (92991, 'Thriller');
+INSERT INTO have_genre VALUES (93428, 'Action');
+INSERT INTO have_genre VALUES (93428, 'Adventure');
+INSERT INTO have_genre VALUES (93428, 'Thriller');
+INSERT INTO have_genre VALUES (93692, 'Action');
+INSERT INTO have_genre VALUES (93692, 'Drama');
+INSERT INTO have_genre VALUES (93692, 'Sport');
+INSERT INTO have_genre VALUES (93773, 'Action');
+INSERT INTO have_genre VALUES (93773, 'Adventure');
+INSERT INTO have_genre VALUES (93773, 'Sci-Fi');
+INSERT INTO have_genre VALUES (93773, 'Thriller');
+INSERT INTO have_genre VALUES (93822, 'Comedy');
+INSERT INTO have_genre VALUES (93822, 'Crime');
+INSERT INTO have_genre VALUES (93894, 'Action');
+INSERT INTO have_genre VALUES (93894, 'Sci-Fi');
+INSERT INTO have_genre VALUES (93894, 'Thriller');
+INSERT INTO have_genre VALUES (93898, 'Drama');
+INSERT INTO have_genre VALUES (94008, 'Crime');
+INSERT INTO have_genre VALUES (94008, 'Drama');
+INSERT INTO have_genre VALUES (94008, 'Romance');
+INSERT INTO have_genre VALUES (94008, 'Thriller');
+INSERT INTO have_genre VALUES (94226, 'Crime');
+INSERT INTO have_genre VALUES (94226, 'Drama');
+INSERT INTO have_genre VALUES (94226, 'Thriller');
+INSERT INTO have_genre VALUES (94351, 'Action');
+INSERT INTO have_genre VALUES (94351, 'Crime');
+INSERT INTO have_genre VALUES (94351, 'Drama');
+INSERT INTO have_genre VALUES (94357, 'Action');
+INSERT INTO have_genre VALUES (94357, 'Crime');
+INSERT INTO have_genre VALUES (94357, 'Drama');
+INSERT INTO have_genre VALUES (94357, 'Thriller');
+INSERT INTO have_genre VALUES (94737, 'Comedy');
+INSERT INTO have_genre VALUES (94737, 'Drama');
+INSERT INTO have_genre VALUES (94737, 'Fantasy');
+INSERT INTO have_genre VALUES (94737, 'Romance');
+INSERT INTO have_genre VALUES (94747, 'Biography');
+INSERT INTO have_genre VALUES (94747, 'Drama');
+INSERT INTO have_genre VALUES (94747, 'Music');
+INSERT INTO have_genre VALUES (94750, 'Action');
+INSERT INTO have_genre VALUES (94750, 'Drama');
+INSERT INTO have_genre VALUES (94963, 'Action');
+INSERT INTO have_genre VALUES (94963, 'Crime');
+INSERT INTO have_genre VALUES (94963, 'Mystery');
+INSERT INTO have_genre VALUES (94963, 'Thriller');
+INSERT INTO have_genre VALUES (95174, 'Crime');
+INSERT INTO have_genre VALUES (95174, 'Drama');
+INSERT INTO have_genre VALUES (95174, 'Mystery');
+INSERT INTO have_genre VALUES (95174, 'Thriller');
+INSERT INTO have_genre VALUES (95379, 'Horror');
+INSERT INTO have_genre VALUES (95379, 'Thriller');
+INSERT INTO have_genre VALUES (95405, 'Drama');
+INSERT INTO have_genre VALUES (95405, 'Romance');
+INSERT INTO have_genre VALUES (95497, 'Drama');
+INSERT INTO have_genre VALUES (95583, 'Action');
+INSERT INTO have_genre VALUES (95583, 'Crime');
+INSERT INTO have_genre VALUES (95583, 'Horror');
+INSERT INTO have_genre VALUES (95583, 'Mystery');
+INSERT INTO have_genre VALUES (95613, 'Comedy');
+INSERT INTO have_genre VALUES (95613, 'Drama');
+INSERT INTO have_genre VALUES (95897, 'Action');
+INSERT INTO have_genre VALUES (95897, 'Crime');
+INSERT INTO have_genre VALUES (95897, 'Mystery');
+INSERT INTO have_genre VALUES (95897, 'Thriller');
+INSERT INTO have_genre VALUES (95927, 'Comedy');
+INSERT INTO have_genre VALUES (95927, 'Drama');
+INSERT INTO have_genre VALUES (95927, 'Romance');
+INSERT INTO have_genre VALUES (95956, 'Action');
+INSERT INTO have_genre VALUES (95956, 'Adventure');
+INSERT INTO have_genre VALUES (95963, 'Action');
+INSERT INTO have_genre VALUES (95963, 'Comedy');
+INSERT INTO have_genre VALUES (95963, 'Crime');
+INSERT INTO have_genre VALUES (95963, 'Thriller');
+INSERT INTO have_genre VALUES (96320, 'Comedy');
+INSERT INTO have_genre VALUES (96320, 'Crime');
+INSERT INTO have_genre VALUES (96463, 'Comedy');
+INSERT INTO have_genre VALUES (96463, 'Drama');
+INSERT INTO have_genre VALUES (96463, 'Romance');
+INSERT INTO have_genre VALUES (96734, 'Comedy');
+INSERT INTO have_genre VALUES (96734, 'Mystery');
+INSERT INTO have_genre VALUES (96734, 'Thriller');
+INSERT INTO have_genre VALUES (96754, 'Adventure');
+INSERT INTO have_genre VALUES (96754, 'Drama');
+INSERT INTO have_genre VALUES (96754, 'Mystery');
+INSERT INTO have_genre VALUES (96754, 'Sci-Fi');
+INSERT INTO have_genre VALUES (96754, 'Thriller');
+INSERT INTO have_genre VALUES (96794, 'Drama');
+INSERT INTO have_genre VALUES (96794, 'Fantasy');
+INSERT INTO have_genre VALUES (96794, 'Romance');
+INSERT INTO have_genre VALUES (96933, 'Action');
+INSERT INTO have_genre VALUES (96933, 'Crime');
+INSERT INTO have_genre VALUES (96933, 'Thriller');
+INSERT INTO have_genre VALUES (97027, 'Crime');
+INSERT INTO have_genre VALUES (97027, 'Drama');
+INSERT INTO have_genre VALUES (97027, 'War');
+INSERT INTO have_genre VALUES (97138, 'Action');
+INSERT INTO have_genre VALUES (97138, 'Sci-Fi');
+INSERT INTO have_genre VALUES (97138, 'Thriller');
+INSERT INTO have_genre VALUES (97202, 'Action');
+INSERT INTO have_genre VALUES (97202, 'Crime');
+INSERT INTO have_genre VALUES (97202, 'Drama');
+INSERT INTO have_genre VALUES (97202, 'Thriller');
+INSERT INTO have_genre VALUES (97328, 'Crime');
+INSERT INTO have_genre VALUES (97328, 'Drama');
+INSERT INTO have_genre VALUES (97576, 'Action');
+INSERT INTO have_genre VALUES (97576, 'Adventure');
+INSERT INTO have_genre VALUES (97659, 'Action');
+INSERT INTO have_genre VALUES (97659, 'Sport');
+INSERT INTO have_genre VALUES (97659, 'Thriller');
+INSERT INTO have_genre VALUES (97742, 'Action');
+INSERT INTO have_genre VALUES (97742, 'Adventure');
+INSERT INTO have_genre VALUES (97742, 'Thriller');
+INSERT INTO have_genre VALUES (97770, 'Action');
+INSERT INTO have_genre VALUES (97770, 'Crime');
+INSERT INTO have_genre VALUES (97770, 'Drama');
+INSERT INTO have_genre VALUES (97770, 'Thriller');
+INSERT INTO have_genre VALUES (97858, 'Animation');
+INSERT INTO have_genre VALUES (97858, 'Comedy');
+INSERT INTO have_genre VALUES (97858, 'Music');
+INSERT INTO have_genre VALUES (97858, 'Musical');
+INSERT INTO have_genre VALUES (97965, 'Comedy');
+INSERT INTO have_genre VALUES (97965, 'Drama');
+INSERT INTO have_genre VALUES (97965, 'Romance');
+INSERT INTO have_genre VALUES (98067, 'Comedy');
+INSERT INTO have_genre VALUES (98067, 'Drama');
+INSERT INTO have_genre VALUES (98097, 'Action');
+INSERT INTO have_genre VALUES (98097, 'Comedy');
+INSERT INTO have_genre VALUES (98097, 'Crime');
+INSERT INTO have_genre VALUES (98097, 'Drama');
+INSERT INTO have_genre VALUES (98439, 'Action');
+INSERT INTO have_genre VALUES (98439, 'Comedy');
+INSERT INTO have_genre VALUES (98439, 'Crime');
+INSERT INTO have_genre VALUES (98439, 'Thriller');
+INSERT INTO have_genre VALUES (98536, 'Comedy');
+INSERT INTO have_genre VALUES (98536, 'Crime');
+INSERT INTO have_genre VALUES (98536, 'Drama');
+INSERT INTO have_genre VALUES (98536, 'Thriller');
+INSERT INTO have_genre VALUES (99077, 'Biography');
+INSERT INTO have_genre VALUES (99077, 'Drama');
+INSERT INTO have_genre VALUES (99165, 'Comedy');
+INSERT INTO have_genre VALUES (99165, 'Drama');
+INSERT INTO have_genre VALUES (99165, 'Romance');
+INSERT INTO have_genre VALUES (99365, 'Action');
+INSERT INTO have_genre VALUES (99365, 'Sci-Fi');
+INSERT INTO have_genre VALUES (99365, 'Thriller');
+INSERT INTO have_genre VALUES (99385, 'Action');
+INSERT INTO have_genre VALUES (99385, 'Crime');
+INSERT INTO have_genre VALUES (99385, 'Mystery');
+INSERT INTO have_genre VALUES (99385, 'Thriller');
+INSERT INTO have_genre VALUES (99426, 'Action');
+INSERT INTO have_genre VALUES (99426, 'Crime');
+INSERT INTO have_genre VALUES (99426, 'Drama');
+INSERT INTO have_genre VALUES (99426, 'Thriller');
+INSERT INTO have_genre VALUES (99426, 'War');
+INSERT INTO have_genre VALUES (99685, 'Biography');
+INSERT INTO have_genre VALUES (99685, 'Crime');
+INSERT INTO have_genre VALUES (99685, 'Drama');
+INSERT INTO have_genre VALUES (99703, 'Crime');
+INSERT INTO have_genre VALUES (99703, 'Drama');
+INSERT INTO have_genre VALUES (99703, 'Thriller');
+INSERT INTO have_genre VALUES (99810, 'Action');
+INSERT INTO have_genre VALUES (99810, 'Adventure');
+INSERT INTO have_genre VALUES (99810, 'Thriller');
+INSERT INTO have_genre VALUES (99892, 'Comedy');
+INSERT INTO have_genre VALUES (99892, 'Romance');
+INSERT INTO have_genre VALUES (99938, 'Comedy');
+INSERT INTO have_genre VALUES (99938, 'Crime');
+INSERT INTO have_genre VALUES (100029, 'Action');
+INSERT INTO have_genre VALUES (100029, 'Crime');
+INSERT INTO have_genre VALUES (100029, 'Drama');
+INSERT INTO have_genre VALUES (100029, 'Sport');
+INSERT INTO have_genre VALUES (100107, 'Crime');
+INSERT INTO have_genre VALUES (100107, 'Horror');
+INSERT INTO have_genre VALUES (100107, 'Action');
+INSERT INTO have_genre VALUES (100107, 'Thriller');
+INSERT INTO have_genre VALUES (100150, 'Crime');
+INSERT INTO have_genre VALUES (100150, 'Drama');
+INSERT INTO have_genre VALUES (100150, 'Thriller');
+INSERT INTO have_genre VALUES (100404, 'Mystery');
+INSERT INTO have_genre VALUES (100404, 'Thriller');
+INSERT INTO have_genre VALUES (100507, 'Drama');
+INSERT INTO have_genre VALUES (100507, 'Sport');
+INSERT INTO have_genre VALUES (100514, 'Action');
+INSERT INTO have_genre VALUES (100514, 'Crime');
+INSERT INTO have_genre VALUES (100514, 'Drama');
+INSERT INTO have_genre VALUES (100514, 'Thriller');
+INSERT INTO have_genre VALUES (100530, 'Drama');
+INSERT INTO have_genre VALUES (100530, 'Romance');
+INSERT INTO have_genre VALUES (100530, 'Thriller');
+INSERT INTO have_genre VALUES (100802, 'Action');
+INSERT INTO have_genre VALUES (100802, 'Sci-Fi');
+INSERT INTO have_genre VALUES (100802, 'Thriller');
+INSERT INTO have_genre VALUES (100876, 'Western');
+INSERT INTO have_genre VALUES (100928, 'Adventure');
+INSERT INTO have_genre VALUES (100928, 'Drama');
+INSERT INTO have_genre VALUES (100992, 'Crime');
+INSERT INTO have_genre VALUES (100992, 'Drama');
+INSERT INTO have_genre VALUES (100998, 'Drama');
+INSERT INTO have_genre VALUES (100998, 'Fantasy');
+INSERT INTO have_genre VALUES (101020, 'Action');
+INSERT INTO have_genre VALUES (101020, 'Comedy');
+INSERT INTO have_genre VALUES (101020, 'Crime');
+INSERT INTO have_genre VALUES (101020, 'Thriller');
+INSERT INTO have_genre VALUES (101410, 'Comedy');
+INSERT INTO have_genre VALUES (101410, 'Drama');
+INSERT INTO have_genre VALUES (101410, 'Thriller');
+INSERT INTO have_genre VALUES (101540, 'Crime');
+INSERT INTO have_genre VALUES (101540, 'Thriller');
+INSERT INTO have_genre VALUES (101670, 'Horror');
+INSERT INTO have_genre VALUES (101764, 'Action');
+INSERT INTO have_genre VALUES (101764, 'Crime');
+INSERT INTO have_genre VALUES (101984, 'Drama');
+INSERT INTO have_genre VALUES (101999, 'Comedy');
+INSERT INTO have_genre VALUES (102034, 'Action');
+INSERT INTO have_genre VALUES (102034, 'Adventure');
+INSERT INTO have_genre VALUES (102034, 'Fantasy');
+INSERT INTO have_genre VALUES (102034, 'Sci-Fi');
+INSERT INTO have_genre VALUES (102034, 'Thriller');
+INSERT INTO have_genre VALUES (102057, 'Adventure');
+INSERT INTO have_genre VALUES (102057, 'Comedy');
+INSERT INTO have_genre VALUES (102057, 'Family');
+INSERT INTO have_genre VALUES (102057, 'Fantasy');
+INSERT INTO have_genre VALUES (102603, 'Comedy');
+INSERT INTO have_genre VALUES (102603, 'Crime');
+INSERT INTO have_genre VALUES (102768, 'Drama');
+INSERT INTO have_genre VALUES (102768, 'Romance');
+INSERT INTO have_genre VALUES (102798, 'Action');
+INSERT INTO have_genre VALUES (102798, 'Adventure');
+INSERT INTO have_genre VALUES (102798, 'Drama');
+INSERT INTO have_genre VALUES (102798, 'Romance');
+INSERT INTO have_genre VALUES (103064, 'Action');
+INSERT INTO have_genre VALUES (103064, 'Sci-Fi');
+INSERT INTO have_genre VALUES (103074, 'Adventure');
+INSERT INTO have_genre VALUES (103074, 'Crime');
+INSERT INTO have_genre VALUES (103074, 'Drama');
+INSERT INTO have_genre VALUES (103594, 'Adventure');
+INSERT INTO have_genre VALUES (103594, 'Biography');
+INSERT INTO have_genre VALUES (103594, 'Drama');
+INSERT INTO have_genre VALUES (103594, 'History');
+INSERT INTO have_genre VALUES (103873, 'Action');
+INSERT INTO have_genre VALUES (103873, 'Comedy');
+INSERT INTO have_genre VALUES (103873, 'Fantasy');
+INSERT INTO have_genre VALUES (103873, 'Horror');
+INSERT INTO have_genre VALUES (104511, 'Action');
+INSERT INTO have_genre VALUES (104511, 'Comedy');
+INSERT INTO have_genre VALUES (104511, 'Crime');
+INSERT INTO have_genre VALUES (104511, 'Horror');
+INSERT INTO have_genre VALUES (104511, 'Romance');
+INSERT INTO have_genre VALUES (104684, 'Action');
+INSERT INTO have_genre VALUES (104684, 'Crime');
+INSERT INTO have_genre VALUES (104684, 'Thriller');
+INSERT INTO have_genre VALUES (104694, 'Comedy');
+INSERT INTO have_genre VALUES (104694, 'Drama');
+INSERT INTO have_genre VALUES (104694, 'Family');
+INSERT INTO have_genre VALUES (104694, 'Sport');
+INSERT INTO have_genre VALUES (104839, 'Adventure');
+INSERT INTO have_genre VALUES (104839, 'Drama');
+INSERT INTO have_genre VALUES (104839, 'Romance');
+INSERT INTO have_genre VALUES (105112, 'Action');
+INSERT INTO have_genre VALUES (105112, 'Thriller');
+INSERT INTO have_genre VALUES (105211, 'Drama');
+INSERT INTO have_genre VALUES (105217, 'Crime');
+INSERT INTO have_genre VALUES (105217, 'Drama');
+INSERT INTO have_genre VALUES (105217, 'Horror');
+INSERT INTO have_genre VALUES (105217, 'Thriller');
+INSERT INTO have_genre VALUES (105236, 'Crime');
+INSERT INTO have_genre VALUES (105236, 'Drama');
+INSERT INTO have_genre VALUES (105236, 'Thriller');
+INSERT INTO have_genre VALUES (105399, 'Action');
+INSERT INTO have_genre VALUES (105399, 'Comedy');
+INSERT INTO have_genre VALUES (105477, 'Action');
+INSERT INTO have_genre VALUES (105477, 'Comedy');
+INSERT INTO have_genre VALUES (105695, 'Drama');
+INSERT INTO have_genre VALUES (105695, 'Western');
+INSERT INTO have_genre VALUES (105698, 'Action');
+INSERT INTO have_genre VALUES (105698, 'Sci-Fi');
+INSERT INTO have_genre VALUES (105810, 'Crime');
+INSERT INTO have_genre VALUES (105810, 'Drama');
+INSERT INTO have_genre VALUES (105810, 'Thriller');
+INSERT INTO have_genre VALUES (106074, 'Drama');
+INSERT INTO have_genre VALUES (106074, 'History');
+INSERT INTO have_genre VALUES (106226, 'Drama');
+INSERT INTO have_genre VALUES (106226, 'Romance');
+INSERT INTO have_genre VALUES (106308, 'Comedy');
+INSERT INTO have_genre VALUES (106308, 'Fantasy');
+INSERT INTO have_genre VALUES (106308, 'Horror');
+INSERT INTO have_genre VALUES (106519, 'Crime');
+INSERT INTO have_genre VALUES (106519, 'Drama');
+INSERT INTO have_genre VALUES (106519, 'Thriller');
+INSERT INTO have_genre VALUES (106582, 'Action');
+INSERT INTO have_genre VALUES (106582, 'Adventure');
+INSERT INTO have_genre VALUES (106582, 'Thriller');
+INSERT INTO have_genre VALUES (106673, 'Comedy');
+INSERT INTO have_genre VALUES (106673, 'Romance');
+INSERT INTO have_genre VALUES (106697, 'Action');
+INSERT INTO have_genre VALUES (106697, 'Sci-Fi');
+INSERT INTO have_genre VALUES (106697, 'Thriller');
+INSERT INTO have_genre VALUES (106793, 'Comedy');
+INSERT INTO have_genre VALUES (106793, 'Drama');
+INSERT INTO have_genre VALUES (106977, 'Action');
+INSERT INTO have_genre VALUES (106977, 'Crime');
+INSERT INTO have_genre VALUES (106977, 'Drama');
+INSERT INTO have_genre VALUES (106977, 'Mystery');
+INSERT INTO have_genre VALUES (106977, 'Thriller');
+INSERT INTO have_genre VALUES (107076, 'Action');
+INSERT INTO have_genre VALUES (107076, 'Adventure');
+INSERT INTO have_genre VALUES (107076, 'Drama');
+INSERT INTO have_genre VALUES (107076, 'Thriller');
+INSERT INTO have_genre VALUES (107206, 'Action');
+INSERT INTO have_genre VALUES (107206, 'Crime');
+INSERT INTO have_genre VALUES (107206, 'Drama');
+INSERT INTO have_genre VALUES (107206, 'Thriller');
+INSERT INTO have_genre VALUES (107212, 'Comedy');
+INSERT INTO have_genre VALUES (107212, 'Drama');
+INSERT INTO have_genre VALUES (107212, 'Romance');
+INSERT INTO have_genre VALUES (107290, 'Action');
+INSERT INTO have_genre VALUES (107290, 'Adventure');
+INSERT INTO have_genre VALUES (107290, 'Sci-Fi');
+INSERT INTO have_genre VALUES (107290, 'Thriller');
+INSERT INTO have_genre VALUES (107362, 'Action');
+INSERT INTO have_genre VALUES (107362, 'Adventure');
+INSERT INTO have_genre VALUES (107362, 'Comedy');
+INSERT INTO have_genre VALUES (107362, 'Fantasy');
+INSERT INTO have_genre VALUES (107478, 'Comedy');
+INSERT INTO have_genre VALUES (107711, 'Action');
+INSERT INTO have_genre VALUES (107711, 'Drama');
+INSERT INTO have_genre VALUES (107711, 'Romance');
+INSERT INTO have_genre VALUES (107711, 'Thriller');
+INSERT INTO have_genre VALUES (107808, 'Crime');
+INSERT INTO have_genre VALUES (107808, 'Drama');
+INSERT INTO have_genre VALUES (107808, 'Thriller');
+INSERT INTO have_genre VALUES (107818, 'Drama');
+INSERT INTO have_genre VALUES (107969, 'Action');
+INSERT INTO have_genre VALUES (107969, 'Crime');
+INSERT INTO have_genre VALUES (107969, 'Drama');
+INSERT INTO have_genre VALUES (107969, 'Mystery');
+INSERT INTO have_genre VALUES (107969, 'Thriller');
+INSERT INTO have_genre VALUES (108052, 'Biography');
+INSERT INTO have_genre VALUES (108052, 'Drama');
+INSERT INTO have_genre VALUES (108052, 'History');
+INSERT INTO have_genre VALUES (108149, 'Comedy');
+INSERT INTO have_genre VALUES (108149, 'Drama');
+INSERT INTO have_genre VALUES (108149, 'Mystery');
+INSERT INTO have_genre VALUES (108160, 'Comedy');
+INSERT INTO have_genre VALUES (108160, 'Drama');
+INSERT INTO have_genre VALUES (108160, 'Romance');
+INSERT INTO have_genre VALUES (108941, 'Adventure');
+INSERT INTO have_genre VALUES (108941, 'Drama');
+INSERT INTO have_genre VALUES (108941, 'Fantasy');
+INSERT INTO have_genre VALUES (108941, 'Horror');
+INSERT INTO have_genre VALUES (108941, 'Sci-Fi');
+INSERT INTO have_genre VALUES (109444, 'Action');
+INSERT INTO have_genre VALUES (109444, 'Crime');
+INSERT INTO have_genre VALUES (109444, 'Drama');
+INSERT INTO have_genre VALUES (109444, 'Thriller');
+INSERT INTO have_genre VALUES (109813, 'Comedy');
+INSERT INTO have_genre VALUES (109813, 'Family');
+INSERT INTO have_genre VALUES (109813, 'Fantasy');
+INSERT INTO have_genre VALUES (109830, 'Drama');
+INSERT INTO have_genre VALUES (109830, 'Romance');
+INSERT INTO have_genre VALUES (109920, 'Comedy');
+INSERT INTO have_genre VALUES (110005, 'Biography');
+INSERT INTO have_genre VALUES (110005, 'Crime');
+INSERT INTO have_genre VALUES (110005, 'Drama');
+INSERT INTO have_genre VALUES (110005, 'Thriller');
+INSERT INTO have_genre VALUES (110074, 'Comedy');
+INSERT INTO have_genre VALUES (110074, 'Drama');
+INSERT INTO have_genre VALUES (110074, 'Fantasy');
+INSERT INTO have_genre VALUES (110197, 'Crime');
+INSERT INTO have_genre VALUES (110197, 'Comedy');
+INSERT INTO have_genre VALUES (110197, 'Drama');
+INSERT INTO have_genre VALUES (110216, 'Comedy');
+INSERT INTO have_genre VALUES (110216, 'Romance');
+INSERT INTO have_genre VALUES (110216, 'Sci-Fi');
+INSERT INTO have_genre VALUES (110912, 'Crime');
+INSERT INTO have_genre VALUES (110912, 'Drama');
+INSERT INTO have_genre VALUES (110932, 'Biography');
+INSERT INTO have_genre VALUES (110932, 'Drama');
+INSERT INTO have_genre VALUES (110932, 'History');
+INSERT INTO have_genre VALUES (111022, 'Comedy');
+INSERT INTO have_genre VALUES (111149, 'Crime');
+INSERT INTO have_genre VALUES (111149, 'Thriller');
+INSERT INTO have_genre VALUES (111218, 'Comedy');
+INSERT INTO have_genre VALUES (111218, 'Drama');
+INSERT INTO have_genre VALUES (111218, 'Romance');
+INSERT INTO have_genre VALUES (111237, 'Comedy');
+INSERT INTO have_genre VALUES (111237, 'Drama');
+INSERT INTO have_genre VALUES (111255, 'Action');
+INSERT INTO have_genre VALUES (111255, 'Drama');
+INSERT INTO have_genre VALUES (111255, 'Thriller');
+INSERT INTO have_genre VALUES (111301, 'Action');
+INSERT INTO have_genre VALUES (111301, 'Adventure');
+INSERT INTO have_genre VALUES (111301, 'Comedy');
+INSERT INTO have_genre VALUES (111301, 'Thriller');
+INSERT INTO have_genre VALUES (111438, 'Action');
+INSERT INTO have_genre VALUES (111438, 'Crime');
+INSERT INTO have_genre VALUES (111438, 'Sci-Fi');
+INSERT INTO have_genre VALUES (111438, 'Thriller');
+INSERT INTO have_genre VALUES (111503, 'Action');
+INSERT INTO have_genre VALUES (111503, 'Comedy');
+INSERT INTO have_genre VALUES (111503, 'Thriller');
+INSERT INTO have_genre VALUES (112384, 'Adventure');
+INSERT INTO have_genre VALUES (112384, 'Drama');
+INSERT INTO have_genre VALUES (112384, 'History');
+INSERT INTO have_genre VALUES (112401, 'Action');
+INSERT INTO have_genre VALUES (112401, 'Crime');
+INSERT INTO have_genre VALUES (112401, 'Thriller');
+INSERT INTO have_genre VALUES (112442, 'Action');
+INSERT INTO have_genre VALUES (112442, 'Comedy');
+INSERT INTO have_genre VALUES (112442, 'Crime');
+INSERT INTO have_genre VALUES (112442, 'Thriller');
+INSERT INTO have_genre VALUES (112579, 'Drama');
+INSERT INTO have_genre VALUES (112579, 'Romance');
+INSERT INTO have_genre VALUES (112641, 'Crime');
+INSERT INTO have_genre VALUES (112641, 'Drama');
+INSERT INTO have_genre VALUES (112642, 'Comedy');
+INSERT INTO have_genre VALUES (112642, 'Family');
+INSERT INTO have_genre VALUES (112642, 'Fantasy');
+INSERT INTO have_genre VALUES (112851, 'Action');
+INSERT INTO have_genre VALUES (112851, 'Crime');
+INSERT INTO have_genre VALUES (112851, 'Thriller');
+INSERT INTO have_genre VALUES (112854, 'Crime');
+INSERT INTO have_genre VALUES (112854, 'Comedy');
+INSERT INTO have_genre VALUES (112854, 'Fantasy');
+INSERT INTO have_genre VALUES (113071, 'Action');
+INSERT INTO have_genre VALUES (113071, 'Adventure');
+INSERT INTO have_genre VALUES (113071, 'Drama');
+INSERT INTO have_genre VALUES (113071, 'Romance');
+INSERT INTO have_genre VALUES (113101, 'Comedy');
+INSERT INTO have_genre VALUES (113140, 'Action');
+INSERT INTO have_genre VALUES (113140, 'Sci-Fi');
+INSERT INTO have_genre VALUES (113140, 'Thriller');
+INSERT INTO have_genre VALUES (113189, 'Action');
+INSERT INTO have_genre VALUES (113189, 'Adventure');
+INSERT INTO have_genre VALUES (113189, 'Thriller');
+INSERT INTO have_genre VALUES (113492, 'Action');
+INSERT INTO have_genre VALUES (113492, 'Crime');
+INSERT INTO have_genre VALUES (113492, 'Sci-Fi');
+INSERT INTO have_genre VALUES (113492, 'Thriller');
+INSERT INTO have_genre VALUES (113501, 'Action');
+INSERT INTO have_genre VALUES (113501, 'Crime');
+INSERT INTO have_genre VALUES (113501, 'Drama');
+INSERT INTO have_genre VALUES (113501, 'Mystery');
+INSERT INTO have_genre VALUES (113501, 'Thriller');
+INSERT INTO have_genre VALUES (114214, 'Action');
+INSERT INTO have_genre VALUES (114214, 'Romance');
+INSERT INTO have_genre VALUES (114214, 'Thriller');
+INSERT INTO have_genre VALUES (114214, 'Western');
+INSERT INTO have_genre VALUES (114319, 'Comedy');
+INSERT INTO have_genre VALUES (114319, 'Drama');
+INSERT INTO have_genre VALUES (114319, 'Romance');
+INSERT INTO have_genre VALUES (114371, 'Action');
+INSERT INTO have_genre VALUES (114371, 'Comedy');
+INSERT INTO have_genre VALUES (114371, 'Drama');
+INSERT INTO have_genre VALUES (114576, 'Action');
+INSERT INTO have_genre VALUES (114576, 'Crime');
+INSERT INTO have_genre VALUES (114576, 'Thriller');
+INSERT INTO have_genre VALUES (114681, 'Comedy');
+INSERT INTO have_genre VALUES (114681, 'Crime');
+INSERT INTO have_genre VALUES (114681, 'Drama');
+INSERT INTO have_genre VALUES (114681, 'Thriller');
+INSERT INTO have_genre VALUES (114709, 'Animation');
+INSERT INTO have_genre VALUES (114709, 'Adventure');
+INSERT INTO have_genre VALUES (114709, 'Comedy');
+INSERT INTO have_genre VALUES (114709, 'Family');
+INSERT INTO have_genre VALUES (114709, 'Fantasy');
+INSERT INTO have_genre VALUES (115759, 'Action');
+INSERT INTO have_genre VALUES (115759, 'Adventure');
+INSERT INTO have_genre VALUES (115759, 'Thriller');
+INSERT INTO have_genre VALUES (115994, 'Comedy');
+INSERT INTO have_genre VALUES (115994, 'Crime');
+INSERT INTO have_genre VALUES (115994, 'Thriller');
+INSERT INTO have_genre VALUES (116040, 'Action');
+INSERT INTO have_genre VALUES (116040, 'Adventure');
+INSERT INTO have_genre VALUES (116040, 'Drama');
+INSERT INTO have_genre VALUES (116040, 'Thriller');
+INSERT INTO have_genre VALUES (116136, 'Action');
+INSERT INTO have_genre VALUES (116136, 'Adventure');
+INSERT INTO have_genre VALUES (116136, 'Fantasy');
+INSERT INTO have_genre VALUES (116213, 'Action');
+INSERT INTO have_genre VALUES (116213, 'Drama');
+INSERT INTO have_genre VALUES (116213, 'Thriller');
+INSERT INTO have_genre VALUES (116282, 'Crime');
+INSERT INTO have_genre VALUES (116282, 'Drama');
+INSERT INTO have_genre VALUES (116282, 'Thriller');
+INSERT INTO have_genre VALUES (116365, 'Comedy');
+INSERT INTO have_genre VALUES (116365, 'Fantasy');
+INSERT INTO have_genre VALUES (116365, 'Horror');
+INSERT INTO have_genre VALUES (116367, 'Action');
+INSERT INTO have_genre VALUES (116367, 'Crime');
+INSERT INTO have_genre VALUES (116367, 'Horror');
+INSERT INTO have_genre VALUES (116414, 'Comedy');
+INSERT INTO have_genre VALUES (116414, 'Drama');
+INSERT INTO have_genre VALUES (116629, 'Action');
+INSERT INTO have_genre VALUES (116629, 'Adventure');
+INSERT INTO have_genre VALUES (116629, 'Sci-Fi');
+INSERT INTO have_genre VALUES (116705, 'Adventure');
+INSERT INTO have_genre VALUES (116705, 'Comedy');
+INSERT INTO have_genre VALUES (116705, 'Family');
+INSERT INTO have_genre VALUES (117011, 'Action');
+INSERT INTO have_genre VALUES (117011, 'Romance');
+INSERT INTO have_genre VALUES (117011, 'Thriller');
+INSERT INTO have_genre VALUES (117060, 'Action');
+INSERT INTO have_genre VALUES (117060, 'Adventure');
+INSERT INTO have_genre VALUES (117060, 'Thriller');
+INSERT INTO have_genre VALUES (117420, 'Action');
+INSERT INTO have_genre VALUES (117420, 'Adventure');
+INSERT INTO have_genre VALUES (117420, 'Drama');
+INSERT INTO have_genre VALUES (117420, 'Thriller');
+INSERT INTO have_genre VALUES (117500, 'Action');
+INSERT INTO have_genre VALUES (117500, 'Adventure');
+INSERT INTO have_genre VALUES (117500, 'Thriller');
+INSERT INTO have_genre VALUES (117887, 'Comedy');
+INSERT INTO have_genre VALUES (117887, 'Drama');
+INSERT INTO have_genre VALUES (117887, 'Music');
+INSERT INTO have_genre VALUES (117951, 'Drama');
+INSERT INTO have_genre VALUES (118158, 'Adventure');
+INSERT INTO have_genre VALUES (118158, 'Drama');
+INSERT INTO have_genre VALUES (118460, 'Drama');
+INSERT INTO have_genre VALUES (118460, 'Fantasy');
+INSERT INTO have_genre VALUES (118460, 'Horror');
+INSERT INTO have_genre VALUES (118460, 'Thriller');
+INSERT INTO have_genre VALUES (118548, 'Action');
+INSERT INTO have_genre VALUES (118548, 'Crime');
+INSERT INTO have_genre VALUES (118548, 'Drama');
+INSERT INTO have_genre VALUES (118548, 'Thriller');
+INSERT INTO have_genre VALUES (118571, 'Action');
+INSERT INTO have_genre VALUES (118571, 'Drama');
+INSERT INTO have_genre VALUES (118571, 'Thriller');
+INSERT INTO have_genre VALUES (118577, 'Comedy');
+INSERT INTO have_genre VALUES (118607, 'Biography');
+INSERT INTO have_genre VALUES (118607, 'Drama');
+INSERT INTO have_genre VALUES (118607, 'History');
+INSERT INTO have_genre VALUES (118661, 'Action');
+INSERT INTO have_genre VALUES (118661, 'Adventure');
+INSERT INTO have_genre VALUES (118661, 'Sci-Fi');
+INSERT INTO have_genre VALUES (118661, 'Thriller');
+INSERT INTO have_genre VALUES (118688, 'Action');
+INSERT INTO have_genre VALUES (118688, 'Sci-Fi');
+INSERT INTO have_genre VALUES (118715, 'Comedy');
+INSERT INTO have_genre VALUES (118715, 'Crime');
+INSERT INTO have_genre VALUES (118715, 'Sport');
+INSERT INTO have_genre VALUES (118863, 'Comedy');
+INSERT INTO have_genre VALUES (118863, 'Crime');
+INSERT INTO have_genre VALUES (118887, 'Crime');
+INSERT INTO have_genre VALUES (118887, 'Drama');
+INSERT INTO have_genre VALUES (118887, 'Thriller');
+INSERT INTO have_genre VALUES (118972, 'Action');
+INSERT INTO have_genre VALUES (118972, 'Crime');
+INSERT INTO have_genre VALUES (118972, 'Drama');
+INSERT INTO have_genre VALUES (118972, 'Thriller');
+INSERT INTO have_genre VALUES (119013, 'Action');
+INSERT INTO have_genre VALUES (119013, 'Comedy');
+INSERT INTO have_genre VALUES (119013, 'Sci-Fi');
+INSERT INTO have_genre VALUES (119013, 'Thriller');
+INSERT INTO have_genre VALUES (119094, 'Action');
+INSERT INTO have_genre VALUES (119094, 'Crime');
+INSERT INTO have_genre VALUES (119094, 'Sci-Fi');
+INSERT INTO have_genre VALUES (119094, 'Thriller');
+INSERT INTO have_genre VALUES (119173, 'Action');
+INSERT INTO have_genre VALUES (119173, 'Drama');
+INSERT INTO have_genre VALUES (119173, 'War');
+INSERT INTO have_genre VALUES (119207, 'Comedy');
+INSERT INTO have_genre VALUES (119207, 'Drama');
+INSERT INTO have_genre VALUES (119216, 'Comedy');
+INSERT INTO have_genre VALUES (119216, 'Crime');
+INSERT INTO have_genre VALUES (119381, 'Drama');
+INSERT INTO have_genre VALUES (119381, 'Romance');
+INSERT INTO have_genre VALUES (119396, 'Crime');
+INSERT INTO have_genre VALUES (119396, 'Drama');
+INSERT INTO have_genre VALUES (119396, 'Thriller');
+INSERT INTO have_genre VALUES (119485, 'Biography');
+INSERT INTO have_genre VALUES (119485, 'Drama');
+INSERT INTO have_genre VALUES (119485, 'History');
+INSERT INTO have_genre VALUES (119485, 'War');
+INSERT INTO have_genre VALUES (119535, 'Comedy');
+INSERT INTO have_genre VALUES (119535, 'Crime');
+INSERT INTO have_genre VALUES (119535, 'Fantasy');
+INSERT INTO have_genre VALUES (119535, 'Romance');
+INSERT INTO have_genre VALUES (119567, 'Action');
+INSERT INTO have_genre VALUES (119567, 'Adventure');
+INSERT INTO have_genre VALUES (119567, 'Sci-Fi');
+INSERT INTO have_genre VALUES (119654, 'Action');
+INSERT INTO have_genre VALUES (119654, 'Adventure');
+INSERT INTO have_genre VALUES (119654, 'Comedy');
+INSERT INTO have_genre VALUES (119654, 'Sci-Fi');
+INSERT INTO have_genre VALUES (119668, 'Crime');
+INSERT INTO have_genre VALUES (119668, 'Drama');
+INSERT INTO have_genre VALUES (119668, 'Mystery');
+INSERT INTO have_genre VALUES (119668, 'Thriller');
+INSERT INTO have_genre VALUES (120324, 'Crime');
+INSERT INTO have_genre VALUES (120324, 'Drama');
+INSERT INTO have_genre VALUES (120324, 'Thriller');
+INSERT INTO have_genre VALUES (120338, 'Drama');
+INSERT INTO have_genre VALUES (120338, 'Romance');
+INSERT INTO have_genre VALUES (120347, 'Action');
+INSERT INTO have_genre VALUES (120347, 'Adventure');
+INSERT INTO have_genre VALUES (120347, 'Thriller');
+INSERT INTO have_genre VALUES (120363, 'Animation');
+INSERT INTO have_genre VALUES (120363, 'Adventure');
+INSERT INTO have_genre VALUES (120363, 'Comedy');
+INSERT INTO have_genre VALUES (120363, 'Family');
+INSERT INTO have_genre VALUES (120363, 'Fantasy');
+INSERT INTO have_genre VALUES (120399, 'Crime');
+INSERT INTO have_genre VALUES (120399, 'Drama');
+INSERT INTO have_genre VALUES (120399, 'Thriller');
+INSERT INTO have_genre VALUES (120570, 'Action');
+INSERT INTO have_genre VALUES (120570, 'Drama');
+INSERT INTO have_genre VALUES (120570, 'History');
+INSERT INTO have_genre VALUES (120570, 'Thriller');
+INSERT INTO have_genre VALUES (120587, 'Animation');
+INSERT INTO have_genre VALUES (120587, 'Adventure');
+INSERT INTO have_genre VALUES (120587, 'Comedy');
+INSERT INTO have_genre VALUES (120587, 'Family');
+INSERT INTO have_genre VALUES (120660, 'Action');
+INSERT INTO have_genre VALUES (120660, 'Thriller');
+INSERT INTO have_genre VALUES (120689, 'Crime');
+INSERT INTO have_genre VALUES (120689, 'Drama');
+INSERT INTO have_genre VALUES (120689, 'Fantasy');
+INSERT INTO have_genre VALUES (120689, 'Mystery');
+INSERT INTO have_genre VALUES (120724, 'Action');
+INSERT INTO have_genre VALUES (120724, 'Crime');
+INSERT INTO have_genre VALUES (120724, 'Thriller');
+INSERT INTO have_genre VALUES (120737, 'Action');
+INSERT INTO have_genre VALUES (120737, 'Adventure');
+INSERT INTO have_genre VALUES (120737, 'Drama');
+INSERT INTO have_genre VALUES (120737, 'Fantasy');
+INSERT INTO have_genre VALUES (120755, 'Action');
+INSERT INTO have_genre VALUES (120755, 'Adventure');
+INSERT INTO have_genre VALUES (120755, 'Thriller');
+INSERT INTO have_genre VALUES (120815, 'Drama');
+INSERT INTO have_genre VALUES (120815, 'War');
+INSERT INTO have_genre VALUES (120828, 'Action');
+INSERT INTO have_genre VALUES (120828, 'Adventure');
+INSERT INTO have_genre VALUES (120828, 'Comedy');
+INSERT INTO have_genre VALUES (120828, 'Romance');
+INSERT INTO have_genre VALUES (120832, 'Crime');
+INSERT INTO have_genre VALUES (120832, 'Mystery');
+INSERT INTO have_genre VALUES (120832, 'Thriller');
+INSERT INTO have_genre VALUES (120891, 'Action');
+INSERT INTO have_genre VALUES (120891, 'Comedy');
+INSERT INTO have_genre VALUES (120891, 'Sci-Fi');
+INSERT INTO have_genre VALUES (120891, 'Western');
+INSERT INTO have_genre VALUES (120912, 'Action');
+INSERT INTO have_genre VALUES (120912, 'Adventure');
+INSERT INTO have_genre VALUES (120912, 'Comedy');
+INSERT INTO have_genre VALUES (120912, 'Mystery');
+INSERT INTO have_genre VALUES (120912, 'Sci-Fi');
+INSERT INTO have_genre VALUES (124595, 'Drama');
+INSERT INTO have_genre VALUES (124595, 'Romance');
+INSERT INTO have_genre VALUES (124595, 'Thriller');
+INSERT INTO have_genre VALUES (126388, 'Action');
+INSERT INTO have_genre VALUES (126388, 'Adventure');
+INSERT INTO have_genre VALUES (126388, 'Drama');
+INSERT INTO have_genre VALUES (126388, 'War');
+INSERT INTO have_genre VALUES (126916, 'Drama');
+INSERT INTO have_genre VALUES (126916, 'Romance');
+INSERT INTO have_genre VALUES (126916, 'Sport');
+INSERT INTO have_genre VALUES (128853, 'Comedy');
+INSERT INTO have_genre VALUES (128853, 'Drama');
+INSERT INTO have_genre VALUES (128853, 'Romance');
+INSERT INTO have_genre VALUES (129167, 'Animation');
+INSERT INTO have_genre VALUES (129167, 'Action');
+INSERT INTO have_genre VALUES (129167, 'Adventure');
+INSERT INTO have_genre VALUES (129167, 'Comedy');
+INSERT INTO have_genre VALUES (129167, 'Drama');
+INSERT INTO have_genre VALUES (129167, 'Family');
+INSERT INTO have_genre VALUES (129167, 'Sci-Fi');
+INSERT INTO have_genre VALUES (132245, 'Action');
+INSERT INTO have_genre VALUES (132245, 'Drama');
+INSERT INTO have_genre VALUES (132245, 'Sport');
+INSERT INTO have_genre VALUES (133285, 'Comedy');
+INSERT INTO have_genre VALUES (133285, 'Drama');
+INSERT INTO have_genre VALUES (133285, 'Romance');
+INSERT INTO have_genre VALUES (134273, 'Crime');
+INSERT INTO have_genre VALUES (134273, 'Drama');
+INSERT INTO have_genre VALUES (134273, 'Mystery');
+INSERT INTO have_genre VALUES (134273, 'Thriller');
+INSERT INTO have_genre VALUES (134630, 'Comedy');
+INSERT INTO have_genre VALUES (134630, 'Drama');
+INSERT INTO have_genre VALUES (134630, 'Music');
+INSERT INTO have_genre VALUES (134630, 'Romance');
+INSERT INTO have_genre VALUES (134847, 'Action');
+INSERT INTO have_genre VALUES (134847, 'Horror');
+INSERT INTO have_genre VALUES (134847, 'Sci-Fi');
+INSERT INTO have_genre VALUES (137494, 'Action');
+INSERT INTO have_genre VALUES (137494, 'Crime');
+INSERT INTO have_genre VALUES (137494, 'Romance');
+INSERT INTO have_genre VALUES (137494, 'Thriller');
+INSERT INTO have_genre VALUES (138322, 'Action');
+INSERT INTO have_genre VALUES (138322, 'Adventure');
+INSERT INTO have_genre VALUES (138322, 'Crime');
+INSERT INTO have_genre VALUES (138322, 'Thriller');
+INSERT INTO have_genre VALUES (138524, 'Comedy');
+INSERT INTO have_genre VALUES (138524, 'Crime');
+INSERT INTO have_genre VALUES (138524, 'Romance');
+INSERT INTO have_genre VALUES (138946, 'Crime');
+INSERT INTO have_genre VALUES (138946, 'Drama');
+INSERT INTO have_genre VALUES (138946, 'Romance');
+INSERT INTO have_genre VALUES (138946, 'Thriller');
+INSERT INTO have_genre VALUES (139151, 'Action');
+INSERT INTO have_genre VALUES (139151, 'Comedy');
+INSERT INTO have_genre VALUES (139151, 'Drama');
+INSERT INTO have_genre VALUES (139151, 'Romance');
+INSERT INTO have_genre VALUES (139668, 'Crime');
+INSERT INTO have_genre VALUES (139668, 'Drama');
+INSERT INTO have_genre VALUES (139668, 'Mystery');
+INSERT INTO have_genre VALUES (139668, 'Thriller');
+INSERT INTO have_genre VALUES (142692, 'Comedy');
+INSERT INTO have_genre VALUES (143145, 'Action');
+INSERT INTO have_genre VALUES (143145, 'Adventure');
+INSERT INTO have_genre VALUES (143145, 'Thriller');
+INSERT INTO have_genre VALUES (145487, 'Action');
+INSERT INTO have_genre VALUES (145487, 'Adventure');
+INSERT INTO have_genre VALUES (145487, 'Sci-Fi');
+INSERT INTO have_genre VALUES (145734, 'Comedy');
+INSERT INTO have_genre VALUES (145734, 'Drama');
+INSERT INTO have_genre VALUES (145734, 'Romance');
+INSERT INTO have_genre VALUES (146675, 'Action');
+INSERT INTO have_genre VALUES (146675, 'Fantasy');
+INSERT INTO have_genre VALUES (146675, 'Horror');
+INSERT INTO have_genre VALUES (146675, 'Thriller');
+INSERT INTO have_genre VALUES (146984, 'Drama');
+INSERT INTO have_genre VALUES (146984, 'Fantasy');
+INSERT INTO have_genre VALUES (146984, 'Sport');
+INSERT INTO have_genre VALUES (149171, 'Crime');
+INSERT INTO have_genre VALUES (149171, 'Drama');
+INSERT INTO have_genre VALUES (154506, 'Crime');
+INSERT INTO have_genre VALUES (154506, 'Mystery');
+INSERT INTO have_genre VALUES (154506, 'Thriller');
+INSERT INTO have_genre VALUES (156934, 'Drama');
+INSERT INTO have_genre VALUES (156934, 'Mystery');
+INSERT INTO have_genre VALUES (156934, 'Romance');
+INSERT INTO have_genre VALUES (160184, 'Crime');
+INSERT INTO have_genre VALUES (160184, 'Thriller');
+INSERT INTO have_genre VALUES (161081, 'Drama');
+INSERT INTO have_genre VALUES (161081, 'Fantasy');
+INSERT INTO have_genre VALUES (161081, 'Horror');
+INSERT INTO have_genre VALUES (161081, 'Mystery');
+INSERT INTO have_genre VALUES (161081, 'Thriller');
+INSERT INTO have_genre VALUES (162222, 'Adventure');
+INSERT INTO have_genre VALUES (162222, 'Drama');
+INSERT INTO have_genre VALUES (162222, 'Romance');
+INSERT INTO have_genre VALUES (163114, 'Comedy');
+INSERT INTO have_genre VALUES (163114, 'Crime');
+INSERT INTO have_genre VALUES (163114, 'Mystery');
+INSERT INTO have_genre VALUES (163114, 'Thriller');
+INSERT INTO have_genre VALUES (163978, 'Adventure');
+INSERT INTO have_genre VALUES (163978, 'Drama');
+INSERT INTO have_genre VALUES (163978, 'Romance');
+INSERT INTO have_genre VALUES (163978, 'Thriller');
+INSERT INTO have_genre VALUES (163988, 'Drama');
+INSERT INTO have_genre VALUES (163988, 'Thriller');
+INSERT INTO have_genre VALUES (164108, 'Comedy');
+INSERT INTO have_genre VALUES (167260, 'Adventure');
+INSERT INTO have_genre VALUES (167260, 'Drama');
+INSERT INTO have_genre VALUES (167260, 'Fantasy');
+INSERT INTO have_genre VALUES (167261, 'Adventure');
+INSERT INTO have_genre VALUES (167261, 'Drama');
+INSERT INTO have_genre VALUES (167261, 'Fantasy');
+INSERT INTO have_genre VALUES (167988, 'Music');
+INSERT INTO have_genre VALUES (168622, 'Drama');
+INSERT INTO have_genre VALUES (170678, 'Drama');
+INSERT INTO have_genre VALUES (172156, 'Action');
+INSERT INTO have_genre VALUES (172156, 'Comedy');
+INSERT INTO have_genre VALUES (172156, 'Crime');
+INSERT INTO have_genre VALUES (172156, 'Thriller');
+INSERT INTO have_genre VALUES (172495, 'Action');
+INSERT INTO have_genre VALUES (172495, 'Adventure');
+INSERT INTO have_genre VALUES (172495, 'Drama');
+INSERT INTO have_genre VALUES (173893, 'None');
+INSERT INTO have_genre VALUES (176269, 'Action');
+INSERT INTO have_genre VALUES (176269, 'Sci-Fi');
+INSERT INTO have_genre VALUES (178762, 'Drama');
+INSERT INTO have_genre VALUES (180073, 'Biography');
+INSERT INTO have_genre VALUES (180073, 'Drama');
+INSERT INTO have_genre VALUES (181536, 'Drama');
+INSERT INTO have_genre VALUES (181689, 'Action');
+INSERT INTO have_genre VALUES (181689, 'Crime');
+INSERT INTO have_genre VALUES (181689, 'Mystery');
+INSERT INTO have_genre VALUES (181689, 'Sci-Fi');
+INSERT INTO have_genre VALUES (181689, 'Thriller');
+INSERT INTO have_genre VALUES (181852, 'Action');
+INSERT INTO have_genre VALUES (181852, 'Sci-Fi');
+INSERT INTO have_genre VALUES (181984, 'Crime');
+INSERT INTO have_genre VALUES (181984, 'Drama');
+INSERT INTO have_genre VALUES (181984, 'Thriller');
+INSERT INTO have_genre VALUES (182392, 'Drama');
+INSERT INTO have_genre VALUES (183523, 'Adventure');
+INSERT INTO have_genre VALUES (183523, 'Sci-Fi');
+INSERT INTO have_genre VALUES (183523, 'Thriller');
+INSERT INTO have_genre VALUES (185431, 'Comedy');
+INSERT INTO have_genre VALUES (185431, 'Fantasy');
+INSERT INTO have_genre VALUES (185446, 'Drama');
+INSERT INTO have_genre VALUES (185906, 'Action');
+INSERT INTO have_genre VALUES (185906, 'Drama');
+INSERT INTO have_genre VALUES (185906, 'History');
+INSERT INTO have_genre VALUES (185906, 'War');
+INSERT INTO have_genre VALUES (186566, 'Action');
+INSERT INTO have_genre VALUES (186566, 'Adventure');
+INSERT INTO have_genre VALUES (186566, 'Thriller');
+INSERT INTO have_genre VALUES (190590, 'Adventure');
+INSERT INTO have_genre VALUES (190590, 'Comedy');
+INSERT INTO have_genre VALUES (190590, 'Crime');
+INSERT INTO have_genre VALUES (190590, 'Music');
+INSERT INTO have_genre VALUES (193364, 'Action');
+INSERT INTO have_genre VALUES (193364, 'Adventure');
+INSERT INTO have_genre VALUES (193364, 'Comedy');
+INSERT INTO have_genre VALUES (208988, 'Action');
+INSERT INTO have_genre VALUES (208988, 'Crime');
+INSERT INTO have_genre VALUES (208988, 'Drama');
+INSERT INTO have_genre VALUES (208988, 'Thriller');
+INSERT INTO have_genre VALUES (209144, 'Mystery');
+INSERT INTO have_genre VALUES (209144, 'Thriller');
+INSERT INTO have_genre VALUES (211465, 'Crime');
+INSERT INTO have_genre VALUES (211465, 'Drama');
+INSERT INTO have_genre VALUES (211465, 'Thriller');
+INSERT INTO have_genre VALUES (212720, 'Drama');
+INSERT INTO have_genre VALUES (212720, 'Sci-Fi');
+INSERT INTO have_genre VALUES (212985, 'Crime');
+INSERT INTO have_genre VALUES (212985, 'Drama');
+INSERT INTO have_genre VALUES (212985, 'Thriller');
+INSERT INTO have_genre VALUES (216216, 'Action');
+INSERT INTO have_genre VALUES (216216, 'Mystery');
+INSERT INTO have_genre VALUES (216216, 'Sci-Fi');
+INSERT INTO have_genre VALUES (216216, 'Thriller');
+INSERT INTO have_genre VALUES (217505, 'Crime');
+INSERT INTO have_genre VALUES (217505, 'Drama');
+INSERT INTO have_genre VALUES (219699, 'Drama');
+INSERT INTO have_genre VALUES (219699, 'Fantasy');
+INSERT INTO have_genre VALUES (219699, 'Horror');
+INSERT INTO have_genre VALUES (219699, 'Mystery');
+INSERT INTO have_genre VALUES (230575, 'Comedy');
+INSERT INTO have_genre VALUES (230575, 'Horror');
+INSERT INTO have_genre VALUES (232500, 'Action');
+INSERT INTO have_genre VALUES (232500, 'Crime');
+INSERT INTO have_genre VALUES (232500, 'Thriller');
+INSERT INTO have_genre VALUES (233469, 'Action');
+INSERT INTO have_genre VALUES (233469, 'Drama');
+INSERT INTO have_genre VALUES (233469, 'Thriller');
+INSERT INTO have_genre VALUES (238552, 'Action');
+INSERT INTO have_genre VALUES (238552, 'Sci-Fi');
+INSERT INTO have_genre VALUES (238552, 'Thriller');
+INSERT INTO have_genre VALUES (243133, 'Crime');
+INSERT INTO have_genre VALUES (243133, 'Drama');
+INSERT INTO have_genre VALUES (245562, 'Action');
+INSERT INTO have_genre VALUES (245562, 'Drama');
+INSERT INTO have_genre VALUES (245562, 'War');
+INSERT INTO have_genre VALUES (246460, 'Action');
+INSERT INTO have_genre VALUES (246460, 'Adventure');
+INSERT INTO have_genre VALUES (246460, 'Thriller');
+INSERT INTO have_genre VALUES (248667, 'Biography');
+INSERT INTO have_genre VALUES (248667, 'Drama');
+INSERT INTO have_genre VALUES (248667, 'Sport');
+INSERT INTO have_genre VALUES (252299, 'Comedy');
+INSERT INTO have_genre VALUES (252299, 'Crime');
+INSERT INTO have_genre VALUES (252299, 'Drama');
+INSERT INTO have_genre VALUES (252299, 'Thriller');
+INSERT INTO have_genre VALUES (252299, 'War');
+INSERT INTO have_genre VALUES (257044, 'Crime');
+INSERT INTO have_genre VALUES (257044, 'Drama');
+INSERT INTO have_genre VALUES (257044, 'Thriller');
+INSERT INTO have_genre VALUES (259711, 'Fantasy');
+INSERT INTO have_genre VALUES (259711, 'Mystery');
+INSERT INTO have_genre VALUES (259711, 'Romance');
+INSERT INTO have_genre VALUES (259711, 'Sci-Fi');
+INSERT INTO have_genre VALUES (259711, 'Thriller');
+INSERT INTO have_genre VALUES (264464, 'Biography');
+INSERT INTO have_genre VALUES (264464, 'Crime');
+INSERT INTO have_genre VALUES (264464, 'Drama');
+INSERT INTO have_genre VALUES (265086, 'Drama');
+INSERT INTO have_genre VALUES (265086, 'History');
+INSERT INTO have_genre VALUES (265086, 'War');
+INSERT INTO have_genre VALUES (266465, 'Action');
+INSERT INTO have_genre VALUES (266465, 'Crime');
+INSERT INTO have_genre VALUES (266465, 'Drama');
+INSERT INTO have_genre VALUES (266465, 'Thriller');
+INSERT INTO have_genre VALUES (266697, 'Action');
+INSERT INTO have_genre VALUES (266697, 'Crime');
+INSERT INTO have_genre VALUES (266697, 'Thriller');
+INSERT INTO have_genre VALUES (267626, 'Drama');
+INSERT INTO have_genre VALUES (267626, 'History');
+INSERT INTO have_genre VALUES (267626, 'Thriller');
+INSERT INTO have_genre VALUES (267626, 'War');
+INSERT INTO have_genre VALUES (269743, 'Comedy');
+INSERT INTO have_genre VALUES (273689, 'Drama');
+INSERT INTO have_genre VALUES (273689, 'Romance');
+INSERT INTO have_genre VALUES (273689, 'Sci-Fi');
+INSERT INTO have_genre VALUES (273689, 'Thriller');
+INSERT INTO have_genre VALUES (275947, 'Action');
+INSERT INTO have_genre VALUES (275947, 'Comedy');
+INSERT INTO have_genre VALUES (275947, 'Crime');
+INSERT INTO have_genre VALUES (275947, 'Romance');
+INSERT INTO have_genre VALUES (278504, 'Drama');
+INSERT INTO have_genre VALUES (278504, 'Mystery');
+INSERT INTO have_genre VALUES (278504, 'Thriller');
+INSERT INTO have_genre VALUES (280665, 'Crime');
+INSERT INTO have_genre VALUES (280665, 'Drama');
+INSERT INTO have_genre VALUES (280665, 'Mystery');
+INSERT INTO have_genre VALUES (280665, 'Thriller');
+INSERT INTO have_genre VALUES (286106, 'Drama');
+INSERT INTO have_genre VALUES (286106, 'Mystery');
+INSERT INTO have_genre VALUES (286106, 'Sci-Fi');
+INSERT INTO have_genre VALUES (286106, 'Thriller');
+INSERT INTO have_genre VALUES (289043, 'Action');
+INSERT INTO have_genre VALUES (289043, 'Drama');
+INSERT INTO have_genre VALUES (289043, 'Horror');
+INSERT INTO have_genre VALUES (289043, 'Sci-Fi');
+INSERT INTO have_genre VALUES (289043, 'Thriller');
+INSERT INTO have_genre VALUES (295178, 'Action');
+INSERT INTO have_genre VALUES (295178, 'Adventure');
+INSERT INTO have_genre VALUES (295178, 'Comedy');
+INSERT INTO have_genre VALUES (295178, 'Crime');
+INSERT INTO have_genre VALUES (295701, 'Action');
+INSERT INTO have_genre VALUES (295701, 'Adventure');
+INSERT INTO have_genre VALUES (295701, 'Thriller');
+INSERT INTO have_genre VALUES (295721, 'Action');
+INSERT INTO have_genre VALUES (295721, 'Comedy');
+INSERT INTO have_genre VALUES (295721, 'Crime');
+INSERT INTO have_genre VALUES (296572, 'Action');
+INSERT INTO have_genre VALUES (296572, 'Adventure');
+INSERT INTO have_genre VALUES (296572, 'Sci-Fi');
+INSERT INTO have_genre VALUES (296572, 'Thriller');
+INSERT INTO have_genre VALUES (298296, 'Action');
+INSERT INTO have_genre VALUES (298296, 'Thriller');
+INSERT INTO have_genre VALUES (307453, 'Animation');
+INSERT INTO have_genre VALUES (307453, 'Adventure');
+INSERT INTO have_genre VALUES (307453, 'Comedy');
+INSERT INTO have_genre VALUES (307453, 'Family');
+INSERT INTO have_genre VALUES (307453, 'Fantasy');
+INSERT INTO have_genre VALUES (309377, 'Action');
+INSERT INTO have_genre VALUES (309377, 'Crime');
+INSERT INTO have_genre VALUES (309377, 'Drama');
+INSERT INTO have_genre VALUES (309377, 'Mystery');
+INSERT INTO have_genre VALUES (309377, 'Thriller');
+INSERT INTO have_genre VALUES (310000, 'Action');
+INSERT INTO have_genre VALUES (310000, 'Comedy');
+INSERT INTO have_genre VALUES (310000, 'Crime');
+INSERT INTO have_genre VALUES (310000, 'Drama');
+INSERT INTO have_genre VALUES (311429, 'Action');
+INSERT INTO have_genre VALUES (311429, 'Adventure');
+INSERT INTO have_genre VALUES (311429, 'Fantasy');
+INSERT INTO have_genre VALUES (311429, 'Sci-Fi');
+INSERT INTO have_genre VALUES (316654, 'Action');
+INSERT INTO have_genre VALUES (316654, 'Adventure');
+INSERT INTO have_genre VALUES (316654, 'Sci-Fi');
+INSERT INTO have_genre VALUES (317219, 'Animation');
+INSERT INTO have_genre VALUES (317219, 'Comedy');
+INSERT INTO have_genre VALUES (317219, 'Family');
+INSERT INTO have_genre VALUES (317219, 'Sport');
+INSERT INTO have_genre VALUES (320661, 'Action');
+INSERT INTO have_genre VALUES (320661, 'Adventure');
+INSERT INTO have_genre VALUES (320661, 'Drama');
+INSERT INTO have_genre VALUES (320661, 'History');
+INSERT INTO have_genre VALUES (320661, 'War');
+INSERT INTO have_genre VALUES (323939, 'Crime');
+INSERT INTO have_genre VALUES (323939, 'Thriller');
+INSERT INTO have_genre VALUES (325805, 'Comedy');
+INSERT INTO have_genre VALUES (325805, 'Crime');
+INSERT INTO have_genre VALUES (325805, 'Drama');
+INSERT INTO have_genre VALUES (325805, 'Thriller');
+INSERT INTO have_genre VALUES (327056, 'Crime');
+INSERT INTO have_genre VALUES (327056, 'Drama');
+INSERT INTO have_genre VALUES (327056, 'Mystery');
+INSERT INTO have_genre VALUES (327056, 'Thriller');
+INSERT INTO have_genre VALUES (327437, 'Action');
+INSERT INTO have_genre VALUES (327437, 'Adventure');
+INSERT INTO have_genre VALUES (327437, 'Comedy');
+INSERT INTO have_genre VALUES (327437, 'Family');
+INSERT INTO have_genre VALUES (327437, 'Western');
+INSERT INTO have_genre VALUES (327850, 'Action');
+INSERT INTO have_genre VALUES (327850, 'Adventure');
+INSERT INTO have_genre VALUES (327850, 'Comedy');
+INSERT INTO have_genre VALUES (327850, 'Thriller');
+INSERT INTO have_genre VALUES (328880, 'Animation');
+INSERT INTO have_genre VALUES (328880, 'Adventure');
+INSERT INTO have_genre VALUES (328880, 'Comedy');
+INSERT INTO have_genre VALUES (328880, 'Family');
+INSERT INTO have_genre VALUES (328880, 'Fantasy');
+INSERT INTO have_genre VALUES (329717, 'Action');
+INSERT INTO have_genre VALUES (329717, 'Comedy');
+INSERT INTO have_genre VALUES (329717, 'Crime');
+INSERT INTO have_genre VALUES (329717, 'Thriller');
+INSERT INTO have_genre VALUES (335245, 'Comedy');
+INSERT INTO have_genre VALUES (335245, 'Crime');
+INSERT INTO have_genre VALUES (335245, 'Thriller');
+INSERT INTO have_genre VALUES (338337, 'Action');
+INSERT INTO have_genre VALUES (338337, 'Mystery');
+INSERT INTO have_genre VALUES (338337, 'Sci-Fi');
+INSERT INTO have_genre VALUES (338337, 'Thriller');
+INSERT INTO have_genre VALUES (338348, 'Animation');
+INSERT INTO have_genre VALUES (338348, 'Adventure');
+INSERT INTO have_genre VALUES (338348, 'Comedy');
+INSERT INTO have_genre VALUES (338348, 'Family');
+INSERT INTO have_genre VALUES (338348, 'Fantasy');
+INSERT INTO have_genre VALUES (338348, 'Musical');
+INSERT INTO have_genre VALUES (338459, 'Action');
+INSERT INTO have_genre VALUES (338459, 'Adventure');
+INSERT INTO have_genre VALUES (338459, 'Comedy');
+INSERT INTO have_genre VALUES (338459, 'Family');
+INSERT INTO have_genre VALUES (338459, 'Sci-Fi');
+INSERT INTO have_genre VALUES (338751, 'Biography');
+INSERT INTO have_genre VALUES (338751, 'Drama');
+INSERT INTO have_genre VALUES (339135, 'Action');
+INSERT INTO have_genre VALUES (339135, 'Drama');
+INSERT INTO have_genre VALUES (339135, 'Thriller');
+INSERT INTO have_genre VALUES (343818, 'Action');
+INSERT INTO have_genre VALUES (343818, 'Drama');
+INSERT INTO have_genre VALUES (343818, 'Sci-Fi');
+INSERT INTO have_genre VALUES (343818, 'Thriller');
+INSERT INTO have_genre VALUES (349710, 'Action');
+INSERT INTO have_genre VALUES (349710, 'Drama');
+INSERT INTO have_genre VALUES (349710, 'Thriller');
+INSERT INTO have_genre VALUES (353969, 'Action');
+INSERT INTO have_genre VALUES (353969, 'Crime');
+INSERT INTO have_genre VALUES (353969, 'Drama');
+INSERT INTO have_genre VALUES (353969, 'Mystery');
+INSERT INTO have_genre VALUES (353969, 'Thriller');
+INSERT INTO have_genre VALUES (358273, 'Biography');
+INSERT INTO have_genre VALUES (358273, 'Drama');
+INSERT INTO have_genre VALUES (358273, 'Music');
+INSERT INTO have_genre VALUES (358273, 'Romance');
+INSERT INTO have_genre VALUES (359715, 'Comedy');
+INSERT INTO have_genre VALUES (360717, 'Action');
+INSERT INTO have_genre VALUES (360717, 'Adventure');
+INSERT INTO have_genre VALUES (360717, 'Drama');
+INSERT INTO have_genre VALUES (360717, 'Romance');
+INSERT INTO have_genre VALUES (361748, 'Adventure');
+INSERT INTO have_genre VALUES (361748, 'Drama');
+INSERT INTO have_genre VALUES (361748, 'War');
+INSERT INTO have_genre VALUES (362227, 'Comedy');
+INSERT INTO have_genre VALUES (362227, 'Drama');
+INSERT INTO have_genre VALUES (362227, 'Romance');
+INSERT INTO have_genre VALUES (364970, 'Action');
+INSERT INTO have_genre VALUES (364970, 'Adventure');
+INSERT INTO have_genre VALUES (364970, 'Sci-Fi');
+INSERT INTO have_genre VALUES (364970, 'Thriller');
+INSERT INTO have_genre VALUES (366777, 'Comedy');
+INSERT INTO have_genre VALUES (366777, 'Crime');
+INSERT INTO have_genre VALUES (366777, 'Drama');
+INSERT INTO have_genre VALUES (366777, 'Family');
+INSERT INTO have_genre VALUES (367478, 'Action');
+INSERT INTO have_genre VALUES (367478, 'Adventure');
+INSERT INTO have_genre VALUES (367478, 'Drama');
+INSERT INTO have_genre VALUES (367882, 'Action');
+INSERT INTO have_genre VALUES (367882, 'Adventure');
+INSERT INTO have_genre VALUES (368447, 'Drama');
+INSERT INTO have_genre VALUES (368447, 'Mystery');
+INSERT INTO have_genre VALUES (368447, 'Thriller');
+INSERT INTO have_genre VALUES (372784, 'Action');
+INSERT INTO have_genre VALUES (372784, 'Adventure');
+INSERT INTO have_genre VALUES (374463, 'Action');
+INSERT INTO have_genre VALUES (374463, 'Adventure');
+INSERT INTO have_genre VALUES (374463, 'Drama');
+INSERT INTO have_genre VALUES (374463, 'History');
+INSERT INTO have_genre VALUES (374463, 'War');
+INSERT INTO have_genre VALUES (377057, 'Comedy');
+INSERT INTO have_genre VALUES (378194, 'Action');
+INSERT INTO have_genre VALUES (378194, 'Crime');
+INSERT INTO have_genre VALUES (378194, 'Thriller');
+INSERT INTO have_genre VALUES (380510, 'Drama');
+INSERT INTO have_genre VALUES (380510, 'Fantasy');
+INSERT INTO have_genre VALUES (380510, 'Thriller');
+INSERT INTO have_genre VALUES (381061, 'Action');
+INSERT INTO have_genre VALUES (381061, 'Adventure');
+INSERT INTO have_genre VALUES (381061, 'Thriller');
+INSERT INTO have_genre VALUES (381442, 'Comedy');
+INSERT INTO have_genre VALUES (382625, 'Mystery');
+INSERT INTO have_genre VALUES (382625, 'Thriller');
+INSERT INTO have_genre VALUES (386588, 'Comedy');
+INSERT INTO have_genre VALUES (386588, 'Romance');
+INSERT INTO have_genre VALUES (387877, 'Crime');
+INSERT INTO have_genre VALUES (387877, 'Drama');
+INSERT INTO have_genre VALUES (387877, 'Mystery');
+INSERT INTO have_genre VALUES (387877, 'Thriller');
+INSERT INTO have_genre VALUES (395169, 'Biography');
+INSERT INTO have_genre VALUES (395169, 'Drama');
+INSERT INTO have_genre VALUES (395169, 'History');
+INSERT INTO have_genre VALUES (395169, 'War');
+INSERT INTO have_genre VALUES (395699, 'Action');
+INSERT INTO have_genre VALUES (395699, 'Comedy');
+INSERT INTO have_genre VALUES (395699, 'Drama');
+INSERT INTO have_genre VALUES (395699, 'Family');
+INSERT INTO have_genre VALUES (401445, 'Comedy');
+INSERT INTO have_genre VALUES (401445, 'Drama');
+INSERT INTO have_genre VALUES (401445, 'Romance');
+INSERT INTO have_genre VALUES (401711, 'Comedy');
+INSERT INTO have_genre VALUES (401711, 'Drama');
+INSERT INTO have_genre VALUES (401711, 'Romance');
+INSERT INTO have_genre VALUES (401792, 'Crime');
+INSERT INTO have_genre VALUES (401792, 'Thriller');
+INSERT INTO have_genre VALUES (405159, 'Drama');
+INSERT INTO have_genre VALUES (405159, 'Sport');
+INSERT INTO have_genre VALUES (407304, 'Adventure');
+INSERT INTO have_genre VALUES (407304, 'Sci-Fi');
+INSERT INTO have_genre VALUES (407304, 'Thriller');
+INSERT INTO have_genre VALUES (407887, 'Crime');
+INSERT INTO have_genre VALUES (407887, 'Drama');
+INSERT INTO have_genre VALUES (407887, 'Thriller');
+INSERT INTO have_genre VALUES (408306, 'Action');
+INSERT INTO have_genre VALUES (408306, 'Drama');
+INSERT INTO have_genre VALUES (408306, 'History');
+INSERT INTO have_genre VALUES (408306, 'Thriller');
+INSERT INTO have_genre VALUES (408345, 'Crime');
+INSERT INTO have_genre VALUES (408345, 'Thriller');
+INSERT INTO have_genre VALUES (409847, 'Action');
+INSERT INTO have_genre VALUES (409847, 'Sci-Fi');
+INSERT INTO have_genre VALUES (409847, 'Thriller');
+INSERT INTO have_genre VALUES (409847, 'Western');
+INSERT INTO have_genre VALUES (411098, 'Drama');
+INSERT INTO have_genre VALUES (413300, 'Action');
+INSERT INTO have_genre VALUES (413300, 'Adventure');
+INSERT INTO have_genre VALUES (413300, 'Sci-Fi');
+INSERT INTO have_genre VALUES (413852, 'Comedy');
+INSERT INTO have_genre VALUES (413852, 'Thriller');
+INSERT INTO have_genre VALUES (413852, 'Mystery');
+INSERT INTO have_genre VALUES (416891, 'Comedy');
+INSERT INTO have_genre VALUES (418689, 'Action');
+INSERT INTO have_genre VALUES (418689, 'Adventure');
+INSERT INTO have_genre VALUES (418689, 'Drama');
+INSERT INTO have_genre VALUES (418689, 'History');
+INSERT INTO have_genre VALUES (418689, 'War');
+INSERT INTO have_genre VALUES (419749, 'Biography');
+INSERT INTO have_genre VALUES (419749, 'Comedy');
+INSERT INTO have_genre VALUES (419749, 'Crime');
+INSERT INTO have_genre VALUES (419749, 'Drama');
+INSERT INTO have_genre VALUES (425112, 'Action');
+INSERT INTO have_genre VALUES (425112, 'Comedy');
+INSERT INTO have_genre VALUES (425112, 'Mystery');
+INSERT INTO have_genre VALUES (425112, 'Thriller');
+INSERT INTO have_genre VALUES (425637, 'Action');
+INSERT INTO have_genre VALUES (425637, 'Adventure');
+INSERT INTO have_genre VALUES (425637, 'Drama');
+INSERT INTO have_genre VALUES (425637, 'History');
+INSERT INTO have_genre VALUES (425637, 'War');
+INSERT INTO have_genre VALUES (435761, 'Animation');
+INSERT INTO have_genre VALUES (435761, 'Adventure');
+INSERT INTO have_genre VALUES (435761, 'Comedy');
+INSERT INTO have_genre VALUES (435761, 'Family');
+INSERT INTO have_genre VALUES (435761, 'Fantasy');
+INSERT INTO have_genre VALUES (443272, 'Biography');
+INSERT INTO have_genre VALUES (443272, 'Drama');
+INSERT INTO have_genre VALUES (443272, 'History');
+INSERT INTO have_genre VALUES (443272, 'War');
+INSERT INTO have_genre VALUES (448134, 'Sci-Fi');
+INSERT INTO have_genre VALUES (448134, 'Thriller');
+INSERT INTO have_genre VALUES (448157, 'Action');
+INSERT INTO have_genre VALUES (448157, 'Fantasy');
+INSERT INTO have_genre VALUES (453562, 'Biography');
+INSERT INTO have_genre VALUES (453562, 'Drama');
+INSERT INTO have_genre VALUES (453562, 'Sport');
+INSERT INTO have_genre VALUES (454921, 'Biography');
+INSERT INTO have_genre VALUES (454921, 'Drama');
+INSERT INTO have_genre VALUES (457409, 'Drama');
+INSERT INTO have_genre VALUES (458471, 'Action');
+INSERT INTO have_genre VALUES (458471, 'Thriller');
+INSERT INTO have_genre VALUES (458471, 'War');
+INSERT INTO have_genre VALUES (460810, 'Adventure');
+INSERT INTO have_genre VALUES (460810, 'Comedy');
+INSERT INTO have_genre VALUES (460810, 'Drama');
+INSERT INTO have_genre VALUES (462322, 'Action');
+INSERT INTO have_genre VALUES (462322, 'Horror');
+INSERT INTO have_genre VALUES (462322, 'Thriller');
+INSERT INTO have_genre VALUES (462329, 'Action');
+INSERT INTO have_genre VALUES (462329, 'Thriller');
+INSERT INTO have_genre VALUES (462499, 'Action');
+INSERT INTO have_genre VALUES (462499, 'Thriller');
+INSERT INTO have_genre VALUES (462538, 'Animation');
+INSERT INTO have_genre VALUES (462538, 'Adventure');
+INSERT INTO have_genre VALUES (462538, 'Comedy');
+INSERT INTO have_genre VALUES (463985, 'Action');
+INSERT INTO have_genre VALUES (463985, 'Crime');
+INSERT INTO have_genre VALUES (463985, 'Thriller');
+INSERT INTO have_genre VALUES (468492, 'Action');
+INSERT INTO have_genre VALUES (468492, 'Drama');
+INSERT INTO have_genre VALUES (468492, 'Horror');
+INSERT INTO have_genre VALUES (468492, 'Sci-Fi');
+INSERT INTO have_genre VALUES (468569, 'Action');
+INSERT INTO have_genre VALUES (468569, 'Crime');
+INSERT INTO have_genre VALUES (468569, 'Drama');
+INSERT INTO have_genre VALUES (468569, 'Thriller');
+INSERT INTO have_genre VALUES (472062, 'Biography');
+INSERT INTO have_genre VALUES (472062, 'Comedy');
+INSERT INTO have_genre VALUES (472062, 'Drama');
+INSERT INTO have_genre VALUES (472062, 'History');
+INSERT INTO have_genre VALUES (475290, 'Comedy');
+INSERT INTO have_genre VALUES (475290, 'Drama');
+INSERT INTO have_genre VALUES (475290, 'Music');
+INSERT INTO have_genre VALUES (475290, 'Mystery');
+INSERT INTO have_genre VALUES (475343, 'Comedy');
+INSERT INTO have_genre VALUES (475343, 'Horror');
+INSERT INTO have_genre VALUES (477302, 'Adventure');
+INSERT INTO have_genre VALUES (477302, 'Drama');
+INSERT INTO have_genre VALUES (477302, 'Mystery');
+INSERT INTO have_genre VALUES (477348, 'Crime');
+INSERT INTO have_genre VALUES (477348, 'Drama');
+INSERT INTO have_genre VALUES (477348, 'Thriller');
+INSERT INTO have_genre VALUES (479143, 'Action');
+INSERT INTO have_genre VALUES (479143, 'Drama');
+INSERT INTO have_genre VALUES (479143, 'Sport');
+INSERT INTO have_genre VALUES (480249, 'Action');
+INSERT INTO have_genre VALUES (480249, 'Adventure');
+INSERT INTO have_genre VALUES (480249, 'Drama');
+INSERT INTO have_genre VALUES (480249, 'Sci-Fi');
+INSERT INTO have_genre VALUES (480249, 'Thriller');
+INSERT INTO have_genre VALUES (482571, 'Drama');
+INSERT INTO have_genre VALUES (482571, 'Mystery');
+INSERT INTO have_genre VALUES (482571, 'Sci-Fi');
+INSERT INTO have_genre VALUES (482571, 'Thriller');
+INSERT INTO have_genre VALUES (490215, 'Drama');
+INSERT INTO have_genre VALUES (490215, 'History');
+INSERT INTO have_genre VALUES (498380, 'Action');
+INSERT INTO have_genre VALUES (498380, 'Adventure');
+INSERT INTO have_genre VALUES (498380, 'Drama');
+INSERT INTO have_genre VALUES (498380, 'History');
+INSERT INTO have_genre VALUES (498380, 'War');
+INSERT INTO have_genre VALUES (498399, 'Crime');
+INSERT INTO have_genre VALUES (498399, 'Drama');
+INSERT INTO have_genre VALUES (498399, 'Thriller');
+INSERT INTO have_genre VALUES (499549, 'Action');
+INSERT INTO have_genre VALUES (499549, 'Adventure');
+INSERT INTO have_genre VALUES (499549, 'Fantasy');
+INSERT INTO have_genre VALUES (499549, 'Sci-Fi');
+INSERT INTO have_genre VALUES (758774, 'Action');
+INSERT INTO have_genre VALUES (758774, 'Drama');
+INSERT INTO have_genre VALUES (758774, 'Thriller');
+INSERT INTO have_genre VALUES (765429, 'Biography');
+INSERT INTO have_genre VALUES (765429, 'Crime');
+INSERT INTO have_genre VALUES (765429, 'Drama');
+INSERT INTO have_genre VALUES (765429, 'Thriller');
+INSERT INTO have_genre VALUES (783598, 'Crime');
+INSERT INTO have_genre VALUES (783598, 'Drama');
+INSERT INTO have_genre VALUES (783598, 'Thriller');
+INSERT INTO have_genre VALUES (808151, 'Action');
+INSERT INTO have_genre VALUES (808151, 'Mystery');
+INSERT INTO have_genre VALUES (808151, 'Thriller');
+INSERT INTO have_genre VALUES (808399, 'Comedy');
+INSERT INTO have_genre VALUES (808399, 'Drama');
+INSERT INTO have_genre VALUES (808399, 'Romance');
+INSERT INTO have_genre VALUES (814314, 'Drama');
+INSERT INTO have_genre VALUES (816692, 'Adventure');
+INSERT INTO have_genre VALUES (816692, 'Drama');
+INSERT INTO have_genre VALUES (816692, 'Sci-Fi');
+INSERT INTO have_genre VALUES (816692, 'Thriller');
+INSERT INTO have_genre VALUES (824747, 'Biography');
+INSERT INTO have_genre VALUES (824747, 'Crime');
+INSERT INTO have_genre VALUES (824747, 'Drama');
+INSERT INTO have_genre VALUES (824747, 'History');
+INSERT INTO have_genre VALUES (824747, 'Mystery');
+INSERT INTO have_genre VALUES (824747, 'Thriller');
+INSERT INTO have_genre VALUES (826631, 'Comedy');
+INSERT INTO have_genre VALUES (826631, 'Drama');
+INSERT INTO have_genre VALUES (827521, 'Action');
+INSERT INTO have_genre VALUES (827521, 'Crime');
+INSERT INTO have_genre VALUES (827521, 'Thriller');
+INSERT INTO have_genre VALUES (830515, 'Action');
+INSERT INTO have_genre VALUES (830515, 'Adventure');
+INSERT INTO have_genre VALUES (830515, 'Thriller');
+INSERT INTO have_genre VALUES (831884, 'Crime');
+INSERT INTO have_genre VALUES (831884, 'Drama');
+INSERT INTO have_genre VALUES (831884, 'Thriller');
+INSERT INTO have_genre VALUES (848557, 'Fantasy');
+INSERT INTO have_genre VALUES (848557, 'Horror');
+INSERT INTO have_genre VALUES (848557, 'Sci-Fi');
+INSERT INTO have_genre VALUES (848557, 'Thriller');
+INSERT INTO have_genre VALUES (851471, 'Animation');
+INSERT INTO have_genre VALUES (851471, 'Adventure');
+INSERT INTO have_genre VALUES (851471, 'Comedy');
+INSERT INTO have_genre VALUES (874886, 'Comedy');
+INSERT INTO have_genre VALUES (874886, 'Drama');
+INSERT INTO have_genre VALUES (874886, 'Romance');
+INSERT INTO have_genre VALUES (887883, 'Comedy');
+INSERT INTO have_genre VALUES (887883, 'Crime');
+INSERT INTO have_genre VALUES (887883, 'Drama');
+INSERT INTO have_genre VALUES (887883, 'Thriller');
+INSERT INTO have_genre VALUES (903624, 'Adventure');
+INSERT INTO have_genre VALUES (903624, 'Family');
+INSERT INTO have_genre VALUES (903624, 'Fantasy');
+INSERT INTO have_genre VALUES (906665, 'Action');
+INSERT INTO have_genre VALUES (906665, 'Western');
+INSERT INTO have_genre VALUES (924129, 'Crime');
+INSERT INTO have_genre VALUES (924129, 'Drama');
+INSERT INTO have_genre VALUES (937237, 'Crime');
+INSERT INTO have_genre VALUES (937237, 'Thriller');
+INSERT INTO have_genre VALUES (937237, 'War');
+INSERT INTO have_genre VALUES (955308, 'Action');
+INSERT INTO have_genre VALUES (955308, 'Adventure');
+INSERT INTO have_genre VALUES (955308, 'Drama');
+INSERT INTO have_genre VALUES (955308, 'History');
+INSERT INTO have_genre VALUES (959306, 'Comedy');
+INSERT INTO have_genre VALUES (959306, 'Crime');
+INSERT INTO have_genre VALUES (959306, 'Drama');
+INSERT INTO have_genre VALUES (970179, 'Drama');
+INSERT INTO have_genre VALUES (970179, 'Family');
+INSERT INTO have_genre VALUES (970179, 'Fantasy');
+INSERT INTO have_genre VALUES (970179, 'Mystery');
+INSERT INTO have_genre VALUES (973844, 'Comedy');
+INSERT INTO have_genre VALUES (973844, 'Drama');
+INSERT INTO have_genre VALUES (976060, 'Comedy');
+INSERT INTO have_genre VALUES (976060, 'Drama');
+INSERT INTO have_genre VALUES (976060, 'Fantasy');
+INSERT INTO have_genre VALUES (983193, 'Animation');
+INSERT INTO have_genre VALUES (983193, 'Action');
+INSERT INTO have_genre VALUES (983193, 'Adventure');
+INSERT INTO have_genre VALUES (983193, 'Family');
+INSERT INTO have_genre VALUES (983193, 'Mystery');
+INSERT INTO have_genre VALUES (986233, 'Biography');
+INSERT INTO have_genre VALUES (986233, 'Drama');
+INSERT INTO have_genre VALUES (993846, 'Biography');
+INSERT INTO have_genre VALUES (993846, 'Crime');
+INSERT INTO have_genre VALUES (993846, 'Drama');
+INSERT INTO have_genre VALUES (1010048, 'Drama');
+INSERT INTO have_genre VALUES (1010048, 'Romance');
+INSERT INTO have_genre VALUES (1013752, 'Action');
+INSERT INTO have_genre VALUES (1013752, 'Thriller');
+INSERT INTO have_genre VALUES (1019452, 'Comedy');
+INSERT INTO have_genre VALUES (1019452, 'Drama');
+INSERT INTO have_genre VALUES (1025100, 'Action');
+INSERT INTO have_genre VALUES (1025100, 'Drama');
+INSERT INTO have_genre VALUES (1025100, 'Sci-Fi');
+INSERT INTO have_genre VALUES (1025100, 'Thriller');
+INSERT INTO have_genre VALUES (1028528, 'Action');
+INSERT INTO have_genre VALUES (1028528, 'Adventure');
+INSERT INTO have_genre VALUES (1028528, 'Thriller');
+INSERT INTO have_genre VALUES (1057500, 'Biography');
+INSERT INTO have_genre VALUES (1057500, 'Drama');
+INSERT INTO have_genre VALUES (1057500, 'History');
+INSERT INTO have_genre VALUES (1057500, 'Sport');
+INSERT INTO have_genre VALUES (1074638, 'Action');
+INSERT INTO have_genre VALUES (1074638, 'Adventure');
+INSERT INTO have_genre VALUES (1074638, 'Thriller');
+INSERT INTO have_genre VALUES (1077258, 'Action');
+INSERT INTO have_genre VALUES (1077258, 'Adventure');
+INSERT INTO have_genre VALUES (1077258, 'Comedy');
+INSERT INTO have_genre VALUES (1077258, 'Horror');
+INSERT INTO have_genre VALUES (1077258, 'Thriller');
+INSERT INTO have_genre VALUES (1092026, 'Adventure');
+INSERT INTO have_genre VALUES (1092026, 'Comedy');
+INSERT INTO have_genre VALUES (1092026, 'Sci-Fi');
+INSERT INTO have_genre VALUES (1103275, 'Drama');
+INSERT INTO have_genre VALUES (1103275, 'Romance');
+INSERT INTO have_genre VALUES (1126618, 'Comedy');
+INSERT INTO have_genre VALUES (1126618, 'Drama');
+INSERT INTO have_genre VALUES (1126618, 'Romance');
+INSERT INTO have_genre VALUES (1127180, 'Horror');
+INSERT INTO have_genre VALUES (1127180, 'Thriller');
+INSERT INTO have_genre VALUES (1130884, 'Mystery');
+INSERT INTO have_genre VALUES (1130884, 'Thriller');
+INSERT INTO have_genre VALUES (1130988, 'Comedy');
+INSERT INTO have_genre VALUES (1130988, 'Crime');
+INSERT INTO have_genre VALUES (1130988, 'Drama');
+INSERT INTO have_genre VALUES (1135989, 'Biography');
+INSERT INTO have_genre VALUES (1135989, 'Drama');
+INSERT INTO have_genre VALUES (1135989, 'History');
+INSERT INTO have_genre VALUES (1135989, 'Mystery');
+INSERT INTO have_genre VALUES (1135989, 'Romance');
+INSERT INTO have_genre VALUES (1135989, 'War');
+INSERT INTO have_genre VALUES (1144804, 'Action');
+INSERT INTO have_genre VALUES (1144804, 'Comedy');
+INSERT INTO have_genre VALUES (1144804, 'Romance');
+INSERT INTO have_genre VALUES (1164607, 'Action');
+INSERT INTO have_genre VALUES (1164607, 'Adventure');
+INSERT INTO have_genre VALUES (1170358, 'Adventure');
+INSERT INTO have_genre VALUES (1170358, 'Fantasy');
+INSERT INTO have_genre VALUES (1173949, 'Comedy');
+INSERT INTO have_genre VALUES (1205489, 'Drama');
+INSERT INTO have_genre VALUES (1206885, 'Action');
+INSERT INTO have_genre VALUES (1206885, 'Thriller');
+INSERT INTO have_genre VALUES (1211956, 'Action');
+INSERT INTO have_genre VALUES (1211956, 'Thriller');
+INSERT INTO have_genre VALUES (1212419, 'Drama');
+INSERT INTO have_genre VALUES (1212419, 'Fantasy');
+INSERT INTO have_genre VALUES (1212419, 'Romance');
+INSERT INTO have_genre VALUES (1216496, 'Crime');
+INSERT INTO have_genre VALUES (1216496, 'Drama');
+INSERT INTO have_genre VALUES (1216496, 'Thriller');
+INSERT INTO have_genre VALUES (1222817, 'Comedy');
+INSERT INTO have_genre VALUES (1222817, 'Family');
+INSERT INTO have_genre VALUES (1222817, 'Fantasy');
+INSERT INTO have_genre VALUES (1222817, 'Romance');
+INSERT INTO have_genre VALUES (1229340, 'Comedy');
+INSERT INTO have_genre VALUES (1244659, 'Drama');
+INSERT INTO have_genre VALUES (1286146, 'Action');
+INSERT INTO have_genre VALUES (1286146, 'Crime');
+INSERT INTO have_genre VALUES (1286146, 'Drama');
+INSERT INTO have_genre VALUES (1286146, 'Romance');
+INSERT INTO have_genre VALUES (1288403, 'Action');
+INSERT INTO have_genre VALUES (1288403, 'Adventure');
+INSERT INTO have_genre VALUES (1288403, 'Sci-Fi');
+INSERT INTO have_genre VALUES (1293847, 'Action');
+INSERT INTO have_genre VALUES (1293847, 'Adventure');
+INSERT INTO have_genre VALUES (1293847, 'Thriller');
+INSERT INTO have_genre VALUES (1302006, 'Biography');
+INSERT INTO have_genre VALUES (1302006, 'Crime');
+INSERT INTO have_genre VALUES (1302006, 'Drama');
+INSERT INTO have_genre VALUES (1302011, 'Animation');
+INSERT INTO have_genre VALUES (1302011, 'Action');
+INSERT INTO have_genre VALUES (1302011, 'Adventure');
+INSERT INTO have_genre VALUES (1302011, 'Comedy');
+INSERT INTO have_genre VALUES (1302011, 'Family');
+INSERT INTO have_genre VALUES (1302011, 'Fantasy');
+INSERT INTO have_genre VALUES (1308729, 'Action');
+INSERT INTO have_genre VALUES (1308729, 'Crime');
+INSERT INTO have_genre VALUES (1308729, 'Thriller');
+INSERT INTO have_genre VALUES (1320253, 'Action');
+INSERT INTO have_genre VALUES (1320253, 'Adventure');
+INSERT INTO have_genre VALUES (1320253, 'Thriller');
+INSERT INTO have_genre VALUES (1326972, 'Action');
+INSERT INTO have_genre VALUES (1326972, 'Drama');
+INSERT INTO have_genre VALUES (1326972, 'History');
+INSERT INTO have_genre VALUES (1326972, 'War');
+INSERT INTO have_genre VALUES (1340138, 'Action');
+INSERT INTO have_genre VALUES (1340138, 'Adventure');
+INSERT INTO have_genre VALUES (1340138, 'Sci-Fi');
+INSERT INTO have_genre VALUES (1340138, 'Thriller');
+INSERT INTO have_genre VALUES (1345836, 'Action');
+INSERT INTO have_genre VALUES (1345836, 'Adventure');
+INSERT INTO have_genre VALUES (1356864, 'Comedy');
+INSERT INTO have_genre VALUES (1356864, 'Drama');
+INSERT INTO have_genre VALUES (1356864, 'Music');
+INSERT INTO have_genre VALUES (1371111, 'Action');
+INSERT INTO have_genre VALUES (1371111, 'Drama');
+INSERT INTO have_genre VALUES (1371111, 'Mystery');
+INSERT INTO have_genre VALUES (1371111, 'Sci-Fi');
+INSERT INTO have_genre VALUES (1375666, 'Action');
+INSERT INTO have_genre VALUES (1375666, 'Adventure');
+INSERT INTO have_genre VALUES (1375666, 'Sci-Fi');
+INSERT INTO have_genre VALUES (1375666, 'Thriller');
+INSERT INTO have_genre VALUES (1386697, 'Action');
+INSERT INTO have_genre VALUES (1386697, 'Adventure');
+INSERT INTO have_genre VALUES (1386697, 'Fantasy');
+INSERT INTO have_genre VALUES (1386697, 'Sci-Fi');
+INSERT INTO have_genre VALUES (1403865, 'Drama');
+INSERT INTO have_genre VALUES (1403865, 'Western');
+INSERT INTO have_genre VALUES (1409024, 'Action');
+INSERT INTO have_genre VALUES (1409024, 'Adventure');
+INSERT INTO have_genre VALUES (1409024, 'Comedy');
+INSERT INTO have_genre VALUES (1409024, 'Sci-Fi');
+INSERT INTO have_genre VALUES (1411250, 'Action');
+INSERT INTO have_genre VALUES (1411250, 'Adventure');
+INSERT INTO have_genre VALUES (1411250, 'Sci-Fi');
+INSERT INTO have_genre VALUES (1411250, 'Thriller');
+INSERT INTO have_genre VALUES (1413495, 'Drama');
+INSERT INTO have_genre VALUES (1413495, 'Thriller');
+INSERT INTO have_genre VALUES (1436568, 'Action');
+INSERT INTO have_genre VALUES (1436568, 'Crime');
+INSERT INTO have_genre VALUES (1436568, 'Drama');
+INSERT INTO have_genre VALUES (1436568, 'Thriller');
+INSERT INTO have_genre VALUES (1438461, 'Drama');
+INSERT INTO have_genre VALUES (1438461, 'History');
+INSERT INTO have_genre VALUES (1438461, 'War');
+INSERT INTO have_genre VALUES (1446714, 'Adventure');
+INSERT INTO have_genre VALUES (1446714, 'Mystery');
+INSERT INTO have_genre VALUES (1446714, 'Sci-Fi');
+INSERT INTO have_genre VALUES (1460743, 'Action');
+INSERT INTO have_genre VALUES (1460743, 'Adventure');
+INSERT INTO have_genre VALUES (1502397, 'Action');
+INSERT INTO have_genre VALUES (1502397, 'Comedy');
+INSERT INTO have_genre VALUES (1502397, 'Crime');
+INSERT INTO have_genre VALUES (1502397, 'Thriller');
+INSERT INTO have_genre VALUES (1528100, 'Action');
+INSERT INTO have_genre VALUES (1528100, 'Drama');
+INSERT INTO have_genre VALUES (1528100, 'Fantasy');
+INSERT INTO have_genre VALUES (1535109, 'Biography');
+INSERT INTO have_genre VALUES (1535109, 'Crime');
+INSERT INTO have_genre VALUES (1535109, 'Drama');
+INSERT INTO have_genre VALUES (1535109, 'Thriller');
+INSERT INTO have_genre VALUES (1542344, 'Biography');
+INSERT INTO have_genre VALUES (1542344, 'Drama');
+INSERT INTO have_genre VALUES (1549920, 'Action');
+INSERT INTO have_genre VALUES (1549920, 'Thriller');
+INSERT INTO have_genre VALUES (1560747, 'Drama');
+INSERT INTO have_genre VALUES (1568911, 'Action');
+INSERT INTO have_genre VALUES (1568911, 'Adventure');
+INSERT INTO have_genre VALUES (1568911, 'Drama');
+INSERT INTO have_genre VALUES (1568911, 'History');
+INSERT INTO have_genre VALUES (1568911, 'War');
+INSERT INTO have_genre VALUES (1583420, 'Comedy');
+INSERT INTO have_genre VALUES (1583420, 'Drama');
+INSERT INTO have_genre VALUES (1583420, 'Romance');
+INSERT INTO have_genre VALUES (1596343, 'Action');
+INSERT INTO have_genre VALUES (1596343, 'Adventure');
+INSERT INTO have_genre VALUES (1596343, 'Crime');
+INSERT INTO have_genre VALUES (1596343, 'Thriller');
+INSERT INTO have_genre VALUES (1616195, 'Biography');
+INSERT INTO have_genre VALUES (1616195, 'Drama');
+INSERT INTO have_genre VALUES (1616195, 'Romance');
+INSERT INTO have_genre VALUES (1618442, 'Action');
+INSERT INTO have_genre VALUES (1618442, 'Adventure');
+INSERT INTO have_genre VALUES (1618442, 'Fantasy');
+INSERT INTO have_genre VALUES (1623205, 'Adventure');
+INSERT INTO have_genre VALUES (1623205, 'Family');
+INSERT INTO have_genre VALUES (1623205, 'Fantasy');
+INSERT INTO have_genre VALUES (1634106, 'Action');
+INSERT INTO have_genre VALUES (1634106, 'Drama');
+INSERT INTO have_genre VALUES (1634106, 'Sci-Fi');
+INSERT INTO have_genre VALUES (1655441, 'Drama');
+INSERT INTO have_genre VALUES (1655441, 'Fantasy');
+INSERT INTO have_genre VALUES (1655441, 'Romance');
+INSERT INTO have_genre VALUES (1659343, 'Action');
+INSERT INTO have_genre VALUES (1659343, 'Horror');
+INSERT INTO have_genre VALUES (1659343, 'Mystery');
+INSERT INTO have_genre VALUES (1659343, 'Sci-Fi');
+INSERT INTO have_genre VALUES (1659343, 'Thriller');
+INSERT INTO have_genre VALUES (1661382, 'Comedy');
+INSERT INTO have_genre VALUES (1661382, 'Drama');
+INSERT INTO have_genre VALUES (1661382, 'Sport');
+INSERT INTO have_genre VALUES (1677720, 'Action');
+INSERT INTO have_genre VALUES (1677720, 'Adventure');
+INSERT INTO have_genre VALUES (1677720, 'Sci-Fi');
+INSERT INTO have_genre VALUES (1699513, 'Drama');
+INSERT INTO have_genre VALUES (1699513, 'History');
+INSERT INTO have_genre VALUES (1706620, 'Action');
+INSERT INTO have_genre VALUES (1706620, 'Drama');
+INSERT INTO have_genre VALUES (1706620, 'Sci-Fi');
+INSERT INTO have_genre VALUES (1723811, 'Drama');
+INSERT INTO have_genre VALUES (1728245, 'Comedy');
+INSERT INTO have_genre VALUES (1731141, 'Action');
+INSERT INTO have_genre VALUES (1731141, 'Adventure');
+INSERT INTO have_genre VALUES (1731141, 'Fantasy');
+INSERT INTO have_genre VALUES (1731141, 'Sci-Fi');
+INSERT INTO have_genre VALUES (1735862, 'Action');
+INSERT INTO have_genre VALUES (1735862, 'Crime');
+INSERT INTO have_genre VALUES (1735862, 'Drama');
+INSERT INTO have_genre VALUES (1735862, 'Thriller');
+INSERT INTO have_genre VALUES (1742044, 'Biography');
+INSERT INTO have_genre VALUES (1742044, 'Drama');
+INSERT INTO have_genre VALUES (1742044, 'Music');
+INSERT INTO have_genre VALUES (1742044, 'Musical');
+INSERT INTO have_genre VALUES (1742334, 'Action');
+INSERT INTO have_genre VALUES (1742334, 'Crime');
+INSERT INTO have_genre VALUES (1742334, 'Drama');
+INSERT INTO have_genre VALUES (1742334, 'Thriller');
+INSERT INTO have_genre VALUES (1764651, 'Action');
+INSERT INTO have_genre VALUES (1764651, 'Adventure');
+INSERT INTO have_genre VALUES (1764651, 'Thriller');
+INSERT INTO have_genre VALUES (1767372, 'Comedy');
+INSERT INTO have_genre VALUES (1767372, 'Drama');
+INSERT INTO have_genre VALUES (1791528, 'Comedy');
+INSERT INTO have_genre VALUES (1791528, 'Crime');
+INSERT INTO have_genre VALUES (1791528, 'Drama');
+INSERT INTO have_genre VALUES (1791528, 'Mystery');
+INSERT INTO have_genre VALUES (1791528, 'Romance');
+INSERT INTO have_genre VALUES (1795369, 'Drama');
+INSERT INTO have_genre VALUES (1795369, 'Sci-Fi');
+INSERT INTO have_genre VALUES (1798709, 'Drama');
+INSERT INTO have_genre VALUES (1798709, 'Romance');
+INSERT INTO have_genre VALUES (1798709, 'Sci-Fi');
+INSERT INTO have_genre VALUES (1813593, 'Action');
+INSERT INTO have_genre VALUES (1813593, 'Adventure');
+INSERT INTO have_genre VALUES (1813593, 'Comedy');
+INSERT INTO have_genre VALUES (1813593, 'Crime');
+INSERT INTO have_genre VALUES (1813593, 'Fantasy');
+INSERT INTO have_genre VALUES (1813593, 'Horror');
+INSERT INTO have_genre VALUES (1813593, 'Thriller');
+INSERT INTO have_genre VALUES (1815862, 'Action');
+INSERT INTO have_genre VALUES (1815862, 'Adventure');
+INSERT INTO have_genre VALUES (1815862, 'Sci-Fi');
+INSERT INTO have_genre VALUES (1825784, 'Comedy');
+INSERT INTO have_genre VALUES (1829012, 'Drama');
+INSERT INTO have_genre VALUES (1829012, 'Mystery');
+INSERT INTO have_genre VALUES (1829012, 'Thriller');
+INSERT INTO have_genre VALUES (1830499, 'Comedy');
+INSERT INTO have_genre VALUES (1830499, 'Crime');
+INSERT INTO have_genre VALUES (1837709, 'Drama');
+INSERT INTO have_genre VALUES (1837709, 'Fantasy');
+INSERT INTO have_genre VALUES (1837709, 'Mystery');
+INSERT INTO have_genre VALUES (1837709, 'Romance');
+INSERT INTO have_genre VALUES (1838609, 'Comedy');
+INSERT INTO have_genre VALUES (1853728, 'Drama');
+INSERT INTO have_genre VALUES (1853728, 'Western');
+INSERT INTO have_genre VALUES (1856101, 'Action');
+INSERT INTO have_genre VALUES (1856101, 'Drama');
+INSERT INTO have_genre VALUES (1856101, 'Mystery');
+INSERT INTO have_genre VALUES (1856101, 'Sci-Fi');
+INSERT INTO have_genre VALUES (1856101, 'Thriller');
+INSERT INTO have_genre VALUES (1881002, 'Drama');
+INSERT INTO have_genre VALUES (1881002, 'Horror');
+INSERT INTO have_genre VALUES (1905041, 'Action');
+INSERT INTO have_genre VALUES (1905041, 'Adventure');
+INSERT INTO have_genre VALUES (1905041, 'Thriller');
+INSERT INTO have_genre VALUES (1924429, 'Crime');
+INSERT INTO have_genre VALUES (1924429, 'Drama');
+INSERT INTO have_genre VALUES (1924429, 'Mystery');
+INSERT INTO have_genre VALUES (1924429, 'Thriller');
+INSERT INTO have_genre VALUES (1951181, 'Drama');
+INSERT INTO have_genre VALUES (1951181, 'Romance');
+INSERT INTO have_genre VALUES (1959602, 'Horror');
+INSERT INTO have_genre VALUES (1975249, 'Action');
+INSERT INTO have_genre VALUES (1975249, 'Crime');
+INSERT INTO have_genre VALUES (1975249, 'Drama');
+INSERT INTO have_genre VALUES (1975249, 'Thriller');
+INSERT INTO have_genre VALUES (1979376, 'Animation');
+INSERT INTO have_genre VALUES (1979376, 'Adventure');
+INSERT INTO have_genre VALUES (1979376, 'Comedy');
+INSERT INTO have_genre VALUES (1979376, 'Family');
+INSERT INTO have_genre VALUES (1979376, 'Fantasy');
+INSERT INTO have_genre VALUES (2015381, 'Action');
+INSERT INTO have_genre VALUES (2015381, 'Adventure');
+INSERT INTO have_genre VALUES (2015381, 'Comedy');
+INSERT INTO have_genre VALUES (2015381, 'Sci-Fi');
+INSERT INTO have_genre VALUES (2024544, 'Biography');
+INSERT INTO have_genre VALUES (2024544, 'Drama');
+INSERT INTO have_genre VALUES (2024544, 'History');
+INSERT INTO have_genre VALUES (2040578, 'Comedy');
+INSERT INTO have_genre VALUES (2040578, 'Horror');
+INSERT INTO have_genre VALUES (2040578, 'Sci-Fi');
+INSERT INTO have_genre VALUES (2042568, 'Comedy');
+INSERT INTO have_genre VALUES (2042568, 'Drama');
+INSERT INTO have_genre VALUES (2042568, 'Music');
+INSERT INTO have_genre VALUES (2080374, 'Biography');
+INSERT INTO have_genre VALUES (2080374, 'Drama');
+INSERT INTO have_genre VALUES (2083383, 'Drama');
+INSERT INTO have_genre VALUES (2083383, 'Sport');
+INSERT INTO have_genre VALUES (2112277, 'Action');
+INSERT INTO have_genre VALUES (2112277, 'Crime');
+INSERT INTO have_genre VALUES (2112277, 'Drama');
+INSERT INTO have_genre VALUES (2112277, 'Thriller');
+INSERT INTO have_genre VALUES (2140373, 'Biography');
+INSERT INTO have_genre VALUES (2140373, 'Comedy');
+INSERT INTO have_genre VALUES (2140373, 'Drama');
+INSERT INTO have_genre VALUES (2150371, 'Drama');
+INSERT INTO have_genre VALUES (2150371, 'History');
+INSERT INTO have_genre VALUES (2150371, 'Romance');
+INSERT INTO have_genre VALUES (2150371, 'War');
+INSERT INTO have_genre VALUES (2179136, 'Action');
+INSERT INTO have_genre VALUES (2179136, 'Biography');
+INSERT INTO have_genre VALUES (2179136, 'Drama');
+INSERT INTO have_genre VALUES (2179136, 'War');
+INSERT INTO have_genre VALUES (2193215, 'Crime');
+INSERT INTO have_genre VALUES (2193215, 'Drama');
+INSERT INTO have_genre VALUES (2193215, 'Thriller');
+INSERT INTO have_genre VALUES (2193265, 'Action');
+INSERT INTO have_genre VALUES (2193265, 'Adventure');
+INSERT INTO have_genre VALUES (2193265, 'Comedy');
+INSERT INTO have_genre VALUES (2267968, 'Animation');
+INSERT INTO have_genre VALUES (2267968, 'Action');
+INSERT INTO have_genre VALUES (2267968, 'Adventure');
+INSERT INTO have_genre VALUES (2267968, 'Comedy');
+INSERT INTO have_genre VALUES (2267968, 'Family');
+INSERT INTO have_genre VALUES (2267968, 'Fantasy');
+INSERT INTO have_genre VALUES (2297164, 'Comedy');
+INSERT INTO have_genre VALUES (2297164, 'Drama');
+INSERT INTO have_genre VALUES (2297164, 'Fantasy');
+INSERT INTO have_genre VALUES (2297164, 'Sci-Fi');
+INSERT INTO have_genre VALUES (2305700, 'Sport');
+INSERT INTO have_genre VALUES (2310332, 'Adventure');
+INSERT INTO have_genre VALUES (2310332, 'Fantasy');
+INSERT INTO have_genre VALUES (2316204, 'Horror');
+INSERT INTO have_genre VALUES (2316204, 'Sci-Fi');
+INSERT INTO have_genre VALUES (2316204, 'Thriller');
+INSERT INTO have_genre VALUES (2333784, 'Action');
+INSERT INTO have_genre VALUES (2333784, 'Adventure');
+INSERT INTO have_genre VALUES (2333784, 'Thriller');
+INSERT INTO have_genre VALUES (2379713, 'Action');
+INSERT INTO have_genre VALUES (2379713, 'Adventure');
+INSERT INTO have_genre VALUES (2379713, 'Thriller');
+INSERT INTO have_genre VALUES (2381941, 'Comedy');
+INSERT INTO have_genre VALUES (2381941, 'Crime');
+INSERT INTO have_genre VALUES (2381941, 'Drama');
+INSERT INTO have_genre VALUES (2381941, 'Romance');
+INSERT INTO have_genre VALUES (2395199, 'Action');
+INSERT INTO have_genre VALUES (2395199, 'Thriller');
+INSERT INTO have_genre VALUES (2488496, 'Action');
+INSERT INTO have_genre VALUES (2488496, 'Adventure');
+INSERT INTO have_genre VALUES (2488496, 'Sci-Fi');
+INSERT INTO have_genre VALUES (2513074, 'Action');
+INSERT INTO have_genre VALUES (2513074, 'Drama');
+INSERT INTO have_genre VALUES (2513074, 'Sport');
+INSERT INTO have_genre VALUES (2513074, 'Thriller');
+INSERT INTO have_genre VALUES (2513074, 'War');
+INSERT INTO have_genre VALUES (2527338, 'Action');
+INSERT INTO have_genre VALUES (2527338, 'Adventure');
+INSERT INTO have_genre VALUES (2527338, 'Fantasy');
+INSERT INTO have_genre VALUES (2527338, 'Sci-Fi');
+INSERT INTO have_genre VALUES (2639514, 'Action');
+INSERT INTO have_genre VALUES (2639514, 'Sci-Fi');
+INSERT INTO have_genre VALUES (2763304, 'Drama');
+INSERT INTO have_genre VALUES (2820852, 'Action');
+INSERT INTO have_genre VALUES (2820852, 'Adventure');
+INSERT INTO have_genre VALUES (2820852, 'Thriller');
+INSERT INTO have_genre VALUES (2865120, 'Animation');
+INSERT INTO have_genre VALUES (2865120, 'Action');
+INSERT INTO have_genre VALUES (2865120, 'Adventure');
+INSERT INTO have_genre VALUES (2865120, 'Comedy');
+INSERT INTO have_genre VALUES (2865120, 'Family');
+INSERT INTO have_genre VALUES (2865120, 'Fantasy');
+INSERT INTO have_genre VALUES (2865120, 'Sci-Fi');
+INSERT INTO have_genre VALUES (2980210, 'Comedy');
+INSERT INTO have_genre VALUES (2980210, 'Drama');
+INSERT INTO have_genre VALUES (2980210, 'Romance');
+INSERT INTO have_genre VALUES (3040964, 'Adventure');
+INSERT INTO have_genre VALUES (3040964, 'Drama');
+INSERT INTO have_genre VALUES (3040964, 'Family');
+INSERT INTO have_genre VALUES (3040964, 'Fantasy');
+INSERT INTO have_genre VALUES (3062096, 'Action');
+INSERT INTO have_genre VALUES (3062096, 'Adventure');
+INSERT INTO have_genre VALUES (3062096, 'Crime');
+INSERT INTO have_genre VALUES (3062096, 'Drama');
+INSERT INTO have_genre VALUES (3062096, 'Mystery');
+INSERT INTO have_genre VALUES (3062096, 'Thriller');
+INSERT INTO have_genre VALUES (3076658, 'Drama');
+INSERT INTO have_genre VALUES (3076658, 'Sport');
+INSERT INTO have_genre VALUES (3082898, 'Action');
+INSERT INTO have_genre VALUES (3082898, 'Crime');
+INSERT INTO have_genre VALUES (3082898, 'Drama');
+INSERT INTO have_genre VALUES (3082898, 'Sport');
+INSERT INTO have_genre VALUES (3138900, 'Comedy');
+INSERT INTO have_genre VALUES (3138900, 'Crime');
+INSERT INTO have_genre VALUES (3138900, 'Drama');
+INSERT INTO have_genre VALUES (3224458, 'Biography');
+INSERT INTO have_genre VALUES (3224458, 'Drama');
+INSERT INTO have_genre VALUES (3263904, 'Biography');
+INSERT INTO have_genre VALUES (3263904, 'Drama');
+INSERT INTO have_genre VALUES (3282076, 'Action');
+INSERT INTO have_genre VALUES (3282076, 'Crime');
+INSERT INTO have_genre VALUES (3282076, 'Thriller');
+INSERT INTO have_genre VALUES (3322364, 'Biography');
+INSERT INTO have_genre VALUES (3322364, 'Drama');
+INSERT INTO have_genre VALUES (3322364, 'Sport');
+INSERT INTO have_genre VALUES (3460252, 'Crime');
+INSERT INTO have_genre VALUES (3460252, 'Drama');
+INSERT INTO have_genre VALUES (3460252, 'Mystery');
+INSERT INTO have_genre VALUES (3460252, 'Thriller');
+INSERT INTO have_genre VALUES (3460252, 'Western');
+INSERT INTO have_genre VALUES (3488328, 'Action');
+INSERT INTO have_genre VALUES (3488328, 'Thriller');
+INSERT INTO have_genre VALUES (3501590, 'Drama');
+INSERT INTO have_genre VALUES (3501590, 'War');
+INSERT INTO have_genre VALUES (3513548, 'Biography');
+INSERT INTO have_genre VALUES (3513548, 'Crime');
+INSERT INTO have_genre VALUES (3513548, 'Drama');
+INSERT INTO have_genre VALUES (3588588, 'Action');
+INSERT INTO have_genre VALUES (3588588, 'Crime');
+INSERT INTO have_genre VALUES (3588588, 'Drama');
+INSERT INTO have_genre VALUES (3659388, 'Adventure');
+INSERT INTO have_genre VALUES (3659388, 'Drama');
+INSERT INTO have_genre VALUES (3659388, 'Sci-Fi');
+INSERT INTO have_genre VALUES (3682448, 'Drama');
+INSERT INTO have_genre VALUES (3682448, 'History');
+INSERT INTO have_genre VALUES (3682448, 'Thriller');
+INSERT INTO have_genre VALUES (3691740, 'Adventure');
+INSERT INTO have_genre VALUES (3691740, 'Family');
+INSERT INTO have_genre VALUES (3691740, 'Fantasy');
+INSERT INTO have_genre VALUES (3715320, 'Comedy');
+INSERT INTO have_genre VALUES (3715320, 'Drama');
+INSERT INTO have_genre VALUES (3715320, 'Romance');
+INSERT INTO have_genre VALUES (3896198, 'Action');
+INSERT INTO have_genre VALUES (3896198, 'Adventure');
+INSERT INTO have_genre VALUES (3896198, 'Comedy');
+INSERT INTO have_genre VALUES (3896198, 'Sci-Fi');
+INSERT INTO have_genre VALUES (3967856, 'Action');
+INSERT INTO have_genre VALUES (3967856, 'Adventure');
+INSERT INTO have_genre VALUES (3967856, 'Drama');
+INSERT INTO have_genre VALUES (3967856, 'Sci-Fi');
+INSERT INTO have_genre VALUES (4027270, 'Drama');
+INSERT INTO have_genre VALUES (4027270, 'History');
+INSERT INTO have_genre VALUES (4027270, 'Romance');
+INSERT INTO have_genre VALUES (4027270, 'War');
+INSERT INTO have_genre VALUES (4154756, 'Action');
+INSERT INTO have_genre VALUES (4154756, 'Adventure');
+INSERT INTO have_genre VALUES (4154756, 'Sci-Fi');
+INSERT INTO have_genre VALUES (4154796, 'Action');
+INSERT INTO have_genre VALUES (4154796, 'Adventure');
+INSERT INTO have_genre VALUES (4154796, 'Drama');
+INSERT INTO have_genre VALUES (4154796, 'Sci-Fi');
+INSERT INTO have_genre VALUES (4155534, 'Animation');
+INSERT INTO have_genre VALUES (4155534, 'Adventure');
+INSERT INTO have_genre VALUES (4155534, 'Comedy');
+INSERT INTO have_genre VALUES (4155534, 'Family');
+INSERT INTO have_genre VALUES (4155534, 'Fantasy');
+INSERT INTO have_genre VALUES (4218572, 'Crime');
+INSERT INTO have_genre VALUES (4218572, 'Drama');
+INSERT INTO have_genre VALUES (4218572, 'Thriller');
+INSERT INTO have_genre VALUES (4287320, 'Drama');
+INSERT INTO have_genre VALUES (4287320, 'Sci-Fi');
+INSERT INTO have_genre VALUES (4287320, 'Thriller');
+INSERT INTO have_genre VALUES (4537986, 'Action');
+INSERT INTO have_genre VALUES (4537986, 'Crime');
+INSERT INTO have_genre VALUES (4537986, 'Thriller');
+INSERT INTO have_genre VALUES (4581576, 'Drama');
+INSERT INTO have_genre VALUES (4581576, 'Thriller');
+INSERT INTO have_genre VALUES (4630562, 'Action');
+INSERT INTO have_genre VALUES (4630562, 'Adventure');
+INSERT INTO have_genre VALUES (4630562, 'Crime');
+INSERT INTO have_genre VALUES (4630562, 'Thriller');
+INSERT INTO have_genre VALUES (4682786, 'Drama');
+INSERT INTO have_genre VALUES (4682786, 'Romance');
+INSERT INTO have_genre VALUES (4818250, 'Comedy');
+INSERT INTO have_genre VALUES (4824394, 'Action');
+INSERT INTO have_genre VALUES (4824394, 'Comedy');
+INSERT INTO have_genre VALUES (4824394, 'Sci-Fi');
+INSERT INTO have_genre VALUES (4971344, 'Crime');
+INSERT INTO have_genre VALUES (4971344, 'Drama');
+INSERT INTO have_genre VALUES (4971344, 'Western');
+INSERT INTO have_genre VALUES (5013056, 'Action');
+INSERT INTO have_genre VALUES (5013056, 'Drama');
+INSERT INTO have_genre VALUES (5013056, 'History');
+INSERT INTO have_genre VALUES (5013056, 'Thriller');
+INSERT INTO have_genre VALUES (5013056, 'War');
+INSERT INTO have_genre VALUES (5113040, 'Animation');
+INSERT INTO have_genre VALUES (5113040, 'Adventure');
+INSERT INTO have_genre VALUES (5113040, 'Comedy');
+INSERT INTO have_genre VALUES (5113040, 'Family');
+INSERT INTO have_genre VALUES (5208950, 'Action');
+INSERT INTO have_genre VALUES (5208950, 'Drama');
+INSERT INTO have_genre VALUES (5294550, 'Biography');
+INSERT INTO have_genre VALUES (5294550, 'Crime');
+INSERT INTO have_genre VALUES (5294550, 'Drama');
+INSERT INTO have_genre VALUES (5294550, 'Mystery');
+INSERT INTO have_genre VALUES (5294550, 'Thriller');
+INSERT INTO have_genre VALUES (5360996, 'Biography');
+INSERT INTO have_genre VALUES (5360996, 'Drama');
+INSERT INTO have_genre VALUES (5519340, 'Action');
+INSERT INTO have_genre VALUES (5519340, 'Fantasy');
+INSERT INTO have_genre VALUES (5519340, 'Thriller');
+INSERT INTO have_genre VALUES (5622412, 'Action');
+INSERT INTO have_genre VALUES (5622412, 'Drama');
+INSERT INTO have_genre VALUES (5622412, 'Thriller');
+INSERT INTO have_genre VALUES (5689068, 'Action');
+INSERT INTO have_genre VALUES (5689068, 'Comedy');
+INSERT INTO have_genre VALUES (5689068, 'Thriller');
+INSERT INTO have_genre VALUES (5742374, 'Crime');
+INSERT INTO have_genre VALUES (5742374, 'Drama');
+INSERT INTO have_genre VALUES (5742374, 'Mystery');
+INSERT INTO have_genre VALUES (5742374, 'Thriller');
+INSERT INTO have_genre VALUES (5767628, 'Action');
+INSERT INTO have_genre VALUES (5767628, 'Crime');
+INSERT INTO have_genre VALUES (5767628, 'Mystery');
+INSERT INTO have_genre VALUES (5767628, 'Thriller');
+INSERT INTO have_genre VALUES (5814534, 'Animation');
+INSERT INTO have_genre VALUES (5814534, 'Adventure');
+INSERT INTO have_genre VALUES (5814534, 'Comedy');
+INSERT INTO have_genre VALUES (5814534, 'Family');
+INSERT INTO have_genre VALUES (5814534, 'Sci-Fi');
+INSERT INTO have_genre VALUES (5848272, 'Animation');
+INSERT INTO have_genre VALUES (5848272, 'Adventure');
+INSERT INTO have_genre VALUES (5848272, 'Comedy');
+INSERT INTO have_genre VALUES (5848272, 'Family');
+INSERT INTO have_genre VALUES (5848272, 'Fantasy');
+INSERT INTO have_genre VALUES (6019206, 'Action');
+INSERT INTO have_genre VALUES (6019206, 'Crime');
+INSERT INTO have_genre VALUES (6019206, 'Thriller');
+INSERT INTO have_genre VALUES (6048922, 'Action');
+INSERT INTO have_genre VALUES (6048922, 'Drama');
+INSERT INTO have_genre VALUES (6048922, 'History');
+INSERT INTO have_genre VALUES (6048922, 'War');
+INSERT INTO have_genre VALUES (6139732, 'Adventure');
+INSERT INTO have_genre VALUES (6139732, 'Family');
+INSERT INTO have_genre VALUES (6139732, 'Fantasy');
+INSERT INTO have_genre VALUES (6139732, 'Musical');
+INSERT INTO have_genre VALUES (6139732, 'Romance');
+INSERT INTO have_genre VALUES (6218010, 'Action');
+INSERT INTO have_genre VALUES (6218010, 'Adventure');
+INSERT INTO have_genre VALUES (6218010, 'Family');
+INSERT INTO have_genre VALUES (6218010, 'Fantasy');
+INSERT INTO have_genre VALUES (6288124, 'Biography');
+INSERT INTO have_genre VALUES (6288124, 'Comedy');
+INSERT INTO have_genre VALUES (6288124, 'Drama');
+INSERT INTO have_genre VALUES (6294822, 'Drama');
+INSERT INTO have_genre VALUES (6294822, 'Thriller');
+INSERT INTO have_genre VALUES (6343314, 'Drama');
+INSERT INTO have_genre VALUES (6343314, 'Sport');
+INSERT INTO have_genre VALUES (6344712, 'Drama');
+INSERT INTO have_genre VALUES (6412452, 'Comedy');
+INSERT INTO have_genre VALUES (6412452, 'Drama');
+INSERT INTO have_genre VALUES (6412452, 'Musical');
+INSERT INTO have_genre VALUES (6412452, 'Mystery');
+INSERT INTO have_genre VALUES (6412452, 'Romance');
+INSERT INTO have_genre VALUES (6412452, 'Western');
+INSERT INTO have_genre VALUES (6450804, 'Action');
+INSERT INTO have_genre VALUES (6450804, 'Adventure');
+INSERT INTO have_genre VALUES (6450804, 'Sci-Fi');
+INSERT INTO have_genre VALUES (6513656, 'Action');
+INSERT INTO have_genre VALUES (6513656, 'Crime');
+INSERT INTO have_genre VALUES (6513656, 'Mystery');
+INSERT INTO have_genre VALUES (6513656, 'Sci-Fi');
+INSERT INTO have_genre VALUES (6513656, 'Thriller');
+INSERT INTO have_genre VALUES (6751668, 'Comedy');
+INSERT INTO have_genre VALUES (6751668, 'Drama');
+INSERT INTO have_genre VALUES (6751668, 'Thriller');
+INSERT INTO have_genre VALUES (6772804, 'Action');
+INSERT INTO have_genre VALUES (6772804, 'Crime');
+INSERT INTO have_genre VALUES (6772804, 'Thriller');
+INSERT INTO have_genre VALUES (6802308, 'Biography');
+INSERT INTO have_genre VALUES (6802308, 'Drama');
+INSERT INTO have_genre VALUES (6802308, 'Thriller');
+INSERT INTO have_genre VALUES (7131622, 'Comedy');
+INSERT INTO have_genre VALUES (7131622, 'Drama');
+INSERT INTO have_genre VALUES (7255568, 'Drama');
+INSERT INTO have_genre VALUES (7255568, 'Romance');
+INSERT INTO have_genre VALUES (7255568, 'Sport');
+INSERT INTO have_genre VALUES (7286456, 'Crime');
+INSERT INTO have_genre VALUES (7286456, 'Drama');
+INSERT INTO have_genre VALUES (7286456, 'Thriller');
+INSERT INTO have_genre VALUES (7504726, 'Adventure');
+INSERT INTO have_genre VALUES (7504726, 'Drama');
+INSERT INTO have_genre VALUES (7504726, 'Family');
+INSERT INTO have_genre VALUES (7763324, 'Adventure');
+INSERT INTO have_genre VALUES (7763324, 'Fantasy');
+INSERT INTO have_genre VALUES (7763324, 'Sci-Fi');
+INSERT INTO have_genre VALUES (7816392, 'Action');
+INSERT INTO have_genre VALUES (7816392, 'Drama');
+INSERT INTO have_genre VALUES (7816392, 'Thriller');
+INSERT INTO have_genre VALUES (7903530, 'Action');
+INSERT INTO have_genre VALUES (7903530, 'Crime');
+INSERT INTO have_genre VALUES (7903530, 'Drama');
+INSERT INTO have_genre VALUES (7903530, 'Thriller');
+INSERT INTO have_genre VALUES (7959026, 'Crime');
+INSERT INTO have_genre VALUES (7959026, 'Drama');
+INSERT INTO have_genre VALUES (7959026, 'Thriller');
+INSERT INTO have_genre VALUES (8079248, 'Comedy');
+INSERT INTO have_genre VALUES (8079248, 'Fantasy');
+INSERT INTO have_genre VALUES (8079248, 'Music');
+INSERT INTO have_genre VALUES (8079248, 'Musical');
+INSERT INTO have_genre VALUES (8079248, 'Romance');
