@@ -16,7 +16,7 @@ create table movies (
 	title varchar2(300) not null,
 	year smallint not null,
 	duration smallint null,
-	synopsis varchar2(1000) null,
+	synopsis varchar2(4000) null,
 	poster_uri varchar2(300) null,
 	color varchar2(20) null,
 	pg varchar2(15) null,
