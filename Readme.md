@@ -1,17 +1,14 @@
 # Movie database
 
-## Create specific user, schema, db, ...
-In directory sql/
+## Run docker
 
-### On linux as user root
-mysql -u root < 00-create-db-user.sql
+Script shell ou powershell start-all
 
-## Create tables and data (Linux, Windows as any OS user)
-In directory sql/ 
+## CLI
+Toutes les commandes doivent être précédées de:
 
-mysql -u movie -p dbmovie < maria_movie_all.sql
+docker compose -p exec -it
 
-## Tests
 - Se connecter avec le user movie:
 
 mysql -u movie -p dbmovie
