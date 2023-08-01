@@ -7,7 +7,7 @@ Script shell ou powershell start-all
 ## CLI
 Toutes les commandes doivent être précédées de:
 
-docker compose -p exec -it
+docker compose -p maria-dbmovie exec -it db
 
 - Se connecter avec le user movie:
 
