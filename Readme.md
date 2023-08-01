@@ -11,7 +11,7 @@ docker compose -p maria-dbmovie exec -it db
 
 - Se connecter avec le user movie:
 
-mysql -u movie -p dbmovie
+mariadb -u movie -p dbmovie
 
 - Lister les bases
 
