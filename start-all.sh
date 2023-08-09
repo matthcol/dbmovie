@@ -1,2 +1,2 @@
-# create a MariaDB container with PHPMyAdmin
-docker-compose -p maria-dbmovie up -d
+# create a MySQL container with PHPMyAdmin
+docker-compose -p mysql-dbmovie up -d

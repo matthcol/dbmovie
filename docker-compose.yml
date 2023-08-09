@@ -3,18 +3,18 @@ version: '3.1'
 services:
 
   db:
-    image: mariadb:${MARIADB_VERSION:-latest}
+    image: mysql:${MYSQL_VERSION:-latest}
     restart: unless-stopped
     environment:
-      MYSQL_DATABASE: ${MARIADB_DB:-dbmovie}
-      MYSQL_USER: ${MARIADB_USER:-movie}
-      MYSQL_PASSWORD: ${MARIADB_PASSWORD:-password}
-      MYSQL_ROOT_PASSWORD: ${MARIADB_ROOT_PASSWORD:-password}
+      MYSQL_DATABASE: ${MYSQL_DB:-dbmovie}
+      MYSQL_USER: ${MYSQL_USER:-movie}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD:-password}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-password}
     volumes:
       - ./sql:/docker-entrypoint-initdb.d
-      - mariadata-movie:/var/lib/mysql
+      - mysqldata-movie:/var/lib/mysql
     ports:
-      - ${MARIADB_PORT:-3306}:3306
+      - ${MYSQL_PORT:-3306}:3306
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin:${ADMIN_VERSION:-latest}
@@ -27,5 +27,5 @@ services:
       PMA_PORT: 3306
 
 volumes:
-  mariadata-movie:
+  mysqldata-movie:
 
