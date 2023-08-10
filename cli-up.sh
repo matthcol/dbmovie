@@ -1,7 +1,7 @@
-#!/bin/bash
+#!/bin/sh
 
 # create a DB container with a GUI client
-# Usage: start-all.ps [composition-name [env-file]]
+# Usage: cli-up.sh [composition-name [env-file]]
 
 # Args:
 COMPOSITION_NAME=maria-dbmovie

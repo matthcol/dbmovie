@@ -17,7 +17,7 @@ create table movies (
 	director_id integer null,
 	constraint pk_movies primary key(id),
 	constraint uniq_movies UNIQUE(title, year),
-	constraint chk_movies_year CHECK(year >= 1850)
+	constraint chk_movies_year CHECK(year >= 1888)
 );
 
 create table play(
