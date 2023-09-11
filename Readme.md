@@ -7,27 +7,28 @@ Script shell ou powershell start-all
 ## Check containers
 - state (check composition name)
 
-docker compose -p maria-dbmovie ps -a
+`docker compose -p maria-dbmovie ps -a`
 
 - logs (check composition name)
 
+```
 docker compose -p maria-dbmovie logs
-
 docker compose -p maria-dbmovie logs db
-
 docker compose -p maria-dbmovie logs gui
+```
 
 ## Delete container(s)
 - containers (check composition name)
-docker compose -p maria-dbmovie down
+
+`docker compose -p maria-dbmovie down`
 
 - volumes (check name in .env)
-docker volume rm maria-dbmovie-data
+`docker volume rm maria-dbmovie-data`
 
 ## CLI
 Toutes les commandes doivent être précédées de (check composition name):
 
-docker compose -p maria-dbmovie exec -it db
+`docker compose -p maria-dbmovie exec -it db`
 
 - Lancer un shell (si disponible)
 bash
@@ -49,4 +50,4 @@ show tables;
 
 - Vérifier le contenu d'une table
 
-select * from movies limit 50;
+`select * from movies limit 50;`
