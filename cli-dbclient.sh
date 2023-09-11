@@ -4,7 +4,7 @@
 # Usage: cli-dbclient.sh [composition-name [env-file]]
 
 # Args:
-COMPOSITION_NAME=mysql-dbmovie
+COMPOSITION_NAME=sqlserver-dbmovie
 ENV_FILE=.env
 if [ $# -ge 1 ]
 then

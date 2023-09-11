@@ -2,7 +2,7 @@
 # Usage: cli-up.ps1 [composition-name [env-file]]
 
 # Args:
-$composition_name="mysql-dbmovie"
+$composition_name="sqlserver-dbmovie"
 $env_file=".env"
 if ($args.Count -ge 1) {
     $composition_name=$args[0]
