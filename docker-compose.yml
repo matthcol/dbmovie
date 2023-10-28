@@ -11,14 +11,14 @@ services:
 
       
   db:
-    image: postgres:${POSTGRES_VERSION:-latest}
+    image: postgres:${DB_VERSION:-latest}
     restart: unless-stopped
     ports:
-      - ${POSTGRES_PORT:-5432}:5432
+      - ${DB_PORT:-5432}:5432
     environment:
-      POSTGRES_DB: ${POSTGRES_DB:-dbmovie}
-      POSTGRES_USER: ${POSTGRES_USER:-movie}
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-password}
+      POSTGRES_DB: ${DB_NAME:-dbmovie}
+      POSTGRES_USER: ${DB_USER:-movie}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-password}
     volumes:
       - ./sql:/docker-entrypoint-initdb.d
       - dbstorage:/var/lib/postgresql/data
