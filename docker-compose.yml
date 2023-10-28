@@ -16,7 +16,7 @@ services:
       # MYSQL_DATABASE: ${DB_DBNAME:-dbmovie}
       # MYSQL_USER: ${DB_USER:-movie}
       # MYSQL_PASSWORD: ${DB_PASSWORD:-password}
-      MSSQL_SA_PASSWORD: ${DB_ROOT_PASSWORD:-Passw@rd}
+      MSSQL_SA_PASSWORD: ${DB_ROOT_PASSWORD:-P@ssw0rd}
     volumes:
       - ./sql:/docker-entrypoint-initdb.d
       - dbstorage:/var/lib/mysql
