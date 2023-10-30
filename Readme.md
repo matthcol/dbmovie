@@ -1,26 +1,7 @@
 # Movie database
 
-## Run docker
+## Create your database with GUI or script #00.
 
-Script shell ou powershell start-all
+## Run scripts #01 to #05
 
-## CLI
-Toutes les commandes doivent être précédées de:
-
-docker compose -p maria-dbmovie exec -it db
-
-- Se connecter avec le user movie:
-
-mariadb -u movie -p dbmovie
-
-- Lister les bases
-
-show databases;
-
-- Lister les tables
-
-show tables;
-
-- Vérifier le contenu d'une table
-
-select * from movies limit 50;
+## Check content
