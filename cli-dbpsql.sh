@@ -15,4 +15,4 @@ then
     ENV_FILE=$2
 fi
 echo "Start DB client for composition [$COMPOSITION_NAME] with env file [$ENV_FILE]"
-docker compose -p "$COMPOSITION_NAME" exec -it db psql -U movie -d dbmovie
+docker compose -p "$COMPOSITION_NAME" exec -it db psql

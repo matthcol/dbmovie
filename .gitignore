@@ -1,2 +1,6 @@
 !.env.sample
 .env*
+!/scripts/db/__DB_NOSTART_SCRIPTS_HERE__
+!/scripts/gui/__GUI_SCRIPTS_HERE__
+/scripts/db/*.*
+/scripts/db/gui/*/*.*

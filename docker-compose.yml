@@ -21,6 +21,7 @@ services:
       POSTGRES_PASSWORD: ${DB_PASSWORD:-password}
     volumes:
       - ./sql:/docker-entrypoint-initdb.d
+      - ./scripts/db:/mnt
       - dbstorage:/var/lib/postgresql/data
 
   gui:
@@ -33,4 +34,6 @@ services:
       PGADMIN_DEFAULT_PASSWORD: ${GUI_PASSWORD:-password}
     volumes:
       - guistorage:/var/lib/pgadmin
+      - ./scripts/gui:/var/lib/pgadmin/storage
+
 
