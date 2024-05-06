@@ -1,12 +1,12 @@
 
-create table persons (
+create table person (
 	id serial constraint pk_stars primary key,
 	name varchar(150) not null,
 	birthdate date null
 );
 
-create table movies (
-	id serial constraint pk_movies primary key,
+create table movie (
+	id serial constraint pk_movie primary key,
 	title varchar(300) not null,
 	year smallint not null,
 	duration smallint null,
@@ -15,8 +15,8 @@ create table movies (
 	color varchar(20) null,
 	pg varchar(15) null,
 	director_id int null,
-	constraint uniq_movies UNIQUE(title, year),
-	constraint chk_movies_year CHECK(year >= 1850)
+	constraint uniq_movie UNIQUE(title, year),
+	constraint chk_movie_year CHECK(year >= 1850)
 );
 
 create table play(
@@ -31,17 +31,17 @@ create table have_genre(
 	genre varchar(20) not null
 );
 
-alter table movies add constraint fk_movies_director 
+alter table movie add constraint fk_movie_director 
 	FOREIGN KEY (director_id)
-	references persons(id);
+	references person(id);
 alter table play add constraint FK_PLAY_MOVIE 
 	FOREIGN KEY (movie_id)
-	references movies(id);
+	references movie(id);
 alter table play add constraint FK_PLAY_ACTOR 
 	FOREIGN KEY (actor_id)
-	references persons(id);
+	references person(id);
 alter table have_genre add constraint FK_HAVE_GENRE 
 	FOREIGN KEY (movie_id)
-	references movies(id);
+	references movie(id);
 
 

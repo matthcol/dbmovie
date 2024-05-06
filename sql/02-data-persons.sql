@@ -1,6 +1,6 @@
 SET client_encoding = 'UTF8';
 
-COPY persons (id, name, birthdate) FROM stdin;
+COPY person (id, name, birthdate) FROM stdin;
 1	Fred Astaire	1899-05-10
 2	Lauren Bacall	1924-09-16
 3	Brigitte Bardot	1934-09-28
