@@ -1,3 +1,5 @@
+CONN movie/password@localhost/xepdb1
+
 set define off
 set autocommit on
 

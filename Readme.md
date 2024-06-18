@@ -1,11 +1,9 @@
-# Database Movie with Oracle
+# Database Movie with Oracle (docker)
+Database Oracle Database 21 XE
+Dockerfile model from https://github.com/oracle/docker-images/blob/main/OracleDatabase/SingleInstance/README.md
+
+## Create container
+docker compose up -d
 
 
-## create user and schema data
-In directory sql/
 
-sqlplus system/password @00-user.sql
-
-## create tables and init data
-In directory sql/
-sqlplus movie/password @ movie_all.sql > /dev/null

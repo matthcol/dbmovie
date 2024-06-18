@@ -1,0 +1,24 @@
+volumes:
+
+  dbstorage:
+    name: ${DB_DATA_VOLUME:-oracle-dbmovie-data}
+
+services:
+
+  db:
+    build: 
+      context: 21.3.0
+      dockerfile: Dockerfile.xe
+    image: oracle/database:21.3.0-xe
+    restart: unless-stopped
+    environment:
+      ORACLE_PWD: ${DB_ROOT_PASSWORD:-password}
+      ORACLE_CHARACTERSET: ${DB_CHARSET:-AL32UTF8}
+    volumes:
+      - ./sql:/docker-entrypoint-initdb.d/startup
+      - dbstorage:/var/lib/mysql
+    ports:
+      - ${DB_PORT:-1521}:1521
+      - ${EM_PORT:-5500}:5500
+
+  
