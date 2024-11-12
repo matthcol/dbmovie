@@ -1,10 +1,7 @@
-version: '3.1'
-
 volumes:
 
   dbstorage:
     name: ${DB_DATA_VOLUME:-mysql-dbmovie-data}
-
 
 services:
 
@@ -22,7 +19,7 @@ services:
     ports:
       - ${DB_PORT:-3306}:3306
 
-  phpmyadmin:
+  gui:
     image: phpmyadmin/phpmyadmin:${GUI_TAG:-latest}
     restart: unless-stopped
     ports:
