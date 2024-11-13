@@ -6,7 +6,7 @@ volumes:
 services:
 
   db:
-    image: mysql:${DB_TAG:-latest}
+    image: mysql:${DB_TAG:-lts}
     restart: unless-stopped
     environment:
       MYSQL_DATABASE: ${DB_DBNAME:-dbmovie}
@@ -15,6 +15,9 @@ services:
       MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD:-password}
     volumes:
       - ./sql:/docker-entrypoint-initdb.d
+      - ./conf:/etc/mysql/conf.d
+      - ./backup:/backup
+      - ./scripts:/scripts
       - dbstorage:/var/lib/mysql
     ports:
       - ${DB_PORT:-3306}:3306

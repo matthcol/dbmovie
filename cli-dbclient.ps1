@@ -2,7 +2,7 @@
 # Usage: cli-dbclient.ps1 [composition-name [env-file]]
 
 # Args:
-$composition_name="mysql-dbmovie"
+$composition_name="dbmovie-mysql"
 $env_file=".env"
 if ($args.Count -ge 1) {
     $composition_name=$args[0]

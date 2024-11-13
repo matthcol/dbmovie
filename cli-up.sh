@@ -4,7 +4,7 @@
 # Usage: cli-up.sh [composition-name [env-file]]
 
 # Args:
-COMPOSITION_NAME=mysql-dbmovie
+COMPOSITION_NAME=dbmovie-mysql
 ENV_FILE=.env
 if [ $# -ge 1 ]
 then
