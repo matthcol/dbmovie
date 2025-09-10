@@ -1,4 +1,4 @@
-select count(*) from person;
-select count(*) from movie;
-select count(*) from play;
-select count(*) from have_genre;
+select count(*) as person_count from person;
+select count(*) as movie_count from movie;
+select count(*) as play_count from play;
+select count(*) as genre_count from have_genre;

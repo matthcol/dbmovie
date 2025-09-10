@@ -1,0 +1,10 @@
+services:
+
+  db:
+    image: mssqlmovie:1.0
+    restart: unless-stopped
+    volumes:
+      - ./scripts:/scripts
+    ports:
+      - 1433:1433
+

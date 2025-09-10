@@ -1,26 +1,24 @@
-# Movie database
+# Movie database (MSSQL)
 
-## Run docker
+## Créer le conteneur
 
-Script shell ou powershell start-all
+- Lancer la composition
+```
+docker compose up -d
+```
 
-## CLI
-Toutes les commandes doivent être précédées de:
+- Executer le scripts 0 (master)
+- Executer les scripts 1 à 5 (dbmovie)
+- Executer le script check (dbmovie)
 
-docker compose -p maria-dbmovie exec -it db
+## Sauver le conteneur en image
 
-- Se connecter avec le user movie:
+```
+docker commit idcontainer mssqlmovie:1.0
+```
+ 
+## Recréer le conteneur
 
-mariadb -u movie -p dbmovie
-
-- Lister les bases
-
-show databases;
-
-- Lister les tables
-
-show tables;
-
-- Vérifier le contenu d'une table
-
-select * from movies limit 50;
+```
+docker compose -f docker-compose.rerun.yml up -d  
+```
