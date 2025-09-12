@@ -1,5 +1,18 @@
 # Movie database (MSSQL)
 
+## Environnement
+Copier le fichier .env.sample en .env. Régler le choix de licence et accepter la licence.
+
+```
+# DB Accept License (default N)
+DB_ACCEPT_LICENSE=Y
+
+# DB Edition (default Developer): 
+# Developer, Evaluation, Express, Standard, Enterprise, EnterpriseCore
+DB_EDITION=Developer
+```
+
+
 ## Créer le conteneur
 
 - Lancer la composition
